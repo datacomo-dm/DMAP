@@ -1,0 +1,5 @@
+export CC=aCC
+export CXX=aCC
+export CFLAGS="+DD64"
+export CXXFLAGS="+DD64"
+configure --prefix=/crmarch/dbplus --enable-assembler --with-charset=gbk --with-extra-charsets=all  --with-big-tables --without-geometry --without-plugin-daemon_example --without-plugin-ftexample --without-plugin-archive --without-plugin-blackhole --without-plugin-example --with-plugin-innobase --without-plugin-ndbcluster --with-plugin-partition --with-plugin-federated --with-readline

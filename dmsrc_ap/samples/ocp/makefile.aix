@@ -1,0 +1,17 @@
+LFLAGS= -Wl,-brtl -maix64 -lwdbioci -lsupc++ -lrt -lm -lpthread -lclntsh 
+#LDFLAGS= -Wl,-bnolibpath -L/app/dbplus/lib/oci -L$/app/dbplus/lib
+LDFLAGS= -L$(DBPLUS_HOME)/lib/oci -L$(DBPLUS_HOME)/lib -L$(DBPLUSSRC_PATH)/lib 
+INCLUDE= -I$(HOME)/dbplus/inc
+SOURCE=ocp.cc 
+OBJS=ocp.o
+CXX = gcc
+CFLAGS = -g -DAIX -D__unix -maix64 -DUSE_WDBI -DWOCI_DEBUG
+ocp: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+	cp $@ $(DBPLUS_HOME)/bin
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f ocp ocp.o
+	
+rebuild: clean ocp	

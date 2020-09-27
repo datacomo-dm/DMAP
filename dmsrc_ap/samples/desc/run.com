@@ -1,0 +1,14 @@
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar1
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar2
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar3
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar4
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar5
+cdrp -l /dbsturbo/billdata/backupdata/backup_gsm/tar6
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar1
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar2
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar3
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar4
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar5
+cdrp -l /dbsturbo/billdata/backupdata/gsm/tar6

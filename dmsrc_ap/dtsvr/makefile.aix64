@@ -1,0 +1,20 @@
+LFLAGS= -lwdbi -lclntsh -lm -lbz2 -lucl -lrt -ldpio -llzo2 -lz -lpthread -lmysqlclient_r -lsupc++ -lodbc
+#-ldpodbc3
+LDFLAGS=  -Wl,-brtl -maix64 -fpic -fPIC -DPIC -L$(HOME)/dbplus/lib -L$(DBPLUS_HOME)/oci -L$(DBPLUS_HOME)/lib
+INCLUDE= -I$(HOME)/dbplus/inc -I$(HOME)/dbplus/inc/mysql
+SOURCE=dt_check.cpp dt_lib.cpp 
+OBJS=dt_check.o dt_lib.o 
+CXX = gcc
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = -O3 -D__unix -DWORDS_BIGENDIAN -maix64 -DAIX -fPIC -DB_TIME_FORMAT -D_LARGEFILE_SOURCE -fpic -DPIC -DUSE_WDBI -DWOCI_DEBUG 
+#CFLAGS = -O3 -pthread
+
+dpadmin: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS)
+	cp $@ $(DBPLUS_HOME)/bin 
+
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+
+clean:
+	rm -f $(OBJS) dpadmin

@@ -1,0 +1,7 @@
+CC=gcc
+CFLAGS="-O3 -fPIC -DPIC -fno-omit-frame-pointer"
+CXX=gcc
+CXXFLAGS="-O3 -fPIC -DPIC -fno-omit-frame-pointer -felide-constructors"
+export CC CFLAGS CXX CXXFLAGS
+configure
+unset CC CFLAGS CXX CXXFLAGS

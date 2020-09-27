@@ -1,0 +1,2 @@
+gmake EDITION=community debug VERBOSE=yes -j6
+

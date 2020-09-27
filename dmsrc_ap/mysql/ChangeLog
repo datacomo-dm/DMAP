@@ -1,0 +1,306 @@
+------------------------------------------------------------
+revno: 2777
+author: kent.boortz@sun.com
+committer: Build Team <bteam@astra04>
+branch nick: mysql-5.1.30-release
+timestamp: Fri 2008-11-14 17:29:38 +0100
+message:
+  Changes of copyright output from "--version" and similar.
+  Changes of copyright in RPM spec file.
+------------------------------------------------------------
+revno: 2776
+committer: Build Team <bteam@astra04>
+branch nick: mysql-5.1.30-release
+timestamp: Mon 2008-11-10 21:21:49 +0100
+message:
+  Added "Sun Microsystems, Inc." to copyright headers on files modified
+  since Oct 1st
+------------------------------------------------------------
+revno: 2775
+committer: Build Team <bteam@astra04>
+branch nick: mysql-5.1.30-release
+timestamp: Sun 2008-11-09 03:14:35 +0100
+message:
+  Added the default configure COMMUNITY_SERVER and ENABLED_PROFILING to
+  the Windows configuration file "include/config-win.h".
+------------------------------------------------------------
+revno: 2774
+committer: Joerg Bruehe <joerg@mysql.com>
+branch nick: clone-5.1
+timestamp: Fri 2008-11-07 20:08:37 +0100
+message:
+  Merge second fix for bug#40546 to the 5.1.30 tree.
+    ------------------------------------------------------------
+    revno: 2771.1.1
+    committer: Joerg Bruehe <joerg@mysql.com>
+    branch nick: bug40546-2-5.1
+    timestamp: Fri 2008-11-07 19:01:28 +0100
+    message:
+      Upmerge the second fix for bug#40546 from 5.0 to 5.1
+      and fix a defect specific to 5.1 (wrong quoting).
+    ------------------------------------------------------------
+    revno: 1810.3776.12
+    committer: Joerg Bruehe <joerg@mysql.com>
+    branch nick: bug40546-2-5.0
+    timestamp: Fri 2008-11-07 18:38:40 +0100
+    message:
+      "spec" file for RPM builds:
+      Fix yesterday's patch so that it also works for the last flag.
+      Still part of the fix for bug#40546.
+------------------------------------------------------------
+revno: 2773
+author: kent.boortz@sun.com
+committer: Build Team <bteam@astra04>
+branch nick: mysql-5.1.30-release
+timestamp: Thu 2008-11-06 19:38:19 +0100
+message:
+  Back merges from 6.0.8
+  - Removed some copy/paste between debug and normal build in RPM spec
+  - Removed "mysql_upgrade_shell" from RPM build
+  - Removed use of "grep -q" in "configure.in", not portable
+  - Improved test to disable ABI check not to accidently run for icc
+  
+  Other changes
+  - Added make file test targets 'test-bt-fast' and 'test-bt-debug-fast'
+  - Reenabled "jp" test suite run
+------------------------------------------------------------
+revno: 2772
+tags: clone-5.1.30-build
+committer: Joerg Bruehe <joerg@mysql.com>
+branch nick: bug40546-5.1
+timestamp: Thu 2008-11-06 17:30:33 +0100
+message:
+  Merge main 5.1 and the 5.1 version of the fix for bug#40546
+    ------------------------------------------------------------
+    revno: 2646.19.22
+    committer: Sven Sandberg <sven@mysql.com>
+    branch nick: 5.1
+    timestamp: Thu 2008-11-06 11:00:55 +0100
+    message:
+      BUG#36625: Please remove the rpl_probe and rpl_parse features from the server
+      Problem 1: BUG#36625: rpl_redirect doesn't do anything useful. It tests an
+      obsolete feature that was never fully implemented.
+      Fix 1: Remove rpl_redirect.
+      Problem 2: rpl_innodb_bug28430 and rpl_flushlog_loop are disabled despite the
+      bugs for which they were disabled have been fixed.
+      Fix 2: Re-enable rpl_innodb_bug28430 and rpl_flushlog_loop.
+    ------------------------------------------------------------
+    revno: 2646.19.21
+    committer: Mattias Jonsson <mattias.jonsson@sun.com>
+    branch nick: b40494-51-main
+    timestamp: Wed 2008-11-05 15:58:35 +0100
+    message:
+      merge
+        ------------------------------------------------------------
+        revno: 2770.1.6
+        committer: Mattias Jonsson <mattias.jonsson@sun.com>
+        branch nick: b40494-51-5129rc
+        timestamp: Wed 2008-11-05 15:53:28 +0100
+        message:
+          Bug#40494: MYSQL server crashes on range access with partitioning and
+          order by
+          
+          Problem was that the first index read was unordered,
+          and the next was ordered, resulting in use of
+          uninitialized data.
+          
+          Solution was to use the correct variable to see if
+          the 'next' call should be ordered or not.
+    ------------------------------------------------------------
+    revno: 2646.19.20
+    committer: Joerg Bruehe <joerg@mysql.com>
+    branch nick: push-5.1
+    timestamp: Tue 2008-11-04 13:44:19 +0100
+    message:
+      Merge 5.1-build -> main, to be used in 5.1.30
+        ------------------------------------------------------------
+        revno: 2770.1.5
+        committer: Mats Kindahl <mats@sun.com>
+        branch nick: b40360-5.1
+        timestamp: Mon 2008-11-03 18:50:49 +0100
+        message:
+          Merging with 5.1-5.1.29-rc
+            ------------------------------------------------------------
+            revno: 2770.3.2
+            committer: Ramil Kalimullin <ramil@mysql.com>
+            branch nick: b40053.5.1-5.1.29-rc
+            timestamp: Fri 2008-10-31 14:02:06 +0400
+            message:
+              Merge
+                ------------------------------------------------------------
+                revno: 2770.4.3
+                committer: Mats Kindahl <mats@sun.com>
+                branch nick: b40004-5.1-5.1.29-rc
+                timestamp: Wed 2008-10-29 21:43:15 +0100
+                message:
+                  Merging with 5.1-5.1.29-rc
+                    ------------------------------------------------------------
+                    revno: 2770.5.6
+                    committer: Ramil Kalimullin <ramil@mysql.com>
+                    branch nick: b23113.5.1
+                    timestamp: Fri 2008-10-24 13:00:03 +0500
+                    message:
+                      Fix for bug#23113: Different behavior on altering ENUM fields between 5.0 and 5.1
+                      
+                      Problem: mysqld doesn't detect that enum data must be reinserted performing
+                      'ALTER TABLE' in some cases.
+                      
+                      Fix: reinsert data altering an enum field if enum values are changed.
+                    ------------------------------------------------------------
+                    revno: 2770.5.5
+                    committer: Georgi Kodinov <kgeorge@mysql.com>
+                    branch nick: merge-5.1-5.1.29-rc
+                    timestamp: Thu 2008-10-23 17:09:19 +0300
+                    message:
+                      merged 5.0-5.1.29-rc -> 5.1-5.1.29-rc
+                        ------------------------------------------------------------
+                        revno: 1810.3781.3
+                        committer: Georgi Kodinov <kgeorge@mysql.com>
+                        branch nick: merge-5.0-5.1.29-rc
+                        timestamp: Thu 2008-10-23 16:35:44 +0300
+                        message:
+                          merged 5.0 main -> 5.0-5.1.29-rc
+                    ------------------------------------------------------------
+                    revno: 2770.5.4
+                    committer: Georgi Kodinov <kgeorge@mysql.com>
+                    branch nick: merge-5.1-5.1.29-rc
+                    timestamp: Thu 2008-10-23 16:39:21 +0300
+                    message:
+                      merged 5.1-main to 5.1-5.1.29-rc
+                    ------------------------------------------------------------
+                    revno: 2770.5.3
+                    committer: Sven Sandberg <sven@mysql.com>
+                    branch nick: 5.1-5.1.29-rc
+                    timestamp: Wed 2008-10-22 16:45:29 +0200
+                    message:
+                      Merged new test case for BUG#39812 to the head of 5.1
+                        ------------------------------------------------------------
+                        revno: 2770.6.1
+                        committer: Sven Sandberg <sven@mysql.com>
+                        branch nick: 5.1-5.1.29-rc
+                        timestamp: Wed 2008-10-22 16:00:45 +0200
+                        message:
+                          BUG#39812: Make statement replication default for 5.1 (to match 5.0)
+                          Added test case to check the default value of @@binlog_format.
+                    ------------------------------------------------------------
+                    revno: 2770.5.2
+                    committer: Davi Arnaut <Davi.Arnaut@Sun.COM>
+                    branch nick: mysql-5.1-5.1.29-rc
+                    timestamp: Tue 2008-10-21 19:07:31 -0200
+                    message:
+                      Merge post-merge fix from mysql-5.0-bugteam.
+                        ------------------------------------------------------------
+                        revno: 1810.3781.2
+                        committer: Davi Arnaut <Davi.Arnaut@Sun.COM>
+                        branch nick: mysql-5.0-5.1.29-rc
+                        timestamp: Tue 2008-10-21 19:02:26 -0200
+                        message:
+                          Post-merge fix: drop table at the end of test.
+                    ------------------------------------------------------------
+                    revno: 2770.5.1
+                    committer: Davi Arnaut <Davi.Arnaut@Sun.COM>
+                    branch nick: mysql-5.1-5.1.29-rc
+                    timestamp: Tue 2008-10-21 18:28:01 -0200
+                    message:
+                      Merge Bug#28323 to mysql-5.1.29-rc
+                    ------------------------------------------------------------
+                    revno: 1810.3781.1
+                    committer: Davi Arnaut <Davi.Arnaut@Sun.COM>
+                    branch nick: mysql-5.0-5.1.29-rc
+                    timestamp: Tue 2008-10-21 16:07:31 -0200
+                    message:
+                      Bug#28323: Server crashed in xid cache operations
+                      
+                      The problem was that the server did not robustly handle a
+                      unilateral roll back issued by the Resource Manager (RM)
+                      due to a resource deadlock within the transaction branch.
+                      By not acknowledging the roll back, the server (TM) would
+                      eventually corrupt the XA transaction state and crash.
+                      
+                      The solution is to mark the transaction as rollback-only
+                      if the RM indicates that it rolled back its branch of the
+                      transaction.
+                ------------------------------------------------------------
+                revno: 2770.4.2
+                committer: Mats Kindahl <mats@sun.com>
+                branch nick: b40004-5.1-5.1.29-rc
+                timestamp: Wed 2008-10-29 21:37:51 +0100
+                message:
+                  Bug #40004: Replication failure with no PK + no indexes
+                  
+                  Adding comments to test cases.
+                ------------------------------------------------------------
+                revno: 2770.4.1
+                committer: Mats Kindahl <mats@sun.com>
+                branch nick: b40004-5.1-5.1.29-rc
+                timestamp: Mon 2008-10-20 20:50:08 +0200
+                message:
+                  Bug #40004  	Replication failure with no PK + no indexes
+                  
+                  In certain situations, a scan of the table will return the error
+                  code HA_ERR_RECORD_DELETED, and this error code is not 
+                  correctly caught in the Rows_log_event::find_row() function, which
+                  causes an error to be returned for this case.
+                  
+                  This patch fixes the problem by adding code to either ignore the
+                  record and continuing with the next one, the the event of a table
+                  scan, or change the error code to HA_ERR_KEY_NOT_FOUND, in the event
+                  that a key lookup is attempted.
+            ------------------------------------------------------------
+            revno: 2770.3.1
+            committer: Ramil Kalimullin <ramil@mysql.com>
+            branch nick: b40053.5.1-5.1.29-rc
+            timestamp: Fri 2008-10-17 17:45:17 +0500
+            message:
+              Fix for bug #40053: 'check table .. for upgrade' doesn't detect 
+              collation change made in 5.1.24-rc
+              
+              Problem: 'CHECK TABLE ... FOR UPGRADE' did not check for 
+              incompatible collation changes made in MySQL 5.1.24-rc.
+              
+              Fix: add the check.
+        ------------------------------------------------------------
+        revno: 2770.1.4
+        committer: Mats Kindahl <mats@sun.com>
+        branch nick: b40360-5.1
+        timestamp: Mon 2008-11-03 18:46:47 +0100
+        message:
+          Bug #40360: Binlog related errors with binlog off
+          
+          Adding missing drop of created table and tidying display.
+        ------------------------------------------------------------
+        revno: 2770.1.3
+        committer: Mats Kindahl <mats@sun.com>
+        branch nick: b40360-5.1
+        timestamp: Mon 2008-11-03 12:14:48 +0100
+        message:
+          Bug #40360: Binlog related errors with binlog off
+                
+          When statement-based replication is used, and the
+          transaction isolation level is READ-COMMITTED or stricter,
+          InnoDB will print an error because statement-based
+          replication might lead to inconsistency between master
+          and slave databases. However, when the binary log is not
+          engaged, this is not an issue and an error should
+          not be printed.
+          
+          This patch makes thd_binlog_format() return BINLOG_FORMAT_
+          UNSPEC when the binary log is not engaged for the given
+          thread.
+    ------------------------------------------------------------
+    revno: 2646.19.19
+    author: kent.boortz@sun.com
+    committer: Build Team <bteam@astra04>
+    branch nick: mysql-5.1-build
+    timestamp: Mon 2008-10-27 22:26:58 +0100
+    message:
+      Merge from mysql-5.1.29-rc-release
+        ------------------------------------------------------------
+        revno: 2770.2.4
+        tags: mysql-5.1.29
+        author: kent.boortz@sun.com
+        committer: Build Team <build-private@mysql.com>
+        branch nick: mysql-5.1.29-rc-release
+        timestamp: Sat 2008-10-11 23:51:58 +0200
+        message:
+          More portable sh in configure script

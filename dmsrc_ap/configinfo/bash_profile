@@ -1,0 +1,78 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+#datamerge系统安装路径
+DATAMERGER_HOME=/app/datamerger
+#DBPLUS_HOME用于开发，生产系统不需要
+export DBPLUS_HOME=/app/datamerger
+
+#设置终端使用的语言，RedHat ES/AS 4缺省使用UTF8字符集，会给配置参数文件带来错误，需要
+# 以下的设置。并且终端软件也不要使用UTF8编码解释
+LANG=zh_CN
+#PATH的设置需要增加 DataMerger和JDK的执行文件所在的目录，
+# 请修改JDK的路径，与实际安装位置一致。JDK要求1.4以上版本。
+PATH=$PATH:$DATAMERGER_HOME/bin:./:/app/oracle/product/10.1.0/db_1/jdk/bin
+#JAVA_HOME 变量用于启动Web服务器(tomcat)
+export JAVA_HOME=/app/oracle/product/10.1.0/db_1/jdk
+#NLS_LANG 变量是从ORACLE数据库中抽取数据时,使用的字符集.
+#需要与Oracle数据库服务器中的实例使用的字符集一致.
+# 格式为 语言_地区.字符集，例如
+#    "SIMPLIFIED CHINESE_CHINA.ZHS16CGB231280"  ---使用GB2312
+#    "SIMPLIFIED CHINESE_CHINA.ZHS16GBK"        ---使用GBK
+NLS_LANG="AMERICAN_AMERICA.ZHS16GBK"
+#LD_LIBRARY_PATH设置执行命令时搜索动态库的路径，Windows系统中的动态库和命令
+#都使用PATH变量搜索， 但UNIX中的动态库和命令使用不同的环境变量设置。
+#确保$DATAMERGER_HOME/lib:$DATAMERGER_HOME/oci正确设置
+LD_LIBRARY_PATH=$DATAMERGER_HOME/lib:$DATAMERGER_HOME/oci:$LD_LIBRARY_PATH
+
+#Tru-64系统的字节对齐控制
+#uac p 0
+
+#用户使用资源的限制,需要检查是否超过操作系统限制,操作系统中的资源限制在/etc/security/limit.conf文件中修改
+#如果使用ssh方式登录linux,下面的操作可能会失败,解决的方法是
+#   以root用户做下面的操作：
+#	修改sshd_config配置文件
+#	/etc/ssh/sshd_config 
+#	修改：
+#	#UsePrivilegeSeparation yes
+#	为:
+#	UsePrivilegeSeparation no
+#	以及
+#	#PAMAuthenticationViaKbdInt no ==>
+#       修改为
+#	PAMAuthenticationViaKbdInt yes 
+#	然后重新启动sshd服务
+#	service sshd restart
+# 设置core文件的大小限制
+ulimit -c unlimited
+# 设置最大打开文件数，这个值与表的数据有关，建议为表的最大数量*10
+ulimit -u 16382 
+ulimit -n 65534
+ulimit -d 4000000
+#ulimit -s 22920
+#ORACLE_SID=dtagt
+export PATH LANG NLS_LANG LD_LIBRARY_PATH DATAMERGER_HOME JAVA_HOME
+unset USERNAME
+ export WDBI_LOGPATH=$DATAMERGER_HOME/log/
+ export DP_LOOP=0
+ export DP_MTLIMIT=200
+ export DP_INDEXNUM=100
+ export DP_ECHO=1
+ export DP_VERBOSE=0
+ export DP_DSN=dp
+ export DP_MUSERNAME=root
+ export DP_MPASSWORD=QXVPTVR5VTTXVZBDBFFMDFFKJGGHLVJVHB
+ export DP_WAITTIME=60
+ export DP_THREADNUM=1
+ export DP_CORELEVEL=2
+# export DP_BLOCKSIZE=200
+ export DP_LOADTIDXSIZE=300
+ export CVSROOT=:pserver:cvs@192.168.0.226:/cvsroot
+ export DBPLUSSRC_PATH=$HOME/dtsrc
+ export DP_SERVERIP=localhost

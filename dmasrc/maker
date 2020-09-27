@@ -1,0 +1,2 @@
+make EDITION=community release VERBOSE=yes -j4
+

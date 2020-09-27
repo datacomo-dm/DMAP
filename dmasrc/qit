@@ -1,0 +1,60 @@
+[1mdiff --git a/storage/brighthouse/loader/RCAttrLoadBase.cpp b/storage/brighthouse/loader/RCAttrLoadBase.cpp[m
+[1mindex 0f61f1c..75874e5 100644[m
+[1m--- a/storage/brighthouse/loader/RCAttrLoadBase.cpp[m
+[1m+++ b/storage/brighthouse/loader/RCAttrLoadBase.cpp[m
+[36m@@ -2615,9 +2615,9 @@[m [mint RCAttrLoadBase::merge_table_from_sorted_data(const std::string& sorted_data_[m
+         IBFile _sorted_pack_fn_handle;[m
+         bool _switch_sorted_pack_fn = false;[m
+         bool _sorted_pack_fn_is_open = false;[m
+[31m-        int _sorted_pack_fn_index = 0;[m
+[32m+[m[32m        int _sorted_pack_fn_index = 0;          // ÅÅÐòºóµÄÎÄ¼þÏÂ±ê[m[41m[m
+ [m
+[31m-        char _dpn_buf[38];                      // ¶ÁÈ¡DPNÓÃµÄbuff[m
+[32m+[m[32m        char _dpn_buf[38];                        // ¶ÁÈ¡DPNÓÃµÄbuff[m[41m[m
+         int _cur_sorted_pack_index = 0;         // µ¥¸ö½ÚµãµÄpackÎÄ¼þÏÂ±ê[m
+         bool _single_dpn_last_pack = false;     // µ¥¸ö½ÚµãµÄ×îºóÒ»¸öÊý¾Ý°ü[m
+         int _cur_pack_file_index = -1;          // ÓÃÓÚÇÐ»»ÊÇ·ñÇÐ»»ÅÅÐòºóµÄpackÎÄ¼þ[m
+[36m@@ -2810,17 +2810,17 @@[m [mint RCAttrLoadBase::merge_table_from_sorted_data(const std::string& sorted_data_[m
+                         assert(_sorted_dpn.no_objs == 0xffff);  // ²»ÊÇµÚÒ»¸ö°üºÍ×îºóÒ»¸ö°ü,±ØÐëÒª±£Ö¤ËùÓÐ°ü¶¼ÊÇÂúµÄ[m
+                     }[m
+ [m
+[31m-                    if(_cur_pack_file_index == -1) {[m
+[31m-                        _cur_pack_file_index = _sorted_dpn.pack_file;[m
+[31m-                    }[m
+[31m-                    if(_cur_pack_file_index != _sorted_dpn.pack_file) { // ÇÐ»»ÏÂÒ»¸öÎÄ¼þ[m
+[31m-                        _switch_sorted_pack_fn = true;[m
+[31m-                        _cur_pack_file_index = _sorted_dpn.pack_file;[m
+[31m-                    }[m
+[31m-[m
+                     // pack ÎÄ¼þµÄ¸üÐÂ[m
+                     if(_sorted_dpn.is_stored == true) {[m
+ [m
+[32m+[m[32m                        if(_cur_pack_file_index == -1) {[m[41m[m
+[32m+[m[32m                            _cur_pack_file_index = _sorted_dpn.pack_file;[m[41m[m
+[32m+[m[32m                        }[m[41m[m
+[32m+[m[32m                        if(_cur_pack_file_index != _sorted_dpn.pack_file) { // ÇÐ»»ÏÂÒ»¸öÎÄ¼þ[m[41m[m
+[32m+[m[32m                            _switch_sorted_pack_fn = true;[m[41m[m
+[32m+[m[32m                            _cur_pack_file_index = _sorted_dpn.pack_file;[m[41m[m
+[32m+[m[32m                        }[m[41m[m
+[32m+[m[41m[m
+                         assert(_sorted_dpn.no_objs >=_sorted_dpn.no_nulls);[m
+ [m
+                         // ÇÐ»»saveµÄpackÎÄ¼þ[m
+[36m@@ -2852,7 +2852,16 @@[m [mint RCAttrLoadBase::merge_table_from_sorted_data(const std::string& sorted_data_[m
+                         if(_switch_sorted_pack_fn) { // ÇÐ»»ÎÄ¼þ[m
+                             _sorted_pack_fn_index++;[m
+                             _sorted_pack_fn_handle.Close();[m
+[31m-                            _sorted_pack_fn_handle.OpenReadOnly(_sorted_data_file_info_lst[node_idx].pack_name_lst[_sorted_pack_fn_index]);[m
+[32m+[m[32m                            std::string _f = _sorted_data_file_info_lst[node_idx].pack_name_lst[_sorted_pack_fn_index];[m[41m[m
+[32m+[m[32m                            if(DoesFileExist(_f)){[m[41m[m
+[32m+[m[32m                                _sorted_pack_fn_handle.OpenReadOnly(_f);[m[41m[m
+[32m+[m[32m                            }[m[41m[m
+[32m+[m[32m                            else{[m[41m[m
+[32m+[m[32m                                sprintf(_log_msg,"Error : PackFile [%s] is not exist , can not merge pack file .",_f.c_str());[m[41m[m
+[32m+[m[32m                                rclog << lock << std::string(_log_msg) << unlock;[m[41m[m
+[32m+[m[32m                                throw InternalRCException(_log_msg);[m[41m[m
+[32m+[m[32m                            }[m[41m[m
+[32m+[m[41m                            [m
+                             _switch_sorted_pack_fn = false;[m
+                         }[m
+ [m

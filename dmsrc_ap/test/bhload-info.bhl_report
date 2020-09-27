@@ -1,0 +1,3 @@
+ERROR: The configuration file brighthouse.ini not found
+ERROR: The configuration file brighthouse.ini not found Configuration::Exception/var/lib/mysql/infobright-4.0.5/src/storage/brighthouse/loader/Loader.cpp78
+WARNING: empty KN defininiton file created

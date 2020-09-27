@@ -1,0 +1,1060 @@
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031125 09:05:02  mysqld restarted
+031125 09:08:57  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031127 08:30:28  mysqld restarted
+031127 10:21:08  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031128 09:15:23  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031208 09:11:58  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031208 10:53:55  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031211 14:15:37  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031211 14:21:41  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031212 11:28:27  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031212 14:24:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:24:47  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:24:48  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:24:49  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:05  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:06  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:07  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:08  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:09  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:10  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:12  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:13  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:14  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:15  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:16  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:17  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:18  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:19  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:20  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:21  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:23  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:24  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:25  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:26  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:27  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:28  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:29  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:30  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:32  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:33  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:34  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:35  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:36  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:37  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:38  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:39  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:41  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:43  mysqld restarted
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 1
+mysqld process hanging, pid 972776 - killed
+/usr/local/mysql/bin/mysqld_safe: 972776 Killed
+031212 14:25:44  mysqld restarted
+031212 14:25:44  mysqld ended
+
+-e 
+Number of processes running now: 0
+031212 14:25:45  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:47  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:48  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:49  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:51  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:52  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:53  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:54  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:55  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:56  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:57  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:58  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:25:59  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:00  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:02  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:03  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:04  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:05  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:06  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:07  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:08  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:09  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:11  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:12  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:13  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:14  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:15  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:16  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:17  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:18  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:19  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:21  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:22  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:23  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:24  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:25  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:26  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:27  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:28  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:29  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:31  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:32  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:33  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:34  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:35  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:36  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:38  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:39  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:41  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:42  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:44  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:45  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:48  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:49  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:50  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:51  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:52  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:54  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:55  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:56  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:57  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:26:58  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:00  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:01  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:02  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:03  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:04  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:05  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:06  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:07  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:09  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:10  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:11  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:12  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:13  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:14  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:15  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:17  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:18  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:19  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:20  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:21  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:22  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:23  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:24  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:26  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:27  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:28  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:29  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:30  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:31  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:32  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:34  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:35  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:36  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:37  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:38  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:39  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:41  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:42  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:44  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:45  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:47  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:48  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:49  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:50  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:51  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:53  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:54  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:55  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:56  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:57  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:58  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:27:59  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:00  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:01  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:03  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:04  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:05  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:06  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:07  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:08  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:09  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:10  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:11  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:13  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:14  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:15  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:16  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:17  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:18  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:19  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:20  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:21  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:23  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:24  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:25  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:26  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:27  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:28  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:29  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:30  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:31  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:32  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:34  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:35  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:36  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:37  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:38  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:39  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:41  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:43  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:44  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:45  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:47  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:48  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:49  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:50  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:51  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:53  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:54  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:55  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:56  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:57  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:58  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:28:59  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:29:00  mysqld restarted
+031212 14:29:01  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031212 14:57:32  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:57:36  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:57:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:57:44  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:57:48  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:57:52  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:57:56  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 14:58:00  mysqld restarted
+031212 14:58:11  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031212 15:07:20  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:25  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:30  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:36  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:41  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:51  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:07:56  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:01  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:04  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:09  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:14  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:19  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:24  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:29  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:34  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031212 15:08:45  mysqld restarted
+031212 15:09:28  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031212 15:25:01  mysqld restarted
+031212 15:25:32  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+031212 15:47:40  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+031215 09:03:08  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:15  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:22  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:28  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:32  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:38  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:44  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:03:51  mysqld restarted
+A mysqld process already exists
+-e 
+Number of processes running now: 0
+031215 09:03:57  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:03  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:09  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:15  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:22  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:28  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:34  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:40  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:46  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:53  mysqld restarted
+-e 
+Number of processes running now: 0
+031215 09:04:59  mysqld restarted
+031215 10:11:57  mysqld ended
+
+Starting mysqld daemon with databases from /usr/local/mysql/var
+-e 
+Number of processes running now: 0
+040217 10:58:23  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 10:58:24  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:01:26  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:01:27  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:02:26  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:02:27  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:03:01  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:03:01  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:08:10  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:08:11  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:10:18  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:10:18  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:06  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:06  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:18  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:19  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:33  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:34  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:47  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:12:48  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:14:27  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:14:28  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:20:53  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:20:54  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:21:49  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:21:49  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:38:20  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 11:38:21  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:21:12  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:21:12  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:25:19  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:25:19  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:25:56  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:25:57  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:43:56  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 16:43:56  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 17:02:30  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 17:02:31  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 17:12:20  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 17:12:21  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 17:22:42  mysqld restarted
+-e 
+Number of processes running now: 0
+040217 17:22:46  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 09:08:32  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 09:08:33  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 09:31:07  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 09:31:08  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:21:45  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:21:46  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:22:51  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:22:51  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:26:57  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:26:58  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:43:18  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:43:18  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:44:27  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:44:28  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:47:11  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:47:11  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:52:17  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 10:52:18  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:00:50  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:00:51  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:07:56  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:07:57  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:37:55  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:37:55  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:54:21  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:54:22  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:57:04  mysqld restarted
+-e 
+Number of processes running now: 0
+040218 11:57:05  mysqld restarted
+040218 15:28:39  mysqld ended
+
+[2004:10:20 12:10:22] Á¬½Óµ½Oracle&MySQL...
+[2004:10:20 12:10:22] Excuting :
+ select * from dt_table where tabid=3 ... 
+[2004:10:20 12:10:22] Done.
+.[2004:10:20 12:10:22] 1 rows fetched.
+[2004:10:20 12:10:22] Excuting :
+ select * from dt_datafilemap where fileid=301782... 
+[2004:10:20 12:10:22] Done.
+.[2004:10:20 12:10:22] 1 rows fetched.
+[2004:10:20 12:10:22] Table scan begin.
+[2004:10:20 12:20:39] Total rows :213484345.000000
+[2004:10:20 12:20:39] Test end.
+[2004:10:20 12:20:39] Consuming 617.104 second .

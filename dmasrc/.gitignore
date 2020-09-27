@@ -1,0 +1,17 @@
+aclocal.m4
+config.sub
+autom4te.cache
+autom4te.cache/requests
+autom4te.cache/traces.2
+autom4te.cache/output.2
+missing
+install-sh
+configure
+ltmain.sh
+config.guess
+*.ncb
+*.suo
+*.mac.user
+*.in~
+config.h.in
+ipch/

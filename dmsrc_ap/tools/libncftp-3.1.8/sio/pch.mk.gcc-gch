@@ -1,0 +1,5 @@
+syshdrs.h.gch: syshdrs.h sio.h usio.h
+	$(CC) $(CFLAGS) $(CPPFLAGS) $(DEFS) syshdrs.h
+
+PCH=syshdrs.h.gch
+SYSHDRS_DEP=syshdrs.h.gch

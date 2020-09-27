@@ -1,0 +1,1 @@
+configure --prefix=/app/dbplus51 --enable-assembler --with-charset=gbk --with-big-tables --without-geometry --without-plugin-daemon_example --without-plugin-ftexample --without-plugin-archive --without-plugin-blackhole --without-plugin-example --without-plugin-innobase --without-plugin-ndbcluster --with-plugin-partition --with-plugin-federated --without-readline --without-libedit

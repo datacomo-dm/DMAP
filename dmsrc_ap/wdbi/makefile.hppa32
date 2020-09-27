@@ -1,0 +1,60 @@
+LDFLAGS= +DAportable -b -AA -L$(HOME)/wgsh/lib -L$(ORACLE_HOME)/lib  -lpthread -lm
+OCILIB= -lclntsh 
+ODBCLIB= -lmyodbc3_r -lmysqlclient_r
+INCLUDE= -I$(HOME)/wgsh/inc -I$(ORACLE_HOME)/rdbms/demo -I$(ORACLE_HOME)/rdbms/public -I$(ORACLE_HOME)/plsql/public -I$(ORACLE_HOME)/network/public 
+SOURCE=wdbi_global.cpp wdbi_int.cpp wdbi_main.cpp wociSession.cpp wdbiError.cpp wociStatement.cpp dataTable.cpp memTable.cpp dataTableLink.cpp wodbcSession.cpp wodbcStatement.cpp
+OBJS=wdbi_global.o wdbi_int.o wdbi_main.o wociSession.o wdbiError.o wociStatement.o dataTable.o memTable.o dataTableLink.o wodbcSession.o wodbcStatement.o
+CXX = aCC 
+#CFLAGS = -O +DD64  -pthread
+CFLAGS =  -g -AA +z +DAportable -DWORDS_BIGENDIAN $(INCLUDE)
+
+TARMEM=libwdbi_mem1.2.1.sl
+TARODBC=libwdbi_odbc1.2.1.sl
+TAROCI=libwdbi_oci1.2.1.sl
+TARALL=libwdbi1.2.1.sl
+
+TARMEM_S=libwdbimem.sl
+TARODBC_S=libwdbiodbc.sl
+TAROCI_S=libwdbioci.sl
+TARALL_S=libwdbi.sl
+
+all: $(TARMEM) $(TARODBC) $(TAROCI) $(TARALL)
+
+$(TARMEM):
+	echo "Build pure memory dbi library."
+	rm -f $(OBJS) $@
+	$(CXX) -DNO_OCI -DNO_ODBC $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@
+	rm -f ../lib/$@ ../lib/$(TARMEM_S)
+	cp $@ ../lib
+	ln -s $@ ../lib/$(TARMEM_S)
+	
+$(TARODBC):
+	echo "Build dbi library for odbc."
+	rm -f $(OBJS) $@
+	$(CXX) -DNO_OCI $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(ODBCLIB)
+	rm -f ../lib/$@ ../lib/$(TARODBC_S)
+	cp $@ ../lib
+	ln -s $@ ../lib/$(TARODBC_S)
+
+$(TAROCI):
+	echo "Build dbi library for oci."
+	rm -f $(OBJS) $@
+	$(CXX) -DNO_ODBC $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(OCILIB)
+	rm -f ../lib/$@ ../lib/$(TAROCI_S)
+	cp $@ ../lib
+	ln -s $@ ../lib/$(TAROCI_S)
+	
+$(TARALL): 
+	echo "Build dbi library for odbc&oci."
+	rm -f $(OBJS) $@
+	$(CXX) $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(OCILIB) $(ODBCLIB)
+	rm -f ../lib/$@ ../lib/$(TARALL_S)
+	cp $@ ../lib
+	ln -s $@ ../lib/$(TARALL_S)
+
+clean :
+	rm -f $(OBJS) $(TARMEM) $(TARODBC) $(TAROCI) $(TARALL)

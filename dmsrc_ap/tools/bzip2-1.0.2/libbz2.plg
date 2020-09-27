@@ -1,0 +1,51 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: libbz2 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "d:\tmp\RSP20B.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /Fp"Debug/libbz2.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\blocksort.c"
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\bzlib.c"
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\compress.c"
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\crctable.c"
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\decompress.c"
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\huffman.c"
+"D:\tmp1\zip\bzip2-1.0.2\bzip2-1.0.2\randtable.c"
+]
+Creating command line "cl.exe @d:\tmp\RSP20B.tmp" 
+Creating temporary file "d:\tmp\RSP20C.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /incremental:yes /pdb:"Debug/libbz2.pdb" /debug /machine:I386 /def:".\libbz2.def" /out:"libbz2.dll" /implib:"Debug/libbz2.lib" /pdbtype:sept 
+".\Debug\blocksort.obj"
+".\Debug\bzlib.obj"
+".\Debug\compress.obj"
+".\Debug\crctable.obj"
+".\Debug\decompress.obj"
+".\Debug\huffman.obj"
+".\Debug\randtable.obj"
+]
+Creating command line "link.exe @d:\tmp\RSP20C.tmp"
+<h3>Output Window</h3>
+Compiling...
+blocksort.c
+bzlib.c
+compress.c
+crctable.c
+decompress.c
+huffman.c
+randtable.c
+Linking...
+   Creating library Debug/libbz2.lib and object Debug/libbz2.exp
+
+
+
+<h3>Results</h3>
+libbz2.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

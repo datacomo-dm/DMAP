@@ -1,0 +1,36 @@
+#-----------------------------------------------------------------------------
+#
+# Makefile for the platform @OS@, on the host @host@.
+#
+#-----------------------------------------------------------------------------
+
+CC=@CC@
+DEFS=@DEFS@@NDEFS@
+CFLAGS=@CFLAGS@
+# CC=gcc
+# CFLAGS=-O2 -W -Wall -Wimplicit -Wstrict-prototypes -Wmissing-prototypes
+CPPFLAGS=@CPPFLAGS@
+prefix=@prefix@
+
+LIBS=-lncftp -lsio -lStrn @LIBS@
+STRIPFLAG=@SFLAG@
+LDFLAGS=@LDFLAGS@ -L@MAINDIR@
+
+PROGS=ncftpls@EXEEXT@
+
+all: $(PROGS)
+	-@/bin/ls -l $(PROGS)
+
+install: $(PROGS)
+	-@echo "*** You shouldn't install this version of $(PROGS)"
+	-@echo "*** Get the latest and most feature complete version from"
+	-@echo "*** the NcFTP Client package."
+
+ncftpls@EXEEXT@: ncftpls.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a ../ncftpget/gpshare.c ../ncftpget/gpshare.h ncftpls.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) ../ncftpget/gpshare.c ncftpls.c -o ncftpls@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+@MAINDIR@/libncftp.a:
+	[ -f @MAINDIR@/libncftp.a ]
+
+clean:
+	/bin/rm -f $(PROGS) *.@OBJEXT@ core csetc.pch

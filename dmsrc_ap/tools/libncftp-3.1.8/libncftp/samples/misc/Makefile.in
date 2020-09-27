@@ -1,0 +1,46 @@
+#-----------------------------------------------------------------------------
+#
+# Makefile for the platform @OS@, on the host @host@.
+#
+#-----------------------------------------------------------------------------
+
+CC=@CC@
+DEFS=@DEFS@@NDEFS@
+CFLAGS=@CFLAGS@
+# CC=gcc
+# CFLAGS=-O2 -W -Wall -Wimplicit -Wstrict-prototypes -Wmissing-prototypes
+CPPFLAGS=@CPPFLAGS@
+prefix=@prefix@
+
+LIBS=-lncftp -lsio -lStrn @LIBS@
+LIBS_MIN=-lncftp -lStrn @LIBS@
+STRIPFLAG=@SFLAG@
+LDFLAGS=@LDFLAGS@ -L@MAINDIR@
+
+PROGS=codepw@EXEEXT@ getwelcome@EXEEXT@ ncftpgetbytes@EXEEXT@ pncftp@EXEEXT@ unlstest@EXEEXT@
+
+all: $(PROGS)
+	-@/bin/ls -l $(PROGS)
+
+install: $(PROGS)
+
+codepw@EXEEXT@: codepw.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a codepw.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) codepw.c -o codepw@EXEEXT@ $(LDFLAGS) $(LIBS_MIN) $(STRIPFLAG)
+
+getwelcome@EXEEXT@: getwelcome.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a getwelcome.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) getwelcome.c -o getwelcome@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+ncftpgetbytes@EXEEXT@: ncftpgetbytes.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a ncftpgetbytes.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) ncftpgetbytes.c -o ncftpgetbytes@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+pncftp@EXEEXT@: pncftp.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a pncftp.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) pncftp.c -o pncftp@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+unlstest@EXEEXT@: unlstest.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a unlstest.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) unlstest.c -o unlstest@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+@MAINDIR@/libncftp.a:
+	[ -f @MAINDIR@/libncftp.a ]
+
+clean:
+	/bin/rm -f $(PROGS) *.@OBJEXT@ core csetc.pch

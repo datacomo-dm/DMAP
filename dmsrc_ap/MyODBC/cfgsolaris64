@@ -1,0 +1,7 @@
+CC=gcc
+CFLAGS="-DBUILD_LEGACY_64_BIT_MODE -m64 -O3 -fno-omit-frame-pointer"
+CXX=gcc
+CXXFLAGS="-m64 -O3 -fno-omit-frame-pointer -felide-constructors"
+export CC CFLAGS CXX CXXFLAGS
+configure --enable-threads --with-mysql-path=/app/dm51 --disable-gui --with-unixODBC=/app/dm51/unixodbc --with-unixODBC-libs=/app/dm51/unixodbc/lib --with-ltdl-path=/app/datamerger/dtsrc/libltdl
+unset CC CFLAGS CXX CXXFLAGS

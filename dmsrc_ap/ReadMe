@@ -1,0 +1,10 @@
+Build guide
+
+Before build DM on specific platform,use script/createmake to link makefile to correct version,
+and then link libs/<platform> to 'lib' directory.
+
+Some automake fitted project need to use it's config script to create makefile, such as MyODBC/cfgsol64 for solaris 64 bit.
+
+Environment variables need by build dm :
+DBPLUS_HOME     -->build output to it's bin/lib subdir
+DBPLUSSRC_PATH  -->used to locate include files and put libaray file to 'lib' link dir

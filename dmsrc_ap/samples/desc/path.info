@@ -1,0 +1,11 @@
+billing host:
+ /ttfile/pickbackdata/200609
+ /backupdata/gsm/pickbackdata/200608
+temp backup:
+ /backupdata/gsm/backup/msc 
+local file:
+ /dbsturbo/cdrfile/backupdata/backup_gsm/tar4
+
+nfs shared(windows) file path:
+ /dbsturbo/billdata/backupdata/gsm/tar
+

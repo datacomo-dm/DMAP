@@ -1,0 +1,36 @@
+#-----------------------------------------------------------------------------
+#
+# Makefile for the platform @OS@, on the host @host@.
+#
+#-----------------------------------------------------------------------------
+
+CC=@CC@
+DEFS=-DO_S=\"@OS@\" @DEFS@@NDEFS@
+CFLAGS=@CFLAGS@
+# CC=gcc
+# CFLAGS=-O2 -W -Wall -Wimplicit -Wstrict-prototypes -Wmissing-prototypes
+CPPFLAGS=@CPPFLAGS@
+prefix=@prefix@
+
+LIBS=-lncftp -lsio -lStrn @LIBS@
+STRIPFLAG=@SFLAG@
+LDFLAGS=@LDFLAGS@ -L@MAINDIR@
+
+PROGS=ftp_monkey@EXEEXT@ ftp_monkeys@EXEEXT@
+
+all: $(PROGS)
+	-@/bin/ls -l $(PROGS)
+
+install: $(PROGS)
+
+ftp_monkey@EXEEXT@: monkey.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a monkey.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) monkey.c -o ftp_monkey@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+ftp_monkeys@EXEEXT@: monkey.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a monkeys.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) monkeys.c -o ftp_monkeys@EXEEXT@ $(LDFLAGS) -lncftp $(STRIPFLAG)
+
+@MAINDIR@/libncftp.a:
+	[ -f @MAINDIR@/libncftp.a ]
+
+clean:
+	/bin/rm -f $(PROGS) *.@OBJEXT@ core csetc.pch

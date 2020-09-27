@@ -1,0 +1,16 @@
+LFLAGS= -ldpiosh 
+LDFLAGS=  -L$(DBPLUS_HOME)/oci -L$(DBPLUS_HOME)/lib
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc
+SOURCE=desc.cc 
+OBJS=desc.o
+CXX = gcc
+CFLAGS = -O3 -DUSE_WDBI
+dpdesc: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+	cp $@ $(DBPLUS_HOME)/bin/$@
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f dpdesc desc.o
+	
+rebuild: clean dpdesc	

@@ -1,0 +1,63 @@
+#!/bin/sh
+#
+# This script's purpose is to update the automake/autoconf helper scripts and
+# to run a plain "configure" without any special compile flags. Only features
+# that affect the content of the source distribution are enabled. The resulting
+# tree can then be picked up by "make dist" to create the "pristine source
+# package" that is used as the basis for all other binary builds.
+#
+test -f Makefile && make maintainer-clean
+
+path=`dirname $0`
+. $path/autorun.sh
+
+# Default to gcc for CC and CXX
+if test -z "$CXX" ; then
+  CXX=gcc
+  # Set some required compile options
+  if test -z "$CXXFLAGS" ; then
+    CXXFLAGS="-felide-constructors -fno-exceptions -fno-rtti"
+  fi
+fi
+
+if test -z "$CC" ; then
+  CC=gcc
+fi
+
+
+# Use ccache, if available
+if ccache -V > /dev/null 2>&1
+then
+  if echo "$CC" | grep "ccache" > /dev/null
+  then
+    :
+  else
+    CC="ccache $CC"
+  fi
+  if echo "$CXX" | grep "ccache" > /dev/null
+  then
+    :
+  else
+    CXX="ccache $CXX"
+  fi
+fi
+
+if test -z "$MAKE"
+then
+  if gmake -v > /dev/null 2>&1
+  then
+    MAKE="gmake"
+  else
+    MAKE="make"
+  fi
+fi
+
+export CC CXX MAKE
+
+# Make sure to enable all features that affect "make dist"
+# Remember that configure restricts the man pages to the configured features !
+./configure \
+  --with-embedded-server \
+  --with-ndbcluster
+$MAKE
+

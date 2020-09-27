@@ -1,0 +1,1 @@
+configure --with-mysql-path=/app/dbplus51 --disable-gui --with-ltdl-path=/usr/share/libtool/libltdl --with-unixODBC=/usr/local/unixodbc32 --with-unixODBC-libs=/usr/local/unixodbc32/lib

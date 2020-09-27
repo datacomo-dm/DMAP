@@ -1,0 +1,1 @@
+gcc -o test -g test.cc  -I/usr/include -lhdfs -lstdc++

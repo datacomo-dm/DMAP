@@ -1,0 +1,27 @@
+
+plat=
+case  "$1" in
+   linux32|linux64|sol32|sol64|hppa32|hppa64|hpia32|hpia64|aix32|aix64)
+          plat=$1;;
+   *) echo "Usage: $0 linux32(64)|hppa32(64)|hpia32(64)|sol32(64)|aix32(64)";exit ;;
+esac
+
+makesrc="makefile.$plat"
+makedst="makefile"
+echo "Relink Makefile for platform --$plat--- "
+echo "dtsvr..."
+rm -f "../dtsvr/$makedst"
+ln -s "$makesrc" "../dtsvr/$makedst"
+
+echo "dtio..."
+rm -f "../dtio/$makedst"
+ln -s "$makesrc" "../dtio/$makedst"
+
+echo "wdbi..."
+rm -f "../wdbi/$makedst"
+ln -s "$makesrc" "../wdbi/$makedst"
+
+echo "link lib directory :"
+rm -f "../lib"
+ln -s "libs/$plat" ../lib
+echo "Complete."

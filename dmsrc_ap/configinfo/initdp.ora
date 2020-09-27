@@ -1,0 +1,16 @@
+# needed for an ODBC Agent.
+
+#
+# HS init parameters
+#
+HS_FDS_CONNECT_INFO = dp
+HS_FDS_TRACE_LEVEL = off
+HS_LANGUAGE=AMERICAN_AMERICA.ZHS16CGB231280
+HS_FDS_SHAREABLE_NAME=/app/datamerge/lib/libdpconnect.so
+HS_OPEN_CURSORS=300
+# ODBC specific environment variables
+set ODBCINI=/etc/odbc.ini
+
+# Environment variables required for the non-Oracle system
+set ORACLE_HOME={YOUR ORACLE HOME PATH}
+

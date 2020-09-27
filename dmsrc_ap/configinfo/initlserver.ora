@@ -1,0 +1,21 @@
+# This is a sample agent init file that contains the HS parameters that are
+# needed for an ODBC Agent. 
+
+#
+# HS init parameters
+#
+HS_FDS_CONNECT_INFO = localmysql
+#HS_FDS_TRACE_LEVEL = <trace_level>
+#HS_FDS_TRACE_FILE_NAME = <log file name>
+HS_FDS_SHAREABLE_NAME = /home/lserver/wgsh/lib/libmyodbc3_r.so
+
+#
+# ODBC specific environment variables
+#
+set ODBCINI=/home/lserver/odbc.ini
+
+
+#
+# Environment variables required for the non-Oracle system
+#
+#set <envvar>=<value>

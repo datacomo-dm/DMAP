@@ -1,0 +1,109 @@
+[2006:05:18 13:57:05] 连接到本地数据库...
+[2006:05:18 13:57:06] Excuting :
+ select subscrbid*1.0 subscrbid,statdate,svcnum,svcstat from tab_subscrb where trim(svcstat)<>'9' and svcid='10'... 
+[2006:05:18 13:57:06] Done.
+  50,000 rows fetched.  100,000 rows fetched.  150,000 rows fetched.  200,000 rows fetched.  250,000 rows fetched.  300,000 rows fetched.  350,000 rows fetched.  400,000 rows fetched.  450,000 rows fetched.  500,000 rows fetched.  550,000 rows fetched.  600,000 rows fetched.  650,000 rows fetched.  700,000 rows fetched.  750,000 rows fetched.  800,000 rows fetched.  850,000 rows fetched.  900,000 rows fetched.  950,000 rows fetched.  1,000,000 rows fetched.  1,050,000 rows fetched.  1,100,000 rows fetched.  1,114,892 rows fetched.[2006:05:18 13:57:09] 1114892 rows fetched.
+Get 1114892 rows.
+[2006:05:18 13:57:13] Excuting :
+ select acctid,subscrbid*1.0 subscrbid from tab_acctrelation ... 
+[2006:05:18 13:57:13] Done.
+  50,000 rows fetched.  100,000 rows fetched.  150,000 rows fetched.  200,000 rows fetched.  250,000 rows fetched.  300,000 rows fetched.  350,000 rows fetched.  400,000 rows fetched.  450,000 rows fetched.  500,000 rows fetched.  550,000 rows fetched.  600,000 rows fetched.  650,000 rows fetched.  700,000 rows fetched.  750,000 rows fetched.  800,000 rows fetched.  850,000 rows fetched.  900,000 rows fetched.  950,000 rows fetched.  1,000,000 rows fetched.  1,050,000 rows fetched.  1,100,000 rows fetched.  1,150,000 rows fetched.  1,200,000 rows fetched.  1,250,000 rows fetched.  1,300,000 rows fetched.  1,350,000 rows fetched.  1,400,000 rows fetched.  1,450,000 rows fetched.  1,500,000 rows fetched.  1,550,000 rows fetched.  1,600,000 rows fetched.  1,650,000 rows fetched.  1,700,000 rows fetched.  1,750,000 rows fetched.  1,800,000 rows fetched.  1,850,000 rows fetched.  1,900,000 rows fetched.  1,950,000 rows fetched.  2,000,000 rows fetched.  2,050,000 rows fetched.  2,100,000 rows fetched.  2,150,000 rows fetched.  2,200,000 rows fetched.  2,250,000 rows fetched.  2,300,000 rows fetched.  2,350,000 rows fetched.  2,400,000 rows fetched.  2,450,000 rows fetched.  2,500,000 rows fetched.  2,550,000 rows fetched.  2,600,000 rows fetched.  2,650,000 rows fetched.  2,700,000 rows fetched.  2,750,000 rows fetched.  2,800,000 rows fetched.  2,850,000 rows fetched.  2,900,000 rows fetched.  2,950,000 rows fetched.  3,000,000 rows fetched.  3,050,000 rows fetched.  3,100,000 rows fetched.  3,150,000 rows fetched.  3,200,000 rows fetched.  3,250,000 rows fetched.  3,300,000 rows fetched.  3,350,000 rows fetched.  3,400,000 rows fetched.  3,450,000 rows fetched.  3,500,000 rows fetched.  3,550,000 rows fetched.  3,600,000 rows fetched.  3,650,000 rows fetched.  3,700,000 rows fetched.  3,750,000 rows fetched.  3,800,000 rows fetched.  3,850,000 rows fetched.  3,900,000 rows fetched.  3,950,000 rows fetched.  4,000,000 rows fetched.  4,050,000 rows fetched.  4,100,000 rows fetched.  4,150,000 rows fetched.  4,174,150 rows fetched.[2006:05:18 13:57:32] 4174150 rows fetched.
+[2006:05:18 13:57:32] 4174150 rows fetched.
+[2006:05:18 13:57:32] Excuting :
+ select prcplnid,subscrbid*1.0 subscrbid from tab_subscrbprcpln where begtime<sysdate and (endtime>sysdate or endtime is null) and svcid='10'... 
+[2006:05:18 13:57:32] Done.
+  50,000 rows fetched.  100,000 rows fetched.  150,000 rows fetched.  200,000 rows fetched.  250,000 rows fetched.  300,000 rows fetched.  350,000 rows fetched.  400,000 rows fetched.  450,000 rows fetched.  500,000 rows fetched.  550,000 rows fetched.  600,000 rows fetched.  650,000 rows fetched.  700,000 rows fetched.  750,000 rows fetched.  800,000 rows fetched.  850,000 rows fetched.  900,000 rows fetched.  950,000 rows fetched.  1,000,000 rows fetched.  1,050,000 rows fetched.  1,100,000 rows fetched.  1,136,176 rows fetched.[2006:05:18 13:57:39] 1136176 rows fetched.
+[2006:05:18 13:57:39] 1136176 rows fetched.
+[2006:05:18 13:57:43] Excuting :
+ select subscrbid*1.0 subscrbid,fee from tab_billdetail where recstat in ('00','04','05','06','07','p3') ... 
+[2006:05:18 13:57:43] Done.
+  50,000 rows fetched.  100,000 rows fetched.  150,000 rows fetched.  200,000 rows fetched.  250,000 rows fetched.  300,000 rows fetched.  350,000 rows fetched.  400,000 rows fetched.  450,000 rows fetched.  500,000 rows fetched.  550,000 rows fetched.  600,000 rows fetched.  650,000 rows fetched.  700,000 rows fetched.  750,000 rows fetched.  800,000 rows fetched.  850,000 rows fetched.  900,000 rows fetched.  950,000 rows fetched.  1,000,000 rows fetched.  1,050,000 rows fetched.  1,100,000 rows fetched.  1,150,000 rows fetched.  1,200,000 rows fetched.  1,250,000 rows fetched.  1,300,000 rows fetched.  1,350,000 rows fetched.  1,400,000 rows fetched.  1,450,000 rows fetched.  1,500,000 rows fetched.  1,550,000 rows fetched.  1,600,000 rows fetched.  1,650,000 rows fetched.  1,700,000 rows fetched.  1,750,000 rows fetched.  1,800,000 rows fetched.  1,850,000 rows fetched.  1,900,000 rows fetched.  1,950,000 rows fetched.  2,000,000 rows fetched.  2,050,000 rows fetched.  2,100,000 rows fetched.  2,150,000 rows fetched.  2,200,000 rows fetched.  2,250,000 rows fetched.  2,300,000 rows fetched.  2,350,000 rows fetched.  2,400,000 rows fetched.  2,450,000 rows fetched.  2,500,000 rows fetched.  2,550,000 rows fetched.  2,600,000 rows fetched.  2,650,000 rows fetched.  2,700,000 rows fetched.  2,714,328 rows fetched.[2006:05:18 13:59:34] 2714328 rows fetched.
+[2006:05:18 13:59:34] 2714328 rows fetched.
+[2006:05:18 13:59:35] Excuting :
+ select subscrbid,(fee+dfee)/1000.0 as rfee from tab_acc_gsm_sum_fee where month>=200605... 
+[2006:05:18 13:59:35] Done.
+  50,000 rows fetched.  100,000 rows fetched.  150,000 rows fetched.  200,000 rows fetched.  250,000 rows fetched.  300,000 rows fetched.  350,000 rows fetched.  400,000 rows fetched.  450,000 rows fetched.  500,000 rows fetched.  550,000 rows fetched.  551,370 rows fetched.[2006:05:18 13:59:38] 551370 rows fetched.
+[2006:05:18 13:59:38] 551370 rows fetched.
+[2006:05:18 13:59:40] Excuting :
+ select acctid,thisbal from tab_accountpredeposit ... 
+[2006:05:18 13:59:40] Done.
+  50,000 rows fetched.  100,000 rows fetched.  150,000 rows fetched.  200,000 rows fetched.  250,000 rows fetched.  300,000 rows fetched.  350,000 rows fetched.  400,000 rows fetched.  450,000 rows fetched.  500,000 rows fetched.  550,000 rows fetched.  600,000 rows fetched.  650,000 rows fetched.  700,000 rows fetched.  750,000 rows fetched.  800,000 rows fetched.  850,000 rows fetched.  900,000 rows fetched.  950,000 rows fetched.  1,000,000 rows fetched.  1,050,000 rows fetched.  1,100,000 rows fetched.  1,150,000 rows fetched.  1,200,000 rows fetched.  1,250,000 rows fetched.  1,300,000 rows fetched.  1,350,000 rows fetched.  1,400,000 rows fetched.  1,450,000 rows fetched.  1,500,000 rows fetched.  1,550,000 rows fetched.  1,600,000 rows fetched.  1,650,000 rows fetched.  1,700,000 rows fetched.  1,750,000 rows fetched.  1,800,000 rows fetched.  1,850,000 rows fetched.  1,900,000 rows fetched.  1,950,000 rows fetched.  2,000,000 rows fetched.  2,050,000 rows fetched.  2,100,000 rows fetched.  2,150,000 rows fetched.  2,200,000 rows fetched.  2,250,000 rows fetched.  2,300,000 rows fetched.  2,350,000 rows fetched.  2,400,000 rows fetched.  2,450,000 rows fetched.  2,500,000 rows fetched.  2,550,000 rows fetched.  2,600,000 rows fetched.  2,650,000 rows fetched.  2,700,000 rows fetched.  2,750,000 rows fetched.  2,800,000 rows fetched.  2,850,000 rows fetched.  2,900,000 rows fetched.  2,950,000 rows fetched.  3,000,000 rows fetched.  3,050,000 rows fetched.  3,100,000 rows fetched.  3,150,000 rows fetched.  3,200,000 rows fetched.  3,250,000 rows fetched.  3,300,000 rows fetched.  3,350,000 rows fetched.  3,400,000 rows fetched.  3,450,000 rows fetched.  3,500,000 rows fetched.  3,550,000 rows fetched.  3,600,000 rows fetched.  3,650,000 rows fetched.  3,700,000 rows fetched.  3,750,000 rows fetched.  3,800,000 rows fetched.  3,850,000 rows fetched.  3,900,000 rows fetched.  3,950,000 rows fetched.  4,000,000 rows fetched.  4,050,000 rows fetched.  4,100,000 rows fetched.  4,150,000 rows fetched.  4,200,000 rows fetched.  4,250,000 rows fetched.  4,300,000 rows fetched.  4,350,000 rows fetched.  4,400,000 rows fetched.  4,450,000 rows fetched.  4,500,000 rows fetched.  4,550,000 rows fetched.  4,600,000 rows fetched.  4,650,000 rows fetched.  4,700,000 rows fetched.  4,750,000 rows fetched.  4,800,000 rows fetched.  4,850,000 rows fetched.  4,900,000 rows fetched.  4,950,000 rows fetched.  5,000,000 rows fetched.  5,050,000 rows fetched.  5,100,000 rows fetched.  5,150,000 rows fetched.  5,200,000 rows fetched.  5,250,000 rows fetched.  5,300,000 rows fetched.  5,350,000 rows fetched.  5,400,000 rows fetched.  5,450,000 rows fetched.  5,500,000 rows fetched.  5,550,000 rows fetched.  5,600,000 rows fetched.  5,650,000 rows fetched.  5,700,000 rows fetched.  5,750,000 rows fetched.  5,800,000 rows fetched.  5,850,000 rows fetched.  5,900,000 rows fetched.  5,950,000 rows fetched.  6,000,000 rows fetched.  6,050,000 rows fetched.  6,100,000 rows fetched.  6,150,000 rows fetched.  6,200,000 rows fetched.  6,250,000 rows fetched.  6,300,000 rows fetched.  6,350,000 rows fetched.  6,400,000 rows fetched.  6,450,000 rows fetched.  6,500,000 rows fetched.  6,550,000 rows fetched.  6,600,000 rows fetched.  6,650,000 rows fetched.  6,700,000 rows fetched.  6,750,000 rows fetched.  6,800,000 rows fetched.  6,850,000 rows fetched.  6,900,000 rows fetched.  6,950,000 rows fetched.  7,000,000 rows fetched.  7,050,000 rows fetched.  7,100,000 rows fetched.  7,150,000 rows fetched.  7,200,000 rows fetched.  7,250,000 rows fetched.  7,300,000 rows fetched.  7,350,000 rows fetched.  7,400,000 rows fetched.  7,450,000 rows fetched.  7,500,000 rows fetched.  7,550,000 rows fetched.  7,600,000 rows fetched.  7,650,000 rows fetched.  7,700,000 rows fetched.  7,750,000 rows fetched.  7,800,000 rows fetched.  7,850,000 rows fetched.  7,900,000 rows fetched.  7,950,000 rows fetched.  8,000,000 rows fetched.  8,050,000 rows fetched.  8,100,000 rows fetched.  8,150,000 rows fetched.  8,200,000 rows fetched.  8,250,000 rows fetched.  8,300,000 rows fetched.  8,350,000 rows fetched.  8,400,000 rows fetched.  8,421,615 rows fetched.[2006:05:18 13:59:58] 8421615 rows fetched.
+[2006:05:18 13:59:58] 8421615 rows fetched.
+Write to text file 'subscrbGSM.txt'...
+[2006:05:18 14:00:13] Excuting :
+ drop table tab_gsm_balance_fee... 
+[2006:05:18 14:00:14]  0 rows affected.
+[2006:05:18 14:00:14] Excuting :
+ create table tab_gsm_balance_fee (SUBSCRBID number(10) ,STATDATE date ,SVCNUM varchar2(20) ,SVCSTAT varchar2(2) ,acctid integer ,prcplnid integer ,ofee number(10,2) ,rfee number(10,2) ,thisbal number(10,2) ,rbal number(10,2) )... 
+[2006:05:18 14:00:14]  0 rows affected.
+[2006:05:18 14:00:14] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:14]  50000 rows affected.
+.[2006:05:18 14:00:14] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:15]  50000 rows affected.
+.[2006:05:18 14:00:15] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:15]  50000 rows affected.
+.[2006:05:18 14:00:15] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:16]  50000 rows affected.
+.[2006:05:18 14:00:17] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:17]  50000 rows affected.
+.[2006:05:18 14:00:17] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:17]  50000 rows affected.
+.[2006:05:18 14:00:18] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:18]  50000 rows affected.
+.[2006:05:18 14:00:18] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:18]  50000 rows affected.
+.[2006:05:18 14:00:19] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:19]  50000 rows affected.
+.[2006:05:18 14:00:19] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:20]  50000 rows affected.
+.[2006:05:18 14:00:20] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:20]  50000 rows affected.
+.[2006:05:18 14:00:21] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:21]  50000 rows affected.
+.[2006:05:18 14:00:21] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:21]  50000 rows affected.
+.[2006:05:18 14:00:22] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:22]  50000 rows affected.
+.[2006:05:18 14:00:22] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:22]  50000 rows affected.
+.[2006:05:18 14:00:23] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:23]  50000 rows affected.
+.[2006:05:18 14:00:23] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:23]  50000 rows affected.
+.[2006:05:18 14:00:24] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:24]  50000 rows affected.
+.[2006:05:18 14:00:24] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:25]  50000 rows affected.
+.[2006:05:18 14:00:26] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:26]  50000 rows affected.
+.[2006:05:18 14:00:26] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:26]  50000 rows affected.
+.[2006:05:18 14:00:27] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:27]  50000 rows affected.
+.[2006:05:18 14:00:27] Excuting :
+ insert into tab_gsm_balance_fee values (:id1 ,:id2 ,:id3 ,:id4 ,:id5 ,:id6 ,:id7 ,:id8 ,:id9 ,:id10 )... 
+[2006:05:18 14:00:27]  14892 rows affected.
+.[2006:05:18 14:00:27] 1114892 rows inserted.
+[2006:05:18 14:00:27] 运行时间201.724958秒 正常结束

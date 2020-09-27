@@ -1,0 +1,5 @@
+CC=gcc
+CFLAGS="-O3 -fno-omit-frame-pointer"
+CXX=gcc
+CXXFLAGS="-O3 -fno-omit-frame-pointer -felide-constructors"
+configure --prefix=/app/dm51 --enable-assembler --with-charset=gbk --with-big-tables --without-geometry --without-plugin-daemon_example --without-plugin-ftexample --without-plugin-archive --without-plugin-blackhole --without-plugin-example --with-plugin-innobase --without-plugin-ndbcluster --with-plugin-partition --with-plugin-federated --with-readline --without-libedit --with-extra-charsets=gb2312

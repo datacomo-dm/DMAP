@@ -1,0 +1,47 @@
+LFLAGS= +DD64 +z -AA -lwdbi -ldpiosh -lpthread -lbz2 -lrt -lucl -llzo2 -lz -lmysqlclient_r
+#LFLAGS= -lwoci8sh -lm -lclntsh -lbz2 -lrt -llzo2 -lz -lpthread -lmysqlclient -lstdc++
+LDFLAGS= -L$(DBPLUSSRC_PATH)/lib -L$(DATAMERGER_HOME)/lib -L$(DATAMERGER_HOME)/lib/mysql -L$(DATAMERGER_HOME)/oci -L$(DATAMERGER_HOME)/unixodbc/lib
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc -I$(DBPLUSSRC_PATH)/inc/mysql
+SOURCE=ziptest.cc  
+OBJS=ziptest.o
+CXX = aCC
+ALL: ziptest dpindexq dpfetch dprep dprmrows
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functionsA 
+CFLAGS = +DD64 -g -AA +z -DUSE_WDBI
+#CFLAGS = -g -pthread
+ziptest: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+	cp -p $@ $(DATAMERGER_HOME)/bin
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+	
+dpindexq : dp_indexq.o
+	$(CXX) $(LDFLAGS) dp_indexq.o -o $@  $(LFLAGS) 
+	cp -p $@ $(DATAMERGER_HOME)/bin
+
+dp_indexq.o : dp_indexq.cpp
+	$(CXX) $(CFLAGS) $(INCLUDE) -c dp_indexq.cpp
+
+dpfetch : dpfetch.o
+	$(CXX) $(LDFLAGS) dpfetch.o -o $@  $(LFLAGS) 
+	cp -p $@ $(DATAMERGER_HOME)/bin
+
+dpfetch.o : dpfetch.cpp
+	$(CXX) $(CFLAGS) $(INCLUDE) -c dpfetch.cpp
+
+dprep : dprep.o
+	$(CXX) $(LDFLAGS) dprep.o -o $@  $(LFLAGS) 
+	cp -p $@ $(DATAMERGER_HOME)/bin
+
+dprep.o : dprep.cpp
+	$(CXX) $(CFLAGS) $(INCLUDE) -c dprep.cpp
+
+dprmrows.o : dprmrows.cpp
+	$(CXX) $(CFLAGS) $(INCLUDE) -c dprmrows.cpp
+
+dprmrows: dprmrows.o
+	$(CXX) $(LDFLAGS) dprmrows.o -o $@  $(LFLAGS)
+	cp -p $@ $(DATAMERGER_HOME)/bin
+
+clean : 
+	rm -f $(OBJS) ziptest dp_indexq dpfetch dprep dp_indexq.o  dpfetch.o  dprep.o dprmrows.o dprmrows

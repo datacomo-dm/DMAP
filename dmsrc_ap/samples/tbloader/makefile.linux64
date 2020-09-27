@@ -1,0 +1,48 @@
+LFLAGS= -ldpiosh -lm -lrt -lz -lpthread -lcrypto -lstdc++ -fpic -fPIC
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib
+INCLUDE= -I$(DMASRC_PATH)/inc -I$(DMASRC_PATH)/inc/mysql -I$(DMASRC_PATH)/inc/oci -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux 
+
+SOURCE_loader=tbloader.cc tbloader_impl.cc tbloader_helper.cc ThreadList.cpp
+OBJS_loader=tbloader.o tbloader_impl.o tbloader_helper.o ThreadList.o
+
+SOURCE_exporter=tbexporter.cc tbexport_helper.cc tbloader_impl.cc ThreadList.cpp
+OBJS_exporter=tbexporter.o tbexport_helper.o tbloader_impl.o ThreadList.o
+
+SOURCE_loader_so=tbloader_helper.cc tbloader_impl.cc tbloader_jni.cc tbexport_jni.cc tbexport_helper.cc ThreadList.cpp
+OBJS_loader_so=tbloader_helper.o tbloader_impl.o tbloader_jni.o tbexport_jni.o tbexport_helper.o ThreadList.o
+
+CXX = gcc
+
+# tbloader_helper 编译选项
+#CFLAGS =  -std=c++0x -m64 -std=c++0x -g -pthread -DUSE_WDBI -DDEBUG -DBIGENDIAN -DTBLOADER_HELPER_TEST -fpic -fPIC
+# c++ 11的异常处理功能选项： -std=c++0x 
+CFLAGS = -std=c++0x -g -m64 -pthread -DUSE_WDBI -DNOBOOST_TLIST -DBIGENDIAN -fpic -fPIC 
+
+# 正常选项
+#CFLAGS = -m64 -std=c++0x -g -pthread -DUSE_WDBI -DBIGENDIAN -DDEBUG -fpic -fPIC -std=c++0x
+
+all:tbloader tbexporter libtbloader.so 
+
+#--------------------------------------------------------
+tbloader: $(OBJS_loader) 
+	$(CXX) $(LDFLAGS) $(OBJS_loader) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_loader): $(SOURCE_loader) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_loader) 
+	
+#---------------------------------------------------------	
+tbexporter: $(OBJS_exporter) 
+	$(CXX) $(LDFLAGS) $(OBJS_exporter) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_exporter): $(SOURCE_exporter) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_exporter) 
+	
+#---------------------------------------------------------	
+libtbloader.so: $(OBJS_loader_so) 
+	$(CXX) -shared  $(LDFLAGS) $(OBJS_loader_so) -o $@ $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/lib/$@
+$(OBJS_loader_so): $(SOURCE_loader_so) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_loader_so) 
+
+clean: 
+	rm -f *.o tbloader tbexporter libtbloader.so 

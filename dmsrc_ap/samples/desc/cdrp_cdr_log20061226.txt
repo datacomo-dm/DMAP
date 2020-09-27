@@ -1,0 +1,567 @@
+[2006:12:26 09:25:38] 获取文件列表...
+[2006:12:26 09:25:47] 开始数据库读取.
+[2006:12:26 09:27:39] 排序...
+[2006:12:26 09:28:05] 连接12.80...
+[2006:12:26 09:29:16] 排序...
+[2006:12:26 09:31:41] 排序...
+[2006:12:26 09:31:44] 完成数据库读取.
+已处理文件数:20.
+[2006:12:26 09:32:14] Invalid msisdn number:886919989219.
+[2006:12:26 09:32:32] Invalid msisdn number:15629330042.
+已处理文件数:40.
+[2006:12:26 09:32:38] Invalid msisdn number:15629330042.
+[2006:12:26 09:32:40] Invalid msisdn number:886919989219.
+[2006:12:26 09:32:40] Invalid msisdn number:15629330042.
+[2006:12:26 09:32:42] Invalid msisdn number:15629330042.
+[2006:12:26 09:32:44] Invalid msisdn number:393351031342.
+[2006:12:26 09:32:48] Invalid msisdn number:886919989219.
+[2006:12:26 09:32:52] Invalid msisdn number:00393407037513.
+[2006:12:26 09:32:54] Invalid msisdn number:00393407037513.
+已处理文件数:60.
+[2006:12:26 09:32:56] Invalid msisdn number:00886919989219.
+已处理文件数:80.
+[2006:12:26 09:33:25] Invalid msisdn number:00818034796692.
+[2006:12:26 09:33:27] Invalid msisdn number:00393407037513.
+[2006:12:26 09:33:29] Invalid msisdn number:00393407037513.
+[2006:12:26 09:33:31] Invalid msisdn number:00393407037513.
+[2006:12:26 09:33:31] Invalid msisdn number:886919989219.
+已处理文件数:100.
+[2006:12:26 09:33:49] Invalid msisdn number:00393407037513.
+[2006:12:26 09:33:50] Invalid msisdn number:15629330041.
+[2006:12:26 09:33:50] Invalid msisdn number:15629330041.
+[2006:12:26 09:33:50] Invalid msisdn number:15629330041.
+[2006:12:26 09:33:50] Invalid msisdn number:15629330041.
+[2006:12:26 09:33:53] Invalid msisdn number:886919989219.
+[2006:12:26 09:33:53] Invalid msisdn number:00393407037513.
+[2006:12:26 09:33:54] Invalid msisdn number:00393356457998.
+[2006:12:26 09:33:55] Invalid msisdn number:15629330041.
+[2006:12:26 09:33:55] Invalid msisdn number:15629330041.
+[2006:12:26 09:33:58] Invalid msisdn number:61407611969.
+已处理文件数:120.
+[2006:12:26 09:34:02] Invalid msisdn number:00393407037513.
+[2006:12:26 09:34:08] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:08] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:10] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:13] Invalid msisdn number:6597506639.
+[2006:12:26 09:34:15] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:17] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:17] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:18] Invalid msisdn number:886919989219.
+已处理文件数:140.
+[2006:12:26 09:34:26] Invalid msisdn number:0085294889009.
+[2006:12:26 09:34:30] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:33] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:33] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:40] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:40] Invalid msisdn number:15629330041.
+已处理文件数:160.
+[2006:12:26 09:34:49] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:49] Invalid msisdn number:15629330041.
+[2006:12:26 09:34:57] Invalid msisdn number:393356457998.
+[2006:12:26 09:34:58] Invalid msisdn number:15629330041.
+[2006:12:26 09:35:03] Invalid msisdn number:886958060027.
+[2006:12:26 09:35:04] Invalid msisdn number:15629330041.
+[2006:12:26 09:35:04] Invalid msisdn number:15629330041.
+[2006:12:26 09:35:04] Invalid msisdn number:15629330041.
+已处理文件数:180.
+[2006:12:26 09:35:19] Invalid msisdn number:15629330041.
+[2006:12:26 09:35:19] Invalid msisdn number:15629330041.
+[2006:12:26 09:35:21] Invalid msisdn number:15629330041.
+[2006:12:26 09:35:22] Invalid msisdn number:886919989219.
+已处理文件数:200.
+[2006:12:26 09:35:30] Invalid msisdn number:00886919989219.
+[2006:12:26 09:35:35] Invalid msisdn number:00886919989219.
+[2006:12:26 09:35:37] Invalid msisdn number:00886919989219.
+[2006:12:26 09:35:41] Invalid msisdn number:00886919989219.
+[2006:12:26 09:35:46] Invalid msisdn number:00393396714465.
+[2006:12:26 09:35:48] Invalid msisdn number:61407611969.
+[2006:12:26 09:35:48] Invalid msisdn number:00886919989219.
+[2006:12:26 09:35:50] Invalid msisdn number:00886919989219.
+已处理文件数:220.
+[2006:12:26 09:35:54] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:01] Invalid msisdn number:00886919989219.
+[2006:12:26 09:36:03] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:05] Invalid msisdn number:00886919989219.
+[2006:12:26 09:36:06] Invalid msisdn number:15629330041.
+[2006:12:26 09:36:07] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:09] Invalid msisdn number:15629330041.
+[2006:12:26 09:36:12] Invalid msisdn number:886919989219.
+已处理文件数:240.
+[2006:12:26 09:36:13] Invalid msisdn number:15629330041.
+[2006:12:26 09:36:14] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:14] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:18] Invalid msisdn number:15629330041.
+[2006:12:26 09:36:30] Invalid msisdn number:00886919989219.
+[2006:12:26 09:36:30] Invalid msisdn number:00886919989219.
+[2006:12:26 09:36:32] Invalid msisdn number:886919989219.
+已处理文件数:260.
+[2006:12:26 09:36:37] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:43] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:47] Invalid msisdn number:886919989219.
+[2006:12:26 09:36:52] Invalid msisdn number:886919989219.
+已处理文件数:280.
+[2006:12:26 09:37:03] Invalid msisdn number:00886919989219.
+已处理文件数:300.
+已处理文件数:320.
+已处理文件数:340.
+已处理文件数:360.
+已处理文件数:380.
+已处理文件数:400.
+[2006:12:26 09:39:04] Invalid msisdn number:85298360186.
+已处理文件数:420.
+已处理文件数:440.
+[2006:12:26 09:39:53] Invalid msisdn number:0085266816216.
+已处理文件数:460.
+已处理文件数:480.
+已处理文件数:500.
+[2006:12:26 09:41:02] Invalid msisdn number:00819025964822.
+[2006:12:26 09:41:04] Invalid msisdn number:00819025964822.
+已处理文件数:520.
+已处理文件数:540.
+已处理文件数:560.
+[2006:12:26 09:42:11] Invalid msisdn number:85293796400.
+[2006:12:26 09:42:14] Invalid msisdn number:393497632970.
+已处理文件数:580.
+[2006:12:26 09:42:35] Invalid msisdn number:00393497632970.
+[2006:12:26 09:42:37] Invalid msisdn number:00393497632970.
+已处理文件数:600.
+[2006:12:26 09:42:45] Invalid msisdn number:60129889887.
+已处理文件数:620.
+[2006:12:26 09:43:20] Invalid msisdn number:0085266816216.
+已处理文件数:640.
+[2006:12:26 09:43:45] Invalid msisdn number:0085298655884.
+已处理文件数:660.
+[2006:12:26 09:44:00] Invalid msisdn number:85266816216.
+已处理文件数:680.
+[2006:12:26 09:44:19] Invalid msisdn number:886910738384.
+已处理文件数:700.
+已处理文件数:720.
+已处理文件数:740.
+已处理文件数:760.
+已处理文件数:780.
+已处理文件数:800.
+[2006:12:26 09:46:19] Invalid msisdn number:0085266816216.
+[2006:12:26 09:46:33] Invalid msisdn number:00447809670658.
+[2006:12:26 09:46:33] Invalid msisdn number:006593363303.
+[2006:12:26 09:46:39] Invalid msisdn number:0085262565668.
+[2006:12:26 09:46:39] Invalid msisdn number:0085262565668.
+[2006:12:26 09:46:39] Invalid msisdn number:0085292835742.
+已处理文件数:820.
+[2006:12:26 09:46:45] Invalid msisdn number:0085262565668.
+[2006:12:26 09:46:47] Invalid msisdn number:0085262565668.
+[2006:12:26 09:46:47] Invalid msisdn number:0085262565668.
+[2006:12:26 09:46:47] Invalid msisdn number:0085262565668.
+[2006:12:26 09:46:48] Invalid msisdn number:0085262565668.
+已处理文件数:840.
+已处理文件数:860.
+[2006:12:26 09:47:22] Invalid msisdn number:0085292895901.
+已处理文件数:880.
+[2006:12:26 09:47:50] Invalid msisdn number:886919989219.
+已处理文件数:900.
+[2006:12:26 09:48:16] Invalid msisdn number:00886919989219.
+[2006:12:26 09:48:19] Invalid msisdn number:0085292895901.
+[2006:12:26 09:48:26] Invalid msisdn number:00886912149747.
+已处理文件数:920.
+[2006:12:26 09:48:47] Invalid msisdn number:85294225606.
+已处理文件数:940.
+已处理文件数:960.
+[2006:12:26 09:49:19] Invalid msisdn number:886919989219.
+[2006:12:26 09:49:24] Invalid msisdn number:00886919989219.
+[2006:12:26 09:49:28] Invalid msisdn number:0085292835742.
+[2006:12:26 09:49:31] Invalid msisdn number:0085292835742.
+[2006:12:26 09:49:33] Invalid msisdn number:00886910586734.
+已处理文件数:980.
+已处理文件数:1000.
+[2006:12:26 09:50:21] Invalid msisdn number:00886910586734.
+已处理文件数:1020.
+[2006:12:26 09:50:52] Invalid msisdn number:886922803777.
+[2006:12:26 09:50:56] Invalid msisdn number:85293555397.
+[2006:12:26 09:50:57] Invalid msisdn number:006598195925.
+已处理文件数:1040.
+[2006:12:26 09:51:06] Invalid msisdn number:886919256339.
+已处理文件数:1060.
+已处理文件数:1080.
+[2006:12:26 09:51:48] Invalid msisdn number:0085295727979.
+[2006:12:26 09:51:48] Invalid msisdn number:006598195925.
+[2006:12:26 09:51:53] Invalid msisdn number:886919256339.
+[2006:12:26 09:51:55] Invalid msisdn number:00886933977621.
+[2006:12:26 09:52:08] Invalid msisdn number:0085292895901.
+已处理文件数:1100.
+[2006:12:26 09:52:15] Invalid msisdn number:006598195925.
+已处理文件数:1120.
+[2006:12:26 09:52:40] Invalid msisdn number:00886919256339.
+[2006:12:26 09:52:42] Invalid msisdn number:00886930029138.
+已处理文件数:1140.
+[2006:12:26 09:53:08] Invalid msisdn number:85292590122.
+[2006:12:26 09:53:12] Invalid msisdn number:00886933706607.
+已处理文件数:1160.
+[2006:12:26 09:53:27] Invalid msisdn number:628126027688.
+[2006:12:26 09:53:45] Invalid msisdn number:0085298655884.
+[2006:12:26 09:53:47] Invalid msisdn number:00886935652000.
+已处理文件数:1180.
+已处理文件数:1200.
+[2006:12:26 09:54:16] Invalid msisdn number:886937970795.
+[2006:12:26 09:54:19] Invalid msisdn number:0060128136988.
+[2006:12:26 09:54:23] Invalid msisdn number:00886939789792.
+[2006:12:26 09:54:26] Invalid msisdn number:886937970795.
+[2006:12:26 09:54:26] Invalid msisdn number:886937970795.
+[2006:12:26 09:54:28] Invalid msisdn number:886937970795.
+[2006:12:26 09:54:28] Invalid msisdn number:00886935652000.
+[2006:12:26 09:54:28] Invalid msisdn number:00886921838496.
+[2006:12:26 09:54:28] Invalid msisdn number:00886935652000.
+[2006:12:26 09:54:30] Invalid msisdn number:00886932894799.
+[2006:12:26 09:54:30] Invalid msisdn number:0085292895901.
+[2006:12:26 09:54:32] Invalid msisdn number:886926608018.
+[2006:12:26 09:54:32] Invalid msisdn number:886958686639.
+[2006:12:26 09:54:32] Invalid msisdn number:00919811558801.
+[2006:12:26 09:54:35] Invalid msisdn number:919811558801.
+已处理文件数:1220.
+[2006:12:26 09:54:42] Invalid msisdn number:00919811558801.
+[2006:12:26 09:54:46] Invalid msisdn number:886937970795.
+[2006:12:26 09:54:46] Invalid msisdn number:60194492618.
+[2006:12:26 09:54:48] Invalid msisdn number:006581636676.
+[2006:12:26 09:54:53] Invalid msisdn number:886958686639.
+[2006:12:26 09:54:54] Invalid msisdn number:886958686639.
+[2006:12:26 09:54:54] Invalid msisdn number:886937970795.
+已处理文件数:1240.
+[2006:12:26 09:55:10] Invalid msisdn number:60173710103.
+[2006:12:26 09:55:10] Invalid msisdn number:60173710103.
+[2006:12:26 09:55:18] Invalid msisdn number:886958686639.
+[2006:12:26 09:55:21] Invalid msisdn number:886931031688.
+[2006:12:26 09:55:21] Invalid msisdn number:886931031688.
+[2006:12:26 09:55:23] Invalid msisdn number:886958351717.
+已处理文件数:1260.
+[2006:12:26 09:55:37] Invalid msisdn number:00886939789792.
+已处理文件数:1280.
+[2006:12:26 09:55:58] Invalid msisdn number:0061421605879.
+[2006:12:26 09:56:05] Invalid msisdn number:886937970795.
+已处理文件数:1300.
+[2006:12:26 09:56:17] Invalid msisdn number:85291982103.
+[2006:12:26 09:56:25] Invalid msisdn number:00886933055412.
+已处理文件数:1320.
+[2006:12:26 09:56:51] Invalid msisdn number:85291046127.
+[2006:12:26 09:56:59] Invalid msisdn number:886919120523.
+已处理文件数:1340.
+[2006:12:26 09:57:11] Invalid msisdn number:886937970795.
+[2006:12:26 09:57:11] Invalid msisdn number:00886939789792.
+[2006:12:26 09:57:16] Invalid msisdn number:85294872904.
+[2006:12:26 09:57:17] Invalid msisdn number:00886920081168.
+[2006:12:26 09:57:20] Invalid msisdn number:886919120523.
+[2006:12:26 09:57:25] Invalid msisdn number:0061402205193.
+已处理文件数:1360.
+[2006:12:26 09:57:39] Invalid msisdn number:61421605879.
+[2006:12:26 09:57:50] Invalid msisdn number:6590061313.
+[2006:12:26 09:57:51] Invalid msisdn number:006590061313.
+[2006:12:26 09:57:53] Invalid msisdn number:6590061313.
+[2006:12:26 09:57:53] Invalid msisdn number:00886912482826.
+[2006:12:26 09:57:55] Invalid msisdn number:00886955686225.
+[2006:12:26 09:57:57] Invalid msisdn number:00886955686225.
+[2006:12:26 09:57:57] Invalid msisdn number:85291982103.
+[2006:12:26 09:57:58] Invalid msisdn number:00886910713518.
+[2006:12:26 09:57:58] Invalid msisdn number:00886928136198.
+已处理文件数:1380.
+[2006:12:26 09:58:01] Invalid msisdn number:6596508492.
+[2006:12:26 09:58:03] Invalid msisdn number:006590061313.
+[2006:12:26 09:58:08] Invalid msisdn number:886939125726.
+[2006:12:26 09:58:18] Invalid msisdn number:0061402205193.
+[2006:12:26 09:58:21] Invalid msisdn number:00491726227738.
+[2006:12:26 09:58:21] Invalid msisdn number:886935672270.
+[2006:12:26 09:58:23] Invalid msisdn number:00886928774330.
+已处理文件数:1400.
+[2006:12:26 09:58:30] Invalid msisdn number:886921819216.
+[2006:12:26 09:58:33] Invalid msisdn number:886912482826.
+[2006:12:26 09:58:35] Invalid msisdn number:0085292895901.
+[2006:12:26 09:58:36] Invalid msisdn number:00306944784093.
+[2006:12:26 09:58:47] Invalid msisdn number:85294872904.
+[2006:12:26 09:58:48] Invalid msisdn number:85294872904.
+[2006:12:26 09:58:50] Invalid msisdn number:0085292690199.
+[2006:12:26 09:58:53] Invalid msisdn number:006590061313.
+[2006:12:26 09:58:53] Invalid msisdn number:0084982700628.
+已处理文件数:1420.
+[2006:12:26 09:58:56] Invalid msisdn number:61421605879.
+[2006:12:26 09:58:59] Invalid msisdn number:85296525871.
+[2006:12:26 09:58:59] Invalid msisdn number:6598825442.
+[2006:12:26 09:58:59] Invalid msisdn number:6598825442.
+[2006:12:26 09:59:05] Invalid msisdn number:0085264743618.
+[2006:12:26 09:59:05] Invalid msisdn number:0085264743618.
+[2006:12:26 09:59:06] Invalid msisdn number:0085264743618.
+[2006:12:26 09:59:06] Invalid msisdn number:0085264743618.
+[2006:12:26 09:59:10] Invalid msisdn number:85264743618.
+已处理文件数:1440.
+已处理文件数:1460.
+已处理文件数:1480.
+[2006:12:26 10:00:04] Invalid msisdn number:886937970795.
+[2006:12:26 10:00:05] Invalid msisdn number:0061408763149.
+[2006:12:26 10:00:21] Invalid msisdn number:0085292895901.
+[2006:12:26 10:00:24] Invalid msisdn number:4799771120.
+已处理文件数:1500.
+[2006:12:26 10:00:27] Invalid msisdn number:0085262565668.
+[2006:12:26 10:00:27] Invalid msisdn number:0085262565668.
+[2006:12:26 10:00:30] Invalid msisdn number:006593363303.
+[2006:12:26 10:00:35] Invalid msisdn number:62811607189.
+[2006:12:26 10:00:35] Invalid msisdn number:62811607189.
+[2006:12:26 10:00:36] Invalid msisdn number:0046706600205.
+[2006:12:26 10:00:36] Invalid msisdn number:0046706600205.
+[2006:12:26 10:00:36] Invalid msisdn number:0046706600205.
+[2006:12:26 10:00:37] Invalid msisdn number:0046706600205.
+已处理文件数:1520.
+[2006:12:26 10:00:49] Invalid msisdn number:17788839406.
+[2006:12:26 10:00:58] Invalid msisdn number:886936401739.
+[2006:12:26 10:01:02] Invalid msisdn number:00886915365592.
+已处理文件数:1540.
+[2006:12:26 10:01:09] Invalid msisdn number:00447809766026.
+[2006:12:26 10:01:10] Invalid msisdn number:61408763149.
+[2006:12:26 10:01:11] Invalid msisdn number:00639178193160.
+[2006:12:26 10:01:11] Invalid msisdn number:819054003080.
+[2006:12:26 10:01:13] Invalid msisdn number:61408763149.
+[2006:12:26 10:01:14] Invalid msisdn number:819089145603.
+[2006:12:26 10:01:14] Invalid msisdn number:00819089145603.
+[2006:12:26 10:01:16] Invalid msisdn number:00886928220108.
+[2006:12:26 10:01:16] Invalid msisdn number:006593363303.
+[2006:12:26 10:01:19] Invalid msisdn number:0061402205193.
+[2006:12:26 10:01:21] Invalid msisdn number:0061408763149.
+[2006:12:26 10:01:22] Invalid msisdn number:886921947910.
+[2006:12:26 10:01:33] Invalid msisdn number:886921947910.
+已处理文件数:1560.
+[2006:12:26 10:01:36] Invalid msisdn number:006593363303.
+[2006:12:26 10:01:36] Invalid msisdn number:886937471653.
+[2006:12:26 10:01:36] Invalid msisdn number:00886937016361.
+[2006:12:26 10:01:43] Invalid msisdn number:00886910040986.
+[2006:12:26 10:01:43] Invalid msisdn number:00886910040986.
+[2006:12:26 10:01:43] Invalid msisdn number:00886910040986.
+[2006:12:26 10:01:47] Invalid msisdn number:0060128136988.
+[2006:12:26 10:01:47] Invalid msisdn number:00886920325569.
+[2006:12:26 10:01:48] Invalid msisdn number:0060137773999.
+[2006:12:26 10:01:48] Invalid msisdn number:0060137773999.
+[2006:12:26 10:01:49] Invalid msisdn number:00886920325569.
+[2006:12:26 10:01:51] Invalid msisdn number:0060128136988.
+[2006:12:26 10:01:54] Invalid msisdn number:0060128136988.
+[2006:12:26 10:01:56] Invalid msisdn number:00886931638070.
+[2006:12:26 10:01:56] Invalid msisdn number:006596306366.
+[2006:12:26 10:01:57] Invalid msisdn number:00886931638070.
+[2006:12:26 10:01:58] Invalid msisdn number:00886931638070.
+[2006:12:26 10:01:59] Invalid msisdn number:0061433128580.
+已处理文件数:1580.
+[2006:12:26 10:02:07] Invalid msisdn number:84913287237.
+[2006:12:26 10:02:11] Invalid msisdn number:0066815643793.
+[2006:12:26 10:02:12] Invalid msisdn number:0066815643793.
+[2006:12:26 10:02:18] Invalid msisdn number:84913287237.
+[2006:12:26 10:02:19] Invalid msisdn number:0061433128580.
+已处理文件数:1600.
+已处理文件数:1620.
+[2006:12:26 10:03:02] Invalid msisdn number:84913287237.
+[2006:12:26 10:03:07] Invalid msisdn number:84913287237.
+[2006:12:26 10:03:13] Invalid msisdn number:886935652000.
+[2006:12:26 10:03:18] Invalid msisdn number:819089666011.
+[2006:12:26 10:03:18] Invalid msisdn number:886910268293.
+[2006:12:26 10:03:21] Invalid msisdn number:79057520202.
+[2006:12:26 10:03:21] Invalid msisdn number:00819089666011.
+[2006:12:26 10:03:22] Invalid msisdn number:00819089666011.
+已处理文件数:1640.
+[2006:12:26 10:03:30] Invalid msisdn number:886928220108.
+已处理文件数:1660.
+[2006:12:26 10:04:03] Invalid msisdn number:61407346492.
+[2006:12:26 10:04:09] Invalid msisdn number:61407346492.
+[2006:12:26 10:04:09] Invalid msisdn number:6596306366.
+[2006:12:26 10:04:16] Invalid msisdn number:61407346492.
+[2006:12:26 10:04:17] Invalid msisdn number:15629330039.
+[2006:12:26 10:04:19] Invalid msisdn number:60123386666.
+已处理文件数:1680.
+[2006:12:26 10:04:23] Invalid msisdn number:00886918252259.
+[2006:12:26 10:04:24] Invalid msisdn number:006598195925.
+[2006:12:26 10:04:24] Invalid msisdn number:00886920325569.
+[2006:12:26 10:04:24] Invalid msisdn number:79857225146.
+[2006:12:26 10:04:35] Invalid msisdn number:00886955930819.
+[2006:12:26 10:04:37] Invalid msisdn number:00393386300400.
+[2006:12:26 10:04:38] Invalid msisdn number:15623000032.
+[2006:12:26 10:04:39] Invalid msisdn number:0041798262209.
+[2006:12:26 10:04:40] Invalid msisdn number:886910235299.
+[2006:12:26 10:04:42] Invalid msisdn number:00886920325569.
+[2006:12:26 10:04:44] Invalid msisdn number:0066816200303.
+[2006:12:26 10:04:45] Invalid msisdn number:66816200303.
+已处理文件数:1700.
+[2006:12:26 10:04:53] Invalid msisdn number:0061402205193.
+[2006:12:26 10:05:00] Invalid msisdn number:6592778424.
+[2006:12:26 10:05:03] Invalid msisdn number:886931031688.
+[2006:12:26 10:05:06] Invalid msisdn number:00886928220108.
+[2006:12:26 10:05:10] Invalid msisdn number:886910235299.
+已处理文件数:1720.
+[2006:12:26 10:05:15] Invalid msisdn number:61400660814.
+[2006:12:26 10:05:18] Invalid msisdn number:886910235299.
+[2006:12:26 10:05:20] Invalid msisdn number:66816200303.
+[2006:12:26 10:05:25] Invalid msisdn number:00886933055412.
+[2006:12:26 10:05:25] Invalid msisdn number:00886933055412.
+[2006:12:26 10:05:26] Invalid msisdn number:886910738384.
+[2006:12:26 10:05:29] Invalid msisdn number:0082162806459.
+[2006:12:26 10:05:40] Invalid msisdn number:006598195925.
+已处理文件数:1740.
+[2006:12:26 10:05:42] Invalid msisdn number:00886933537811.
+[2006:12:26 10:05:43] Invalid msisdn number:00886933537811.
+[2006:12:26 10:05:44] Invalid msisdn number:00886928220108.
+[2006:12:26 10:05:47] Invalid msisdn number:00819089666011.
+[2006:12:26 10:05:47] Invalid msisdn number:00886928220108.
+[2006:12:26 10:05:49] Invalid msisdn number:886910235299.
+[2006:12:26 10:05:55] Invalid msisdn number:00886928220108.
+[2006:12:26 10:05:58] Invalid msisdn number:886928220108.
+[2006:12:26 10:06:03] Invalid msisdn number:00919811558801.
+已处理文件数:1760.
+[2006:12:26 10:06:07] Invalid msisdn number:886933958297.
+[2006:12:26 10:06:09] Invalid msisdn number:886920325569.
+[2006:12:26 10:06:10] Invalid msisdn number:919811558801.
+[2006:12:26 10:06:13] Invalid msisdn number:8801711567496.
+[2006:12:26 10:06:15] Invalid msisdn number:00886937091979.
+[2006:12:26 10:06:16] Invalid msisdn number:00886937091979.
+[2006:12:26 10:06:21] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:21] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:25] Invalid msisdn number:00886932894799.
+[2006:12:26 10:06:25] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:25] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:25] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:26] Invalid msisdn number:00886932894799.
+[2006:12:26 10:06:26] Invalid msisdn number:00886920325569.
+[2006:12:26 10:06:28] Invalid msisdn number:00886920325569.
+[2006:12:26 10:06:28] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:29] Invalid msisdn number:00886932894799.
+[2006:12:26 10:06:31] Invalid msisdn number:006598195925.
+[2006:12:26 10:06:31] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:32] Invalid msisdn number:15607200007.
+已处理文件数:1780.
+[2006:12:26 10:06:33] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:39] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:39] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:39] Invalid msisdn number:15607200007.
+[2006:12:26 10:06:40] Invalid msisdn number:00886921307561.
+[2006:12:26 10:06:46] Invalid msisdn number:85291046127.
+[2006:12:26 10:06:46] Invalid msisdn number:8801711567454.
+[2006:12:26 10:06:47] Invalid msisdn number:00491727786250.
+[2006:12:26 10:06:49] Invalid msisdn number:0041798262209.
+[2006:12:26 10:06:50] Invalid msisdn number:0041798262209.
+[2006:12:26 10:06:52] Invalid msisdn number:006598195925.
+[2006:12:26 10:06:53] Invalid msisdn number:0060124011355.
+已处理文件数:1800.
+[2006:12:26 10:07:00] Invalid msisdn number:15607200007.
+[2006:12:26 10:07:00] Invalid msisdn number:15607200007.
+[2006:12:26 10:07:01] Invalid msisdn number:85295377372.
+[2006:12:26 10:07:05] Invalid msisdn number:82162806459.
+[2006:12:26 10:07:10] Invalid msisdn number:886939789792.
+[2006:12:26 10:07:11] Invalid msisdn number:00886911671006.
+[2006:12:26 10:07:16] Invalid msisdn number:15607200007.
+[2006:12:26 10:07:16] Invalid msisdn number:0085296000704.
+[2006:12:26 10:07:17] Invalid msisdn number:0085296000704.
+[2006:12:26 10:07:17] Invalid msisdn number:0085296000704.
+[2006:12:26 10:07:18] Invalid msisdn number:15607200007.
+[2006:12:26 10:07:18] Invalid msisdn number:0085296000704.
+[2006:12:26 10:07:19] Invalid msisdn number:0085296000704.
+[2006:12:26 10:07:22] Invalid msisdn number:00886926746167.
+[2006:12:26 10:07:23] Invalid msisdn number:00886926746167.
+[2006:12:26 10:07:23] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:23] Invalid msisdn number:00886926746167.
+[2006:12:26 10:07:23] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:23] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:24] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:24] Invalid msisdn number:00819089666011.
+[2006:12:26 10:07:24] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:24] Invalid msisdn number:0060122534003.
+[2006:12:26 10:07:24] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:25] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:25] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:25] Invalid msisdn number:0060122534003.
+[2006:12:26 10:07:25] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:25] Invalid msisdn number:15629330039.
+已处理文件数:1820.
+[2006:12:26 10:07:27] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:27] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:27] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:27] Invalid msisdn number:6590259855.
+[2006:12:26 10:07:27] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:28] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:28] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:28] Invalid msisdn number:886926608018.
+[2006:12:26 10:07:29] Invalid msisdn number:60123713303.
+[2006:12:26 10:07:29] Invalid msisdn number:00886939789792.
+[2006:12:26 10:07:31] Invalid msisdn number:60123830688.
+[2006:12:26 10:07:32] Invalid msisdn number:6590259855.
+[2006:12:26 10:07:32] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:33] Invalid msisdn number:6590259855.
+[2006:12:26 10:07:33] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:33] Invalid msisdn number:60198332075.
+[2006:12:26 10:07:33] Invalid msisdn number:15629330039.
+[2006:12:26 10:07:34] Invalid msisdn number:306944784093.
+[2006:12:26 10:07:35] Invalid msisdn number:8801711567496.
+[2006:12:26 10:07:38] Invalid msisdn number:306944784093.
+[2006:12:26 10:07:40] Invalid msisdn number:0085298777491.
+[2006:12:26 10:07:41] Invalid msisdn number:00886937016361.
+[2006:12:26 10:07:42] Invalid msisdn number:8801711567454.
+[2006:12:26 10:07:43] Invalid msisdn number:886930280288.
+[2006:12:26 10:07:50] Invalid msisdn number:0079152378027.
+[2006:12:26 10:07:51] Invalid msisdn number:6590259855.
+已处理文件数:1840.
+[2006:12:26 10:07:55] Invalid msisdn number:00886939789792.
+[2006:12:26 10:08:03] Invalid msisdn number:0079150169057.
+已处理文件数:1860.
+[2006:12:26 10:08:30] Invalid msisdn number:0017788839406.
+[2006:12:26 10:08:31] Invalid msisdn number:0017788839406.
+[2006:12:26 10:08:32] Invalid msisdn number:0017788839406.
+已处理文件数:1880.
+[2006:12:26 10:08:33] Invalid msisdn number:0017788839406.
+[2006:12:26 10:08:33] Invalid msisdn number:0017788839406.
+[2006:12:26 10:08:34] Invalid msisdn number:60122267772.
+[2006:12:26 10:08:38] Invalid msisdn number:00819086458329.
+[2006:12:26 10:08:40] Invalid msisdn number:00819086458329.
+已处理文件数:1900.
+已处理文件数:1920.
+已处理文件数:1940.
+已处理文件数:1960.
+已处理文件数:1980.
+已处理文件数:2000.
+已处理文件数:2020.
+已处理文件数:2040.
+[2006:12:26 10:12:08] Invalid msisdn number:15306324777.
+已处理文件数:2060.
+[2006:12:26 10:12:17] Invalid msisdn number:15306324777.
+[2006:12:26 10:12:21] Invalid msisdn number:15306324777.
+[2006:12:26 10:12:25] Invalid msisdn number:15306324777.
+[2006:12:26 10:12:38] Invalid msisdn number:15306324777.
+已处理文件数:2080.
+[2006:12:26 10:12:40] Invalid msisdn number:15306324777.
+[2006:12:26 10:12:40] Invalid msisdn number:15306324777.
+已处理文件数:2100.
+已处理文件数:2120.
+已处理文件数:2140.
+已处理文件数:2160.
+已处理文件数:2180.
+已处理文件数:2200.
+已处理文件数:2220.
+已处理文件数:2240.
+[2006:12:26 10:16:23] Invalid msisdn number:85291437552.
+[2006:12:26 10:16:27] Invalid msisdn number:0085296085020.
+[2006:12:26 10:16:34] Invalid msisdn number:0085296085020.
+已处理文件数:2260.
+已处理文件数:2280.
+已处理文件数:2300.
+已处理文件数:2320.
+已处理文件数:2340.
+[2006:12:26 10:18:13] Invalid msisdn number:856205516121.
+[2006:12:26 10:18:15] Invalid msisdn number:0061439826644.
+[2006:12:26 10:18:16] Invalid msisdn number:0061439826644.
+[2006:12:26 10:18:19] Invalid msisdn number:00886919989219.
+[2006:12:26 10:18:27] Invalid msisdn number:00886919989219.
+已处理文件数:2360.
+[2006:12:26 10:18:30] Invalid msisdn number:00886919989219.
+已处理文件数:2380.
+[2006:12:26 10:19:09] Invalid msisdn number:00886919989219.
+已处理文件数:2400.
+AREAID  SUBSCRBID  MSISDN       IMEI             FIRSTFID   FIRSTPOS   FIRSTTIME           LASTFID    LASTPOS    LASTTIME            CALLTIMES  
+________________________________________________________________________________________________________________________________________________
+        0          13001002188  354384000247150  125063     316735     2006/07/10 22:56:11 94239      742652     2006/09/06 16:46:23 48         
+        0          13001002212  354334004534940  461875     1135230    2006/12/18 14:20:38 472328     359930     2006/12/20 09:25:54 9          
+        0          13001002228                   331314     157401     2006/04/22 09:34:07 331388     831757     2006/04/22 16:57:48 4          
+        0          13001002299                   287827     891025     2006/04/20 10:37:03 362332     989524     2006/05/04 12:51:46 59         
+        0          13001002299  357579005761190  237764     1734659    2006/06/17 19:42:28 459472     640434     2006/12/11 16:24:41 81         
+        0          13001003646  353360003947050  420890     949293     2006/11/01 07:32:31 412568     1388995    2006/11/04 15:57:02 2          
+        0          13001005843  357599008352780  327106     1340999    2006/05/16 11:03:07 328111     546232     2006/05/18 22:25:30 20         
+        0          13001005914  352882007617480  251477     1564675    2006/09/28 10:44:18 266805     709228     2006/10/04 20:21:10 20         
+        0          13001006184  355079004190120  274714     26627      2006/10/14 06:52:44 475257     1450564    2006/12/25 22:17:14 150        
+        0          13001006568  354860000301500  238049     1203222    2006/06/18 16:36:48 218504     709859     2006/06/25 19:01:07 18         
+文件数 :2409 ,有效话单数:9308075. 
+时间: 文件处理: 2443.4 块处理408.8 总时间3943.1.

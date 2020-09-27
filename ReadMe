@@ -1,0 +1,2 @@
+dmsrc_ap				:	OLAP client
+dmasrc + vender :	OLAP server

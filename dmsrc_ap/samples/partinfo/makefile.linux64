@@ -1,0 +1,28 @@
+LFLAGS= -lm -lrt -lpthread -lstdc++ -ldpiosh
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib -L$(DATAMERGER_HOME)/oci
+INCLUDE= -I$(HOME)/dmsrc/inc -I$(HOME)/dmsrc/inc/oci -I$(HOME)/dmsrc/inc/mysql
+PARTINFO_SOURCE=partinfo.cc
+PARTINFO_OBJS=partinfo.o
+
+APCHECK_SOURCE=apcheck.cc
+APCHECK_OBJ=apcheck.o
+CXX = gcc
+CFLAGS = -O3 -pthread -DUSE_WDBI -DWOCI_DEBUG -m64
+
+all: partinfo apcheck
+
+#-------------------------------------------------------
+partinfo: $(PARTINFO_OBJS)
+	$(CXX) $(LDFLAGS) $(PARTINFO_OBJS) -o $@  $(LFLAGS) 
+$(PARTINFO_OBJS): $(PARTINFO_SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(PARTINFO_SOURCE)
+
+#-------------------------------------------------------
+apcheck:$(APCHECK_OBJ)
+	$(CXX) $(LDFLAGS) $(APCHECK_OBJ) -o $@ $(LFLAGS)
+$(APCHECK_OBJ):$(APCHECK_SOURCE)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(APCHECK_SOURCE)
+
+ 
+clean:
+	rm partinfo.o partinfo apcheck apcheck.o -f

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "storage", "infobright.vcproj", "{2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "loader", "..\loader\loader.vcproj", "{BC4E1F55-A4D5-4142-B48A-7EDE424DECD1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E} = {2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E}.Debug|Win32.Build.0 = Debug|Win32
+		{2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E}.Release|Win32.ActiveCfg = Release|Win32
+		{2808B9EA-F6A9-46B6-B95B-FC95DDE1A71E}.Release|Win32.Build.0 = Release|Win32
+		{BC4E1F55-A4D5-4142-B48A-7EDE424DECD1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BC4E1F55-A4D5-4142-B48A-7EDE424DECD1}.Debug|Win32.Build.0 = Debug|Win32
+		{BC4E1F55-A4D5-4142-B48A-7EDE424DECD1}.Release|Win32.ActiveCfg = Release|Win32
+		{BC4E1F55-A4D5-4142-B48A-7EDE424DECD1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

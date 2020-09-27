@@ -1,0 +1,17 @@
+LFLAGS= -ldpiosh -lm -lrt -lz -lpthread -lstdc++
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc -I$(DBPLUSSRC_PATH)/inc/mysql -I$(DBPLUSSRC_PATH)/inc/oci
+SOURCE=wdbi_thread_test_new.cc
+OBJS=wdbi_thread_test_new.o
+CXX = gcc
+CFLAGS = -std=c++0x -g -pthread -DUSE_WDBI -DNOBOOST_TLIST
+all:wdbi_thread_test_new 
+#-------------------------------------------------------
+wdbi_thread_test_new: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+#-------------------------------------------------------
+clean: 
+	rm -f $(OBJS) wdbi_thread_test_new

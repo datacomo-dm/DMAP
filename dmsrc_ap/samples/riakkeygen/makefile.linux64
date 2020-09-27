@@ -1,0 +1,49 @@
+# 编译dma单机版表转换到riak中表的工具
+# DEBUG 版本
+LFLAGS= -ldpiosh -lm -lrt -lz -lpthread -lcrypto -lstdc++ -fpic -fPIC  /usr/local/lib/libriakdrv++.a /usr/local/lib/libcr_class.a /usr/local/lib/libprotobuf_d.a /usr/local/lib/libsnappy.a /usr/local/lib/liblzma.a ./libibcompress_d.a 
+# RELEASE 版本
+#LFLAGS= -ldpiosh -lm -lrt -lz -lpthread -lcrypto -lstdc++ -fpic -fPIC  /usr/local/lib/libriakdrv++.a /usr/local/lib/libcr_class.a /usr/local/lib/libprotobuf.a /usr/local/lib/libsnappy.a /usr/local/lib/liblzma.a ./libibcompress_r.a
+
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib
+INCLUDE= -I$(DMASRC_PATH)/inc -I$(DMASRC_PATH)/inc/mysql -I$(DMASRC_PATH)/inc/oci -I/usr/local/include/riakdrv/ -I./
+
+SOURCE_generate_table=generate_table.cpp msgIBRiak.pb.cpp
+OBJS_generate_table=generate_table.o msgIBRiak.pb.o
+
+SOURCE_generate_table_clear=generate_table_clear.cpp msgIBRiak.pb.cpp
+OBJS_generate_table_clear=generate_table_clear.o msgIBRiak.pb.o
+
+SOURCE_free_ks=free_riak_keyspace.cpp msgIBRiak.pb.cpp  
+OBJS_free_ks=free_riak_keyspace.o  msgIBRiak.pb.o 
+
+CXX = gcc
+
+# 正常选项
+CFLAGS = -m64 -std=c++0x -g3 -pthread -DUSE_WDBI -DPRINT_LOG_INFO -fpic -fPIC 
+#CFLAGS = -m64 -std=c++0x -O3 -pthread -DUSE_WDBI -fpic -fPIC
+
+
+all:generate_table generate_table_clear free_riak_keyspace
+
+#--------------------------------------------------------
+generate_table: $(OBJS_generate_table) 
+	$(CXX) $(LDFLAGS) $(OBJS_generate_table) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_generate_table): $(SOURCE_generate_table) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_generate_table) 
+	
+free_riak_keyspace: $(OBJS_free_ks) 
+	$(CXX) $(LDFLAGS) $(OBJS_free_ks) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_free_ks): $(SOURCE_free_ks) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_free_ks) 	
+
+generate_table_clear: $(OBJS_generate_table_clear) 
+	$(CXX) $(LDFLAGS) $(OBJS_generate_table_clear) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_generate_table_clear): $(SOURCE_generate_table_clear) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_generate_table_clear) 
+	
+
+clean: 
+	rm -f *.o generate_table generate_table_clear free_riak_keyspace

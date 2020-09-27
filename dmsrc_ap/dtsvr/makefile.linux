@@ -1,0 +1,24 @@
+#LFLAGS= -lwdbi -lm -lstdc++ -lrt -lpthread  -ldtiosh -lbz2 -llzo -lz -lucl -ldpodbc3-3.51.06
+LFLAGS= -lwdbi -lm -lstdc++ -lrt -lpthread -ldpiosh -lbz2 -llzo -lz -lucl
+#LFLAGS= -lwoci8sh -lm -lclntsh -lbz2 -lrt -llzo -lz -lpthread -lmysqlclient -lstdc++
+LDFLAGS=  -fpic -fPIC -DPIC -L$(DBPLUS_HOME)/lib -L$(DBPLUSSRC_PATH)/lib
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc -I$(DBPLUSSRC_PATH)/inc/mysql
+#SOURCE=dt_test.cpp 
+#OBJS=dt_test.o 
+SOURCE=dt_check.cpp dt_lib.cpp 
+OBJS=dt_check.o dt_lib.o 
+CXX = gcc
+TARGET = dpadmin
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = -g -fPIC -DB_TIME_FORMAT -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -fpic -DPIC -DUSE_WDBI -DWOCI_DEBUG
+#CFLAGS = -O3 -pthread
+
+$(TARGET): $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS)
+	cp $@ $(DBPLUS_HOME)/bin 
+
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+
+clean:
+	rm -f $(OBJS) $(TARGET)

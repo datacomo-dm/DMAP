@@ -1,0 +1,272 @@
+Microsoft Developer Studio Workspace File, Format Version 6.00
+# WARNING: DO NOT EDIT OR DELETE THIS WORKSPACE FILE!
+
+###############################################################################
+
+Project: "LibNcFTP_ALL"=.\LibNcFTP_ALL.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name minincftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name monkey
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ncftpget
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ncftpls
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ncftpput
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ncftpsyncput
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name simpleget
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name ncftpftw
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "Strn"=..\Strn\Strn.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Project: "libncftp"=.\libncftp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "minincftp"=.\samples\minincftp\minincftp.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "monkey"=.\samples\monkey\monkey.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ncftpftw"=.\samples\ncftpftw\ncftpftw.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ncftpget"=.\samples\ncftpget\ncftpget.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ncftpls"=.\samples\ncftpls\ncftpls.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ncftpput"=.\samples\ncftpput\ncftpput.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "ncftpsyncput"=.\samples\ncftpsyncput\ncftpsyncput.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "simpleget"=.\samples\simpleget\simpleget.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+    Begin Project Dependency
+    Project_Dep_Name libncftp
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name sio
+    End Project Dependency
+    Begin Project Dependency
+    Project_Dep_Name Strn
+    End Project Dependency
+}}}
+
+###############################################################################
+
+Project: "sio"=..\sio\sio.dsp - Package Owner=<4>
+
+Package=<5>
+{{{
+}}}
+
+Package=<4>
+{{{
+}}}
+
+###############################################################################
+
+Global:
+
+Package=<5>
+{{{
+}}}
+
+Package=<3>
+{{{
+}}}
+
+###############################################################################
+

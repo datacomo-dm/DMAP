@@ -1,0 +1,61 @@
+#gcc *.cpp -I..\inc  -IC:\oracle\ora92\oci\include -DNO_ODBC -DNO_EXCEL -lstdc++ 
+#-LC:\oracle\ora92\oci\lib\msvc -loci -o wdbig.dll -shared -Wl,--out-implib,libwdbig.a -DWDBI_EXPORTS -O3
+LDFLAGS= -LC:\oracle\ora92\oci\lib\msvc  -shared -lstdc++
+#-Wl,--out-implib,libwdbig.a  -lm 
+OCILIB= -loci 
+#ODBCLIB= -ldpconnect 
+ODBCLIB= -lodbc32
+INCLUDE= -I..\inc  -I..\inc\win_odbc -IC:\oracle\ora92\oci\include 
+SOURCE=wdbi_global.cpp wdbi_int.cpp wdbi_main.cpp wociSession.cpp wdbiError.cpp wociStatement.cpp dataTable.cpp memTable.cpp dataTableLink.cpp wodbcSession.cpp wodbcStatement.cpp
+OBJS=wdbi_global.o wdbi_int.o wdbi_main.o wociSession.o wdbiError.o wociStatement.o dataTable.o memTable.o dataTableLink.o wodbcSession.o wodbcStatement.o
+CXX = gcc 
+#CFLAGS = -O +DD64  -pthread
+#CFLAGS =  -g -fPIC -DPIC -DWORDS_BIGENDIAN $(INCLUDE)
+CFLAGS =  -O3 -DWIN32  -DALLREADY_HAVE_WINDOWS_TYPE -DWDBI_EXPORTS -DNO_EXCEL -DAVL_TREE_FIX_MEM -DPIC $(INCLUDE) -DHAVE_EXPIRED -DTIME_UPTO=200705
+#TARMEM=libwdbi_mem1.2.1.dll
+#TARODBC=libwdbi_odbc1.2.1.dll
+#TAROCI=libwdbi_oci1.2.1.dll
+#TARALL=libwdbi1.2.1.dll
+
+TARMEM=libwdbimem
+TARODBC=libwdbiodbc
+TAROCI=libwdbioci
+TARALL=libwdbi
+
+all: $(TARMEM) $(TARODBC) $(TAROCI) $(TARALL)
+
+$(TARMEM):
+	echo "Build pure memory dbi library."
+#del  $(OBJS) $@
+	$(CXX) -DNO_OCI -DNO_ODBC $(CFLAGS)  -c $(SOURCE)
+	$(CXX)  $(OBJS) -Wl,--out-implib,$@.a -o $@.dll $(LDFLAGS)
+#del  ..\lib\$@ ..\lib\$(TARMEM_S)
+	copy $@.* ..\lib
+	echo "DBPLUS_HOME$(DBPLUS_HOME)"
+	
+$(TARODBC):
+	echo "Build dbi library for odbc."
+#del  $(OBJS) $@
+	$(CXX) -DNO_OCI $(CFLAGS)  -c $(SOURCE)
+	$(CXX)  $(OBJS) -Wl,--out-implib,$@.a -o $@.dll $(ODBCLIB) $(LDFLAGS)
+#del  ..\lib\$@ ..\lib\$(TARODBC_S)
+	copy $@.* ..\lib
+
+$(TAROCI):
+	echo "Build dbi library for oci."
+#del  $(OBJS) $@
+	$(CXX) -DNO_ODBC $(CFLAGS)  -c $(SOURCE)
+	$(CXX)  $(OBJS) -Wl,--out-implib,$@.a -o $@.dll $(OCILIB) $(LDFLAGS)
+#del  ..\lib\$@ ..\lib\$(TAROCI_S)
+	copy $@.* ..\lib
+	
+$(TARALL): 
+	echo "Build dbi library for odbc&oci."
+#del  $(OBJS) $@
+	$(CXX) $(CFLAGS)  -c $(SOURCE)
+	$(CXX)  $(OBJS) -Wl,--out-implib,$@.a -o $@.dll $(OCILIB) $(ODBCLIB) $(LDFLAGS)
+#del  ..\lib\$@ ..\lib\$(TARALL_S)
+	copy $@.* ..\lib
+
+clean :
+#del  $(OBJS) $(TARMEM) $(TARODBC) $(TAROCI) $(TARALL)

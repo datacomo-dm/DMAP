@@ -1,0 +1,29 @@
+LFLAGS= -lm -lrt -lpthread -lz -lstdc++ ./libibcompress_r.a /usr/local/lib/libcr_class.a /usr/local/lib/libprotobuf.a /usr/local/lib/liblzma.a /usr/local/lib/libsnappy.a
+LDFLAGS= -m64
+INCLUDE= -I./
+SOURCE=IBCompress_test.cpp 
+OBJS=IBCompress_test.o
+
+SOURCE_S=IBCompress_packs_test.cpp msgIBRiak.pb.cpp
+OBJS_S=IBCompress_packs_test.o msgIBRiak.pb.o
+
+CXX = g++ 
+CFLAGS = -g3 -std=c++0x -D_THREAD_SAFE -D_REENTRANT -DPURE_LIBRARY -D_POSIX_PTHREAD_SEMANTICS   
+
+# all
+all:IBCompress_test IBCompress_packs_test
+
+# packn test
+IBCompress_test: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+	
+# packs test
+IBCompress_packs_test: $(OBJS_S) 
+	$(CXX) $(LDFLAGS) $(OBJS_S) -o $@  $(LFLAGS) 
+$(OBJS_S): $(SOURCE_S) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_S) 
+	
+clean: 
+	rm -f $(OBJS) IBCompress_test $(OBJS_S) IBCompress_packs_test 

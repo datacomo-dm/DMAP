@@ -1,0 +1,7 @@
+WOCILOGF=`ls -lrt ${WDBI_LOGPATH} |grep mysqlwoci_server|tail -1|awk '{print $9}'`
+echo "********The last messages of woci(mysqld) error log*********************"
+tail ${WDBI_LOGPATH}/${WOCILOGF}
+echo "********The last messages of mysqld error log***************************"
+tail ${DBPLUS_HOME}/var/dtsvr.err
+echo "********The last messages of nohup.out***************************"
+tail ${HOME}/nohup.out

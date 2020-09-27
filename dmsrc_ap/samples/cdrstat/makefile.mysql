@@ -1,0 +1,12 @@
+LFLAGS=-lcurses -lz -lwoci8sh -lclntsh -laio -llzo -lbz2 -lrt -lmysqlclient -lmysys -lpthread -lm -lexc
+LDFLAGS= -L/usr/local/mysql/lib/mysql -L$(ORACLE_HOME)/lib -L/usr/ccs/lib/cmplrs/cc/
+INCLUDE= -I/dds/wgsh/inc -I/usr/local/mysql/include/mysql -I/usr/local/include
+SOURCE=dt_check.cpp dt_lib.cpp dt_svrlib.cpp
+OBJS=dt_check.o dt_lib.o dt_svrlib.o
+CXX = cxx
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = 
+dtsvr: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 

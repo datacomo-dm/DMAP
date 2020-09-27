@@ -1,0 +1,91 @@
+#flags used to link target .
+LFLAGS= -ldpiosh +DD64 
+LFLAGS_D= -lwdbimem +DD64 
+#LFLAGS= -lwoci8sh -lm -lclntsh -lbz2 -lrt -llzo -lz -lpthread -lmysqlclient 
+#flags used to link shared lib and target.
+LDFLAGS= +DD64 -L$(DBPLUS_HOME)/lib -L$(DBPLUSSRC_PATH)/lib -L$(DBPLUS_HOME)/unixodbc/lib -lm -lrt -lpthread -L$(DBPLUS_HOME)/oci -L$(DBPLUS_HOME)/lib/mysql
+#+DAportable -AA +DD64 
+LIBFLAGS= -lstd_v2 -lwdbi -lbz2 -llzo2 -lm -lpthread -lz -lucl -lmysqlclient_r -lodbc -lmystrings
+LIBFLAGS_D= -lwdbimem -lbz2 -llzo2 -lm -lpthread -lz -lucl
+#LIBFLAGS_O= -lwdbioci -lbz2 -llzo2 -lm -lpthread -lz -lucl -dtiosh
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc -I$(DBPLUSSRC_PATH)/inc/mysql
+#SOURCE=dt_test.cpp 
+#OBJS=dt_test.o 
+SOURCE=dtioMain.cpp
+OBJS=dtioMain.o
+
+DPSQL = dpsql
+ORASQL = orasql
+DDSOURCE=dpsql.cpp
+DDOBJS=dpsql.o
+ODSOURCE=orasql.cpp
+ODOBJS=orasql.o
+
+CXX = aCC
+LIBOBJS=dtioDTTable.o dtioDTTableGroup.o dtiofile.o dtioMyTable.o dtioMyTableGroup.o dtioStream.o dtioStreamFile.o dtparams_mt.o mttables.o mysqlconn.o dt_common.o dt_svrlib.o crc32.o cert.o
+LIBSOURCE=dtioDTTable.cpp dtioDTTableGroup.cpp dtiofile.cpp dtioMyTable.cpp dtioMyTableGroup.cpp dtioStream.cpp dtioStreamFile.cpp dtparams_mt.cpp mttables.cpp mysqlconn.cpp dt_common.cpp dt_svrlib.cpp crc32.c cert.cpp
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+#CFLAGS = -g -pthreads -DUSE_WDBI -DWOCI_DEBUG -D_FILE_OFFSET_BITS=64
+#lzo&&ucl not support x86-64 asm version ,remove -DUSE_ASM_5 -DUSE_ASM_8
+#CFLAGS = -g -DB_TIME_FORMAT -fPIC -fpic -DPIC -D_FILE_OFFSET_BITS=64  -D_LARGEFILE_SOURCE -DUSE_WDBI -DMYSQL_VER_51 
+#-DWOCI_DEBUG 
+#+O3 +Onoinitcheck +DD64 +z -DWORDS_BEGENDIAN
+CFLAGS = -g +Onoinitcheck +u1 +DD64 +z -AA -DB_TIME_FORMAT -D_FILE_OFFSET_BITS=64  -D_LARGEFILE_SOURCE -DUSE_WDBI  -DWORDS_BIGENDIAN -DMYSQL_VER_51
+DTIOLIB = libdpio.a
+DTIOEXEC = dpio
+DTIOSH = libdpiosh.so
+AR= ar
+ARFLAGS= crvu
+DTIOMYSQLD = libdpios_sh.so
+all : $(DTIOEXEC) $(DPSQL) $(DTIOLIB) $(ORASQL)
+
+$(DTIOLIB) : $(LIBOBJS)
+	rm -f $(DTIOLIB)
+	$(AR) $(ARFLAGS) $@ $(LIBOBJS)
+	ranlib $@
+	cp $@ ../lib
+
+$(DTIOSH) : $(LIBOBJS)
+	$(CXX) -b $(LDFLAGS) $(LIBOBJS) $(LIBFLAGS) -o $@
+	cp $@ ../lib
+	cp $@ $(DBPLUS_HOME)/lib
+
+$(DPSQL) : $(DDOBJS)
+	$(CXX) $(LDFLAGS) -lm -lpthread $(LFLAGS) $(DDOBJS)  -o $@ 
+	cp $@ $(DBPLUS_HOME)/bin
+
+$(ORASQL) : $(ODOBJS)
+	$(CXX) $(LDFLAGS)  -lm -lpthread $(LFLAGS) $(ODOBJS) -o $@ 
+	cp $@ $(DBPLUS_HOME)/bin
+
+$(DTIOEXEC) : $(OBJS) $(DTIOLIB) $(DTIOSH)
+	$(CXX) $(LDFLAGS) -lm -lpthread $(LFLAGS) dtioMain.o  -o $@ 
+	cp $@ $(DBPLUS_HOME)/bin
+
+$(OBJS): $(SOURCE)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE)
+
+$(ODOBJS): $(ODSOURCE)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(ODSOURCE)
+	
+$(DDOBJS): $(DDSOURCE)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(DDSOURCE) 
+	
+$(LIBOBJS): $(LIBSOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(LIBSOURCE) 
+
+mysqld: $(DTIOMYSQLD)
+
+$(DTIOMYSQLD):
+	rm -f $(LIBOBJS) $@
+	$(CXX) $(CFLAGS) $(INCLUDE) -DMYSQL_SERVER -c $(LIBSOURCE)
+	rm -f $@
+	$(CXX) +DAortable -b $(LDFLAGS) $(LIBFLAGS_D) -o $@ $(LIBOBJS)
+	#$(AR) $(ARFLAGS) $@ $(LIBOBJS)
+	#ranlib $@
+	cp $@ ../lib
+	cp $@ $(DBPLUS_HOME)/lib
+	rm -f $(LIBOBJS) $@
+	
+clean:
+	rm -f $(LIBOBJS) $(OBJS) $(DTIOLIB) $(DTIOSH) $(DDOBJS) $(ODOBJS)

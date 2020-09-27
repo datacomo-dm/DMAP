@@ -1,0 +1,14 @@
+LFLAGS= -ldpiosh -lm -lrt -lpthread -lstdc++
+LDFLAGS= -L$(DBPLUS_HOME)/lib
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc
+SOURCE=dbcp.cc 
+OBJS=dbcp.o
+CXX = gcc
+CFLAGS = -g -pthread -DUSE_WDBI -DWOCI_DEBUG
+dbcp: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+	cp $@ $(DBPLUS_HOME)/bin/$@
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean: 
+	rm -f $(OBJS) dbcp

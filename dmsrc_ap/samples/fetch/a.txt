@@ -1,0 +1,6 @@
+[2005:04:07 17:18:59] Excuting :
+ select *  from dest.tab_cdmavoicdr3 where msisdn='13308719031'... 
+[2005:04:07 17:18:59] Done.
+  1,086 rows fetched.
+[2005:04:07 17:18:59] 1086 rows fetched.
+Fetched 1086 rows in 0.52 sec.

@@ -1,0 +1,18 @@
+LFLAGS= -lwdbi -lm -lclntsh -lstdc++ -lbz2 -lrt -lpthread -lz -lmysqlclient_r -lmyodbc3_r 
+#LFLAGS= -lwoci8sh -lm -lclntsh -lbz2 -lrt -llzo -lz -lpthread -lmysqlclient -lstdc++
+LDFLAGS=  -fPIC -DPIC -L$(ORACLE_HOME)/lib -L$(HOME)/wgsh/lib 
+INCLUDE= -I$(HOME)/wgsh/inc -I$(HOME)/wgsh/inc/mysql
+#SOURCE=dt_test.cpp 
+#OBJS=dt_test.o 
+SOURCE=dt_check.cpp dt_lib.cpp 
+OBJS=dt_check.o dt_lib.o 
+CXX = gcc
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = -g -fPIC  -DB_TIME_FORMAT -D_LARGEFILE_SOURCE -DWORDS_BIGENDIAN -DPIC  -DWOCI_DEBUG -DUSE_WDBI
+#CFLAGS = -O3 -pthread
+dtadmin: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) ../lib/libdtio.a ../lib/liblzo.a ../lib/libucl.a -o $@  $(LFLAGS) 
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f $(OBJS) dtadmin

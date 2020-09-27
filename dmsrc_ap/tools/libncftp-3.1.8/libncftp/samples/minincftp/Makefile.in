@@ -1,0 +1,33 @@
+#-----------------------------------------------------------------------------
+#
+# Makefile for the platform @OS@, on the host @host@.
+#
+#-----------------------------------------------------------------------------
+
+CC=@CC@
+DEFS=@DEFS@@NDEFS@
+CFLAGS=@CFLAGS@
+# CC=gcc
+# CFLAGS=-O2 -W -Wall -Wimplicit -Wstrict-prototypes -Wmissing-prototypes
+CPPFLAGS=@CPPFLAGS@
+prefix=@prefix@
+
+LIBS=-lncftp -lsio -lStrn @LIBS@
+STRIPFLAG=@SFLAG@
+LDFLAGS=@LDFLAGS@ -L@MAINDIR@
+
+PROGS=minincftp@EXEEXT@
+
+all: $(PROGS)
+	-@/bin/ls -l $(PROGS)
+
+install: $(PROGS)
+
+minincftp@EXEEXT@: minincftp.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a minincftp.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) minincftp.c -o minincftp@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+@MAINDIR@/libncftp.a:
+	[ -f @MAINDIR@/libncftp.a ]
+
+clean:
+	/bin/rm -f $(PROGS) *.@OBJEXT@ core csetc.pch

@@ -1,0 +1,34 @@
+LFLAGS= -ldpiosh -lm -lrt -lz -lpthread -lstdc++
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc -I$(DBPLUSSRC_PATH)/inc/mysql -I$(DBPLUSSRC_PATH)/inc/oci
+SOURCE=wdbi_thread_test.cc
+OBJS=wdbi_thread_test.o
+SOURCE_CONNECT_TEST=connect_test.cc
+OBJS_CONNECT_TEST=connect_test.o
+SOURCE_PERFORMANCE_TEST=performance_test.cc
+OBJS_PERFORMANCE_TEST=performance_test.o
+CXX = gcc
+CFLAGS = -std=c++0x -g -pthread -DUSE_WDBI -DNOBOOST_TLIST
+all:wdbi_thread_test connect_test performance_test
+#-------------------------------------------------------
+wdbi_thread_test: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+#-------------------------------------------------------
+connect_test: $(OBJS_CONNECT_TEST)
+	$(CXX) $(LDFLAGS) $(OBJS_CONNECT_TEST) -o $@  $(LFLAGS)
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_CONNECT_TEST): $(SOURCE_CONNECT_TEST)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_CONNECT_TEST)
+#-------------------------------------------------------
+performance_test: $(OBJS_PERFORMANCE_TEST)
+	$(CXX) $(LDFLAGS) $(OBJS_PERFORMANCE_TEST) -o $@  $(LFLAGS)
+#	cp $@ $(DATAMERGER_HOME)/bin/$@
+$(OBJS_PERFORMANCE_TEST): $(SOURCE_PERFORMANCE_TEST)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE_PERFORMANCE_TEST)
+
+
+clean: 
+	rm -f $(OBJS) $(connect_test.o) $(performance_test.o) wdbi_thread_test connect_test performance_test

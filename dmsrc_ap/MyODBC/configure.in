@@ -1,0 +1,1002 @@
+# Copyright (C) 1995-2006 MySQL AB
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of version 2 of the GNU General Public License as
+# published by the Free Software Foundation.
+#
+# There are special exceptions to the terms and conditions of the GPL
+# as it is applied to this software. View the full text of the exception
+# in file LICENSE.exceptions in the top-level directory of this software
+# distribution.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+##########################################################################
+#                                                                        #
+# configure.in                                                           #
+#                                                                        #
+# @description: This is the MyODBC 3.51 driver configure.in              #
+#                                                                        #
+# @author     : MySQL AB (monty@mysql.com, venu@mysql.com)               #
+# @date       : 2001-Aug-15                                              #
+# @product    : myodbc3                                                  #
+#                                                                        #
+##########################################################################
+
+###################################################################
+#                                                                 #
+# Initializations                                                 #
+#                                                                 #
+###################################################################
+
+AC_INIT(driver/myodbc3.c)
+AC_PREREQ(2.12)dnl    Minimum Autoconf version required.
+#AC_INIT([MySQL ODBC 3.51 Driver],[3.51.12],[myodbc@lists.mysql.com],[libmyodbc3])
+AC_CANONICAL_SYSTEM
+
+# When changing, also change VersionInfo.h and driver/myodbc3.def
+AM_INIT_AUTOMAKE(mysql-connector-odbc,3.51.25)
+
+myodbc_version=$VERSION
+###################################################################
+#                                                                 #
+# See the libtool docs for information on how to do shared lib    #
+# versions.                                                       #
+#                                                                 #
+###################################################################
+
+SHARED_LIB_VERSION=1:0:0
+# AM_CONFIG_HEADER(driver/myconf.h)
+AC_CONFIG_HEADERS(driver/myconf.h)
+AC_SUBST(myodbc_version)
+
+# Canonicalize the configuration name.
+SYSTEM_TYPE="$host_vendor-$host_os"
+MACHINE_TYPE="$host_cpu"
+AC_SUBST(SYSTEM_TYPE)
+# AC_DEFINE_UNQUOTED(SYSTEM_TYPE, "$SYSTEM_TYPE", [Define SYSTEM_TYPE])
+AC_SUBST(MACHINE_TYPE)
+# AC_DEFINE_UNQUOTED(MACHINE_TYPE, "$MACHINE_TYPE", [Define MACHINE_TYPE])
+
+# ------------------------------------------------------------------------------
+# FIXME nothing in this section is used....
+# ------------------------------------------------------------------------------
+
+# Save some variables and the command line options for mysqlbug
+SAVE_CFLAGS="$CFLAGS"
+SAVE_LDFLAGS="$LDFLAGS"
+CONF_COMMAND="$0 $ac_configure_args"
+AC_SUBST(CONF_COMMAND)
+AC_SUBST(SAVE_CFLAGS)
+AC_SUBST(SAVE_LDFLAGS)
+
+# This is need before AC_PROG_CC
+#
+
+if test "x${CFLAGS-}" = x ; then
+  cflags_is_set=no
+else
+  cflags_is_set=yes
+fi
+
+if test "x${LDFLAGS-}" = x ; then
+  ldflags_is_set=no
+else
+  ldflags_is_set=yes
+fi
+
+# ------------------------------------------------------------------------------
+# End of section of unused
+# ------------------------------------------------------------------------------
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CPP
+
+# Fix for sgi gcc / sgiCC which tries to emulate gcc
+if test "$CC" = "sgicc"
+then
+  ac_cv_prog_gcc="no"
+fi
+
+# Only build shared libraries by default
+AM_ENABLE_SHARED
+AM_DISABLE_STATIC
+
+# define _UNIX_, always true if running this configure script
+AC_DEFINE(_UNIX_,1,[Define if we are using unix build environment])
+
+AM_PROG_LIBTOOL
+AC_CHECK_LIB(z,compress)
+
+###################################################################
+#
+# THREADED
+#
+###################################################################
+AC_ARG_ENABLE(threads, 
+    [AC_HELP_STRING(
+        [--enable-threads],
+        [Build separate thread safe driver [default=yes]])],
+    [ gotthread=$enableval ],
+    [ gotthread=yes ])
+
+AM_CONDITIONAL(SEPARATE_THREAD_SAFE_DRIVER, test "x$gotthread" != "xno")
+
+###################################################################
+#
+# LTDL
+#
+###################################################################
+# FIXME don't set LDFLAGS, add -Lpath when linking
+# FIXME handle 64 bit if other than "lib" directory
+AC_ARG_WITH(ltdl-path,
+[AC_HELP_STRING([--with-ltdl-path=DIR],
+                [Where libtool "libltdl" and "ltdl.h" are installed])],
+[
+ CPPFLAGS="$CPPFLAGS -I$withval/include"
+ LDFLAGS="$LDFLAGS -L$withval/lib"
+ # We prefer the libtool .la file that define dependencies
+ if test -f "$withval/lib/libltdl.la" ; then
+   LTDL_LIB="$withval/lib/libltdl.la"
+  else
+   LTDL_LIB="-L$withval/lib -lltdl"
+  fi
+], [LTDL_LIB="-L/usr/lib -lltdl"])
+AC_SUBST(LTDL_LIB)
+
+dnl AC_CHECK_LIB(ltdl, lt_dlinit, [],
+dnl [ AC_MSG_ERROR([Could not use libtool "libltdl" library, please check config.log for errors])])
+
+###################################################################
+#
+# --enable-bundles
+#
+###################################################################
+bundles=false
+AC_ARG_ENABLE( bundles,
+[AC_HELP_STRING([--enable-bundles],[make OSX bundles [default=no]])],
+[ case "${enableval}" in
+    yes)
+        bundles=true ;;
+    no) 
+        bundles=false ;;
+    *) 
+        AC_MSG_ERROR(bad value ${enableval} for --enable-bundles) ;;
+esac], [bundles=false])
+
+case $SYSTEM_TYPE in
+  *darwin*)
+    is_darwin=true
+    ;;
+  *)
+    bundles=false;		# always false if not darwin/osx
+    ;;
+esac
+
+AM_CONDITIONAL(IS_DARWIN, test x$is_darwin = xtrue)
+AM_CONDITIONAL(ENABLE_BUNDLES, test x$bundles = xtrue)
+
+###################################################################
+#
+# --enable-myodbc3i
+#
+###################################################################
+AC_ARG_ENABLE( myodbc3i,
+[AC_HELP_STRING([--enable-myodbc3i],[Build myodbc installer command-line interface [default=yes]])],
+[ case "${enableval}" in
+    yes) myodbc3i=true ;;
+    no) myodbc3i=false ;;
+    *) AC_MSG_ERROR(bad value ${enableval} for --enable-myodbc3i) ;;
+    esac],[myodbc3i=true])
+#
+# TO DO: Ensure we have libltdl.
+#
+
+AM_CONDITIONAL(MYODBCINST, test "x$myodbc3i" = "xtrue" )
+
+###################################################################
+#
+# --enable-myodbc3m
+#
+###################################################################
+AC_ARG_ENABLE( myodbc3m,
+[AC_HELP_STRING([--enable-myodbc3m],[Build myodbc command-line shell [default=yes]])],
+[ case "${enableval}" in
+    yes) myodbc3m=true ;;
+    no) myodbc3m=false ;;
+    *) AC_MSG_ERROR(bad value ${enableval} for --enable-myodbc3m) ;;
+    esac],[myodbc3m=true])
+#
+# TO DO: Ensure we have libltdl.
+#
+
+AM_CONDITIONAL(IMYODBC, test "x$myodbc3m" = "xtrue" )
+
+###################################################################
+#
+# option, cache_name, variable,
+# code to execute if yes, code to exectute if fail
+#
+###################################################################
+AC_DEFUN([AC_SYS_COMPILER_FLAG],
+[
+  AC_MSG_CHECKING($1)
+  OLD_CFLAGS="[$]CFLAGS"
+  AC_CACHE_VAL(mysql_cv_option_$2,
+  [
+    CFLAGS="[$]OLD_CFLAGS $1"
+    AC_TRY_RUN([int main(){exit(0);}],mysql_cv_option_$2=yes,mysql_cv_option_$2=no,mysql_cv_option_$2=no)
+  ])
+  CFLAGS="[$]OLD_CFLAGS"
+  if test x"[$]mysql_cv_option_$2" = "xyes" ; then
+    $3="[$]$3 $1"
+    AC_MSG_RESULT(yes)
+    $5
+  else
+    AC_MSG_RESULT(no)
+    $4
+  fi
+])
+
+###################################################################
+#
+# arch, option, cache_name, variable
+#
+###################################################################
+AC_DEFUN([AC_SYS_CPU_COMPILER_FLAG],
+[
+  if test "`uname -m 2>/dev/null`" = "$1" ; then
+    AC_SYS_COMPILER_FLAG($2,$3,$4)
+  fi
+])
+
+# os, option, cache_name, variable
+AC_DEFUN([AC_SYS_OS_COMPILER_FLAG],
+[
+  if test "x$mysql_cv_sys_os" = "x$1" ; then
+    AC_SYS_COMPILER_FLAG($2,$3,$4)
+  fi
+])
+
+# We need some special hacks when running solaris
+AC_PATH_PROG(uname_prog, uname, no)
+
+# We should go through this and put all the explictly system dependent
+# stuff in one place
+AC_MSG_CHECKING(operating system)
+AC_CACHE_VAL(mysql_cv_sys_os,
+[
+  if test "$uname_prog" != "no"; then
+    mysql_cv_sys_os="`uname`"
+  else
+    mysql_cv_sys_os="Not Solaris"
+  fi
+])
+AC_MSG_RESULT($mysql_cv_sys_os)
+
+# This should be rewritten to use $target_os
+case "$target_os" in
+ sco3.2v5*) 
+     CFLAGS="$CFLAGS -DSCO"
+     LD='$(CC) $(CFLAGS)'
+     case "$CFLAGS" in
+       *-belf*) 
+         AC_SYS_COMPILER_FLAG(-belf,sco_belf_option,CFLAGS,[],[
+         case "$LDFLAGS" in
+           *-belf*) ;;
+           *) echo "Adding -belf option to ldflags."
+              LDFLAGS="$LDFLAGS -belf"
+           ;;
+         esac
+         ])
+       ;;
+       *)
+         AC_SYS_COMPILER_FLAG(-belf,sco_belf_option,CFLAGS,[],[
+         case "$LDFLAGS" in
+           *-belf*) ;;
+           *)
+             echo "Adding -belf option to ldflags."
+             LDFLAGS="$LDFLAGS -belf"
+           ;;
+         esac
+         ])
+       ;;
+     esac
+  ;;
+  sysv5UnixWare*) 
+    if test "$GCC" != "yes"; then
+      # We are using built-in inline function
+      CFLAGS="$CFLAGS -Kalloca"
+    fi
+  ;;
+  sysv5OpenUNIX8*) 
+    if test "$GCC" != "yes"; then
+      # We are using built-in inline function
+      CFLAGS="$CFLAGS -Kalloca"
+    fi
+  ;;
+esac
+
+AC_SUBST(CC)
+AC_SUBST(CFLAGS)
+AC_SUBST(LD)
+AC_SUBST(INSTALL_SCRIPT)
+
+export CC CFLAGS LD LDFLAGS
+
+###################################################################
+#                                                                 #
+# Check if localtime_r exists in libc or not                      #
+#                                                                 #
+###################################################################
+
+AC_CHECK_FUNCS(localtime_r)
+
+###################################################################
+#                                                                 #
+# Check for the client libraries and compile options              #
+# Options are taken from the output of mysql_config               #
+#                                                                 #
+###################################################################
+
+AC_ARG_WITH(mysql-path,
+            [  --with-mysql-path=DIR   Path where MySQL is installed],
+            mysql_path=$withval,
+            mysql_path="")
+
+mysql_config=""
+building_against_source=""
+MYSQL_PATH_ARG=""
+
+if test "$mysql_path" != ""
+then
+  MYSQL_PATH_ARG="--with-mysql-path=$mysql_path"
+  if test -f $mysql_path/libmysql/libmysqlclient.la
+  then
+    building_against_source="true"
+    CFLAGS="-I$mysql_path/include"
+    MYSQL_LIB="$mysql_path/libmysql/libmysqlclient.la"
+    MYSQL_THREADSAFE_LIB="$mysql_path/libmysql_r/libmysqlclient_r.la"
+  else
+    mysql_config="$mysql_path/bin/mysql_config"
+    if test ! -x $mysql_config
+    then
+      AC_MSG_ERROR([File $mysql_config doesn't exists or isn't executable.  Please specify with --with-mysql-path where bin/mysql_config can be found]);
+    fi
+  fi
+else
+  # Search where mysql_config is installed
+  TEST_PATHS="/opt/mysql/mysql /usr/local/mysql /usr"
+  for i in $TEST_PATHS
+  do
+    mysql_config="$i/bin/mysql_config"
+    if test -x $mysql_config
+    then
+      MYSQL_PATH_ARG="--with-mysql-path=$TEST_PATHS"
+      break;
+    fi   
+    mysql_config=""
+  done
+
+  if test "$mysql_config" = ""
+  then
+    AC_MSG_ERROR([Can't find mysql_config in $TEST_PATHS]);
+  fi
+fi
+
+AC_SUBST(MYSQL_PATH_ARG)
+
+if test "x$building_against_source" = x
+then
+  OPT=`$mysql_config --cflags`
+  if test $? != "0"
+  then
+    AC_MSG_ERROR([Could not execute $mysql_config. Please check your installation])
+  fi
+
+  # We have to remove any ' around paths as this confuses configure
+  OPT=`echo $OPT | sed -e "s;';;g"`
+  CFLAGS="$OPT $CFLAGS"
+
+  MYSQL_LIB=`$mysql_config --libs | sed -e "s;';;g"`
+  OPT=`$mysql_config --libs_r`
+  if test $? != "0"
+  then
+    # mysql_config that is before 4.0.17
+    # In this case assume we can use the same compile options for the
+    # thread safe library as for the normal
+    OPT=`echo $MYSQL_LIB | sed -e 's;lmysqlclient;lmysqlclient_r;'`
+  else
+    OPT=`echo $OPT | sed -e "s;';;g"`
+  fi
+  MYSQL_THREADSAFE_LIB="$OPT"
+
+  SAVE_LIBS=$LIBS
+  LIBS="$LIBS $MYSQL_LIB"
+  AC_CHECK_FUNC(mysql_real_query,[],
+  [ AC_MSG_ERROR([Could not use the single thread MySQL client library, please check config.log for errors]) ])
+
+  if test "x$gotthread" != "xno"
+  then
+    LIBS="$LIBS $MYSQL_THREADSAFE_LIB"
+    AC_CHECK_FUNC(mysql_real_query,[],
+    [ AC_MSG_ERROR([Could not use the thread safe MySQL client library, please check config.log for errors]) ])
+  fi
+  LIBS=$SAVE_LIBS
+fi
+
+AC_SUBST(MYSQL_LIB)
+AC_SUBST(MYSQL_THREADSAFE_LIB)
+
+echo "END OF MYSQL CONFIGURATION"
+echo ""
+echo "ODBC DRIVER MANAGER CONFIGURATION - LIBRARIES AND HEADERS"
+
+# iODBC
+
+use_iODBC=no
+AC_ARG_WITH(iODBC,
+[  --with-iODBC[=DIR]        Use iODBC located in DIR],
+[ use_iODBC=yes
+  iodbc="$withval"
+],
+[ use_iODBC="" ])
+
+# Default to /usr if not specified
+if test "x$iodbc" = "x" -o "x$iodbc" = "xyes"
+then
+  iodbc="/usr";
+fi
+
+if test "x$use_iODBC" = "xyes"
+then
+  AC_DEFINE([USE_IODBC], [1], [use iODBC])
+
+  AC_ARG_WITH(iodbc-includes,
+              [  --with-iodbc-includes=DIR Find iODBC headers in DIR],
+              iodbc_includes="$withval", iodbc_includes="$iodbc/include")
+
+  AC_ARG_WITH(iodbc-libs,
+              [  --with-iodbc-libs=DIR     Find iODBC libraries in DIR],
+              iodbc_libs="$withval", iodbc_libs="$iodbc/lib")
+
+  AC_MSG_CHECKING([for iODBC version])
+  AC_PATH_PROG(iodbc_conf, iodbc-config, no)
+  if test "$iodbc_conf" != "no"
+  then
+    iodbc_version=`$iodbc_conf --version`
+    iodbc_cflags=`$iodbc_conf --cflags`
+    if test "x$iodbc_cflags" != "x"; then
+      CFLAGS="$CFLAGS $iodbc_cflags"
+    fi
+    ODBC_DM_LIB=`$iodbc_conf --libs`
+  else
+    iodbc_version="unknown"
+    ODBC_DM_LIB="-liodbc"
+  fi
+  AC_MSG_RESULT([$iodbc_version])
+
+  AC_SUBST(ODBC_DM_LIB)
+
+  AC_CHECK_IODBC($iodbc_includes, $iodbc_libs)
+
+  AC_ARG_WITH(odbc-ini,
+  [  --with-odbc-ini=PATH    Location of system ODBC.INI [IODBCDIR/etc/odbc.ini]],
+  odbc_ini="$withval", odbc_ini="$iodbc/etc/odbc.ini")
+
+  if test "x$have_iodbcinst" != "xyes"
+  then
+    AC_DEFINE_UNQUOTED(SYSTEM_ODBC_INI,"$odbc_ini",
+                       [Define path to system ODBC.INI file])
+  fi
+
+  ODBC_DM_PATH_ARG="--with-iodbc=$iodbc"
+  AC_SUBST(ODBC_DM_PATH_ARG)
+
+else
+# unixODBC
+
+  AC_ARG_WITH(unixODBC,
+              [  --with-unixODBC[=DIR]     Use unixODBC located in DIR],
+              [ unixODBC="$withval" ], [ unixODBC="" ])
+
+  AC_DEFINE([USE_UNIXODBC], [1], [use unixODBC])
+
+  # Default to /usr if not specified
+  if test "x$unixODBC" = "x" -o "x$unixODBC" = "xyes"
+  then
+    unixODBC="/usr";
+  fi
+
+  AC_MSG_CHECKING([for unixODBC version])
+  AC_PATH_PROG(isql, isql, no, ["$unixODBC/bin:$PATH"])
+  if test "$isql" != "no"
+  then
+    unixodbc_version=`$isql --version`
+  else
+    unixodbc_version="unknown"
+  fi
+  AC_MSG_RESULT([$unixodbc_version])
+
+  AC_ARG_WITH(unixODBC-includes,
+              [  --with-unixODBC-includes=DIR Find unixODBC headers in DIR],
+              unixODBC_includes="$withval",
+              unixODBC_includes="$unixODBC/include")
+
+  AC_ARG_WITH(unixODBC-libs,
+              [  --with-unixODBC-libs=DIR Find unixODBC libraries in DIR],
+              unixODBC_libs="$withval", unixODBC_libs="$unixODBC/lib")
+
+  AC_CHECK_UNIXODBC($unixODBC_includes, $unixODBC_libs)
+
+  AC_ARG_WITH(odbc-ini,
+              [  --with-odbc-ini=PATH    Location of system ODBC.INI [UnixODBCDIR/etc/odbc.ini]],
+              odbc_ini="$withval", odbc_ini="$unixODBC/etc/odbc.ini")
+
+  if test "x$have_odbcinst" != "xyes"
+  then
+    AC_DEFINE_UNQUOTED(SYSTEM_ODBC_INI,"$odbc_ini",
+                       [Define path to system ODBC.INI file])
+  fi
+
+  ODBC_DM_PATH_ARG="--with-unixODBC=$unixODBC"
+  AC_SUBST(ODBC_DM_PATH_ARG)
+
+  ODBC_DM_LIB="-lodbc"
+  AC_SUBST(ODBC_DM_LIB)
+fi
+
+###################################################################
+# if we're working in an older odbc environment,                  #
+# we don't have the SQL* types, so we need to fall                #
+# back to the old versions                                        #
+###################################################################
+
+AC_CHECK_ODBC_TYPE(SQLHENV,HENV)
+AC_CHECK_ODBC_TYPE(SQLHDBC,HDBC)
+AC_CHECK_ODBC_TYPE(SQLHSTMT,HSTMT)
+
+AC_CHECK_ODBC_TYPE(SQLINTEGER,SDWORD)
+AC_CHECK_ODBC_TYPE(SQLUINTEGER,UDWORD)
+AC_CHECK_ODBC_TYPE(SQLSMALLINT,SWORD)
+AC_CHECK_ODBC_TYPE(SQLUSMALLINT,UWORD)
+
+AC_CHECK_ODBC_TYPE(SQLPOINTER,PTR)
+AC_CHECK_ODBC_TYPE(SQLHWND,HWND)
+
+AC_CHECK_ODBC_TYPE(SQLRETURN,RETCODE)
+
+AC_CHECK_ODBC_TYPE(SQLCHAR,UCHAR)
+
+###################################################################
+#                                                                 #
+# Check and validate for odbc.ini                                 #
+#                                                                 #
+###################################################################
+
+if test "x$iodbc_ok" = "xyes" && test "x$have_iodbcinst" != "xyes"
+then
+cat <<EOF
+----------------------------------------------------------------
+Warning: using iODBC but libiodbcinst library not found.
+Enabling workaround, which will search for MySQL datasource
+configuration as follows:
+
+1. \$ODBCINI, and if not found - \$HOME/.odbc.ini (User data sources)
+2. $odbc_ini (System data sources)
+
+If you want to change (2), re-run configure using the
+   --with-odbc-ini=/some/other/path/odbc.ini
+option.
+----------------------------------------------------------------
+EOF
+fi
+
+echo "END OF DRIVER MANAGER CONFIGURATION"
+echo
+
+###################################################################
+#                                                                 #
+# Build optimized or debug version ?                              #
+#                                                                 #
+#   1. If CFLAGS or DEBUG_CFLAGS set in environment, honor that   #
+#   2. If not set and gcc, set flags                              #
+#   3. If DEBUG_CFLAGS not set and not gcc, set DEBUG_CFLAGS      #
+#      to CFLAGS is set                                           #
+#                                                                 #
+###################################################################
+
+if test "$ac_cv_prog_gcc" = "yes"
+then
+  DEBUG_CFLAGS="-ggdb3"
+  OPTIMIZE_CFLAGS="-O3"
+else
+  DEBUG_CFLAGS="-g"
+  OPTIMIZE_CFLAGS="-O"
+fi
+
+AC_MSG_CHECKING([if debug mode is enabled])
+AC_ARG_WITH(debug,
+    [AC_HELP_STRING(
+        [--with-debug],
+        [Include debug support in the binaries [default=no]])],
+    [with_debug=$withval],
+    [with_debug=no])
+
+AC_ARG_WITH(debug,
+[  --with-debug            Build the debug version default=no],
+    [with_debug=$withval],
+    [with_debug=no])
+AC_MSG_RESULT([$with_debug])
+
+AM_CONDITIONAL(WITH_DEBUG, test "x$with_debug" != xno)
+
+if test "$with_debug" = "yes" || test "$with_debug" = "full"
+then
+ CFLAGS="$DEBUG_CFLAGS -DDBUG_ON $CFLAGS"
+else
+  # Optimized version. No debug
+  CFLAGS="$OPTIMIZE_CFLAGS -DDBUG_OFF $CFLAGS"
+fi
+AC_SUBST(CFLAGS)
+
+
+###################################################################
+#                                                                 #
+# Add some extra LDFLAGS to the linking of the shared library     #
+#                                                                 #
+###################################################################
+
+AC_ARG_WITH(ldflags,
+    [  --with-ldflags=option   Extra arguments for linking],
+    EXTRA_LDFLAGS="$withval",EXTRA_LDFLAGS="")
+AC_SUBST(EXTRA_LDFLAGS)
+LDFLAGS="$LDFLAGS $EXTRA_LDFLAGS"
+
+###################################################################
+#                                                                 #
+# Add some extra X libs when linking shared library that usees X  #
+#                                                                 #
+###################################################################
+
+AC_ARG_WITH(ldflags,
+    [  --with-ldflags=option   Extra arguments for linking],
+    EXTRA_LDFLAGS="$withval",EXTRA_LDFLAGS="")
+AC_SUBST(EXTRA_LDFLAGS)
+LDFLAGS="$LDFLAGS $EXTRA_LDFLAGS"
+
+extra_xlibs=
+AC_ARG_WITH(extra-xlibs,
+    [  --with-extra-xlibs=     Extra arguments for linking X apps/libs],
+    use_extra_xlibs=$withval,
+    use_extra_xlibs=no
+)
+if test -n "$use_extra_xlibs" && \
+   test "$use_extra_xlibs" != "no"; then
+
+   EXTRA_XLIBS="$use_extra_xlibs"
+fi
+AC_SUBST(EXTRA_XLIBS)
+
+###################################################################
+#
+# X
+#
+###################################################################
+
+# We delayed the test for X and Qt, as it will use LDFLAGS and LIBS
+# set above. This configure doesn't even try find threads library
+# etc, it trust to get these configuration from the packages it uses,
+# so configure trying to link a Qt test app earlier than this, will
+# fail. "qt.m4" actually assumes a PTHREAD_LIBS that never is set.
+
+AC_PATH_X
+if test -z "$ac_x_libraries" || test "x$ac_x_libraries" = xNONE; then
+  X_LDFLAGS=""
+  x_libraries="/usr/lib"; dnl better than nothing :-
+ else
+  x_libraries=$ac_x_libraries
+  X_LDFLAGS="-L$x_libraries"
+fi
+all_includes="$all_includes $X_INCLUDES"
+all_libraries="$all_libraries $X_LDFLAGS"
+
+AC_SUBST(X_INCLUDES)
+AC_SUBST(X_LDFLAGS)
+AC_SUBST(x_libraries)
+AC_SUBST(x_includes)
+
+LIB_X11='-lX11 $(LIBSOCKET)'
+AC_SUBST(LIB_X11)
+
+###################################################################
+#
+# --enable-gui
+#
+###################################################################
+AC_ARG_ENABLE( gui,
+[AC_HELP_STRING([--enable-gui],[Build GUI bits (needs qt) [default=yes]])],
+[ case "${enableval}" in
+    yes) gui=true ;;
+    no) gui=false ;;
+    *) AC_MSG_ERROR(bad value ${enableval} for --enable-gui) ;;
+    esac],[gui=true])
+
+if test "x$gui" = "xtrue"; then
+  AC_PROG_CXX
+else
+  if
+    test "x$enable_dependency_tracking" != xno \
+    && test "$am_cv_CXX_dependencies_compiler_type" = gcc3; then
+    am__fastdepCXX_TRUE=
+    am__fastdepCXX_FALSE='#'
+  else
+    am__fastdepCXX_TRUE='#'
+    am__fastdepCXX_FALSE=
+  fi
+fi
+
+have_qt="no"
+if test "x$gui" = "xtrue"; then
+  FUN_CHECK_QT
+  dnl This did run FUN_QT_COMPILE that try link a Qt test app, but
+  dnl leave it to us to decide what to do with a failure
+  if test "x$qt_compile" != "xyes" ; then
+    AC_MSG_ERROR([--enable-gui is given but can't compile/link a Qt test application])
+  fi
+fi
+
+AM_CONDITIONAL(QT, test "x$have_qt" = "xyes" )
+
+###################################################################
+#                                                                 #
+# Build test library ?                                            #
+#                                                                 #
+###################################################################
+
+AC_MSG_CHECKING([if building of test is enabled])
+AC_ARG_ENABLE(test,
+[AC_HELP_STRING([--enable-test],[Enable building of test library [default=yes]])],
+ [ case "${enableval}" in
+     yes) enable_test=yes ;;
+     no)  enable_test=no ;;
+     *) AC_MSG_ERROR(bad value '${enableval}' for --enable-test);;
+     esac
+ ],[enable_test=yes])
+ AC_MSG_RESULT([$enable_test])
+
+if test "x$enable_test" = "xyes"
+then
+  myodbc_test_dir="test"
+fi
+AC_SUBST(myodbc_test_dir)
+
+###################################################################
+#                                                                 #
+# Link test library againt Driver Manager supplied ?              #
+#                                                                 #
+###################################################################
+
+
+AC_MSG_CHECKING([if linking of test library is specified])
+AC_ARG_ENABLE(dmlink,
+[AC_HELP_STRING([--enable-dmlink],[Enable linking of test library againt supplied driver manager [default=no]])],
+ [ case "${enableval}" in
+     yes) enable_dmlink=yes ;;
+     no)  enable_dmlink=no ;;
+     *) AC_MSG_ERROR(bad value '${enableval}' for --enable-dmlink);;
+     esac
+ ],[enable_dmlink=no])
+ AC_MSG_RESULT([$enable_dmlink])
+
+if test "x$enable_dmlink" = "xyes" ; then
+  myodbc_test_linklib="$ODBC_DM_LIB"
+elif test "x$gotthread" = "xno" ; then
+  myodbc_test_linklib="../driver/libmyodbc3.la"
+else
+  myodbc_test_linklib="../driver/libmyodbc3_r.la"
+fi
+AC_SUBST(myodbc_test_linklib)
+
+###################################################################
+#                                                                 #
+# Link driver against odbcinst library?                           #
+#   If no, this builds the "dmless" driver.                       #
+#                                                                 #
+###################################################################
+
+AC_MSG_CHECKING([if driver should be linked against odbcinst library])
+AC_ARG_ENABLE(odbcinstlink,
+  [AC_HELP_STRING([--enable-odbcinstlink],[Enable linking of driver against odbcinst library [default=yes]])],
+    [ case "${enableval}" in
+        yes) enable_odbcinstlink=yes
+        ;;
+        no)  enable_odbcinstlink=no
+             CFLAGS="$CFLAGS -DNO_DRIVERMANAGER"
+        ;;
+        *)   AC_MSG_ERROR(bad value '${enableval}' for --enable-odbcinstlink);;
+      esac
+    ], [enable_odbcinstlink=yes])
+AC_MSG_RESULT([$enable_odbcinstlink])
+AM_CONDITIONAL(ODBCINSTLINK, [test "x$enable_odbcinstlink" = "xyes"])
+
+###################################################################
+#                                                                 #
+# Find out if compiler defines __func__ or __FUNCTION__ macro     #
+#                                                                 #
+###################################################################
+
+# Use expression that will result in syntax error if undefined
+AC_MSG_CHECKING([if compiler defines the __FUNCTION__ macro])
+AC_TRY_COMPILE([],[const char *cp = __FUNCTION__;],
+ [AC_MSG_RESULT([yes])
+  AC_DEFINE(USE_GNU_FUNC_MACRO, 1,
+            [Define if compiler defines __FUNCTION__])],
+ [AC_MSG_RESULT([no])])
+
+AC_MSG_CHECKING([if compiler defines the C99 __func__ macro])
+AC_TRY_COMPILE([], [const char *cp = __func__;],
+ [AC_MSG_RESULT([yes])
+  AC_DEFINE(USE_C99_FUNC_MACRO, 1,
+            [Define if compiler defines C99 __func__ macro])],
+ [AC_MSG_RESULT([no])])
+
+###################################################################
+#                                                                 #
+# Should be done adding to LIBS, check if functions are there     #
+#                                                                 #
+###################################################################
+
+# There are claims strndup() is broken on AIX 5.1, lets play safe
+case "$host_os" in
+  *aix*) ;;
+  *) AC_CHECK_FUNCS(strndup) ;;
+esac
+
+###################################################################
+#                                                                 #
+# Handle declaration compatibility problems                       #
+#                                                                 #
+###################################################################
+
+# Function SQLParamOptions() is deprecated in ODBC 3
+AC_MSG_CHECKING([if SQLParamOptions() 2nd and 3rd arg is compatible with SQLULEN])
+AC_COMPILE_IFELSE(
+[
+  AC_LANG_SOURCE(
+  [
+    #include <sql.h>
+    #include <sqlext.h>
+
+    SQLRETURN SQL_API SQLParamOptions( SQLHSTMT     hstmt, 
+				       SQLULEN      crow,
+				       SQLULEN      *pirow )
+    { return 1; }
+  ])
+],
+[
+  AC_MSG_RESULT([yes])
+  AC_DEFINE(USE_SQLPARAMOPTIONS_SQLULEN_PTR, 1,
+            [Define if SQLParamOptions() 2nd and 3rd arg is compatible with SQLULEN])
+],
+[
+  AC_MSG_RESULT([no])
+  AC_MSG_CHECKING([if SQLParamOptions() 2nd and 3rd arg is compatible with SQLUINTEGER])
+  AC_COMPILE_IFELSE(
+  [
+    AC_LANG_SOURCE(
+    [
+      #include <sql.h>
+      #include <sqlext.h>
+
+      SQLRETURN SQL_API SQLParamOptions( SQLHSTMT     hstmt, 
+                                         SQLUINTEGER  crow,
+                                         SQLUINTEGER *pirow )
+      { return 1; }
+    ])
+  ],
+  [
+    AC_MSG_RESULT([yes])
+    AC_DEFINE(USE_SQLPARAMOPTIONS_SQLUINTEGER_PTR, 1,
+              [Define if SQLParamOptions() 2nd and 3rd arg is compatible with SQLUINTEGER])
+  ],
+  [ AC_MSG_RESULT([no]) ])
+])
+
+# Microsoft changed declaration for 64 bits to SQLLEN*, from SQLPOINTER
+AC_MSG_CHECKING([if SQLColAttribute() last arg is compatible with SQLLEN*])
+AC_COMPILE_IFELSE(
+[
+  AC_LANG_SOURCE(
+  [
+    #include <sql.h>
+    #include <sqlext.h>
+
+    SQLRETURN SQL_API SQLColAttribute( SQLHSTMT  StatementHandle,
+                                       SQLUSMALLINT ColumnNumber,
+                                       SQLUSMALLINT FieldIdentifier,
+                                       SQLPOINTER  CharacterAttributePtr,
+                                       SQLSMALLINT BufferLength,
+                                       SQLSMALLINT *StringLengthPtr,
+                                       SQLLEN *  NumericAttributePtr )
+    { return 1; }
+  ])
+],
+[
+  AC_MSG_RESULT([yes])
+  AC_DEFINE(USE_SQLCOLATTRIBUTE_SQLLEN_PTR, 1,
+            [Define if SQLColAttribute() last arg is compatible with SQLLEN*])
+],
+[
+  AC_MSG_RESULT([no])
+  AC_MSG_CHECKING([if SQLColAttribute() last arg is compatible with SQLPOINTER])
+  AC_COMPILE_IFELSE(
+  [
+    AC_LANG_SOURCE(
+    [
+      #include <sql.h>
+      #include <sqlext.h>
+
+      SQLRETURN SQL_API SQLColAttribute( SQLHSTMT  StatementHandle,
+                                         SQLUSMALLINT ColumnNumber,
+                                         SQLUSMALLINT FieldIdentifier,
+                                         SQLPOINTER  CharacterAttributePtr,
+                                         SQLSMALLINT BufferLength,
+                                         SQLSMALLINT *StringLengthPtr,
+                                         SQLPOINTER  NumericAttributePtr )
+      { return 1; }
+    ])
+  ],
+  [
+    AC_MSG_RESULT([yes])
+    AC_DEFINE(USE_SQLCOLATTRIBUTE_SQLPOINTER, 1,
+              [Define if SQLColAttribute() last arg is compatible with SQLPOINTER])
+  ],
+  [ AC_MSG_RESULT([no]) ])
+])
+
+###################################################################
+#                                                                 #
+# Generate Makefiles                                              #
+#                                                                 #
+###################################################################
+
+AC_OUTPUT([
+  Makefile 
+  util/Makefile
+  driver/Makefile
+  setup/Makefile
+  dsn-editor/Makefile
+  installer/Makefile
+  monitor/Makefile
+  test/Makefile
+  scripts/Makefile
+  dltest/Makefile
+])
+
+echo
+echo "Success!!"
+echo " -------------------------------------------------------------------- "
+echo "| Remember to check the Connector/ODBC documentation for detailed    |"
+echo "| installation and setup instructions at:                            |"
+echo "|   http://dev.mysql.com/doc/refman/5.0/en/myodbc-connector.html     |"
+echo "|                                                                    |"
+echo "| Connector/ODBC product information:                                |"
+echo "|   http://www.mysql.com/products/myodbc/                            |" 
+echo "|                                                                    |"
+echo "| Connector/ODBC mailing list archive:                               |"
+echo "|   http://lists.mysql.com/myodbc                                    |" 
+echo "|                                                                    |"
+echo "| If you have any questions or improvements to ithe driver, then     |"
+echo "| send a detailed mail to 'myodbc@lists.mysql.com'                   |" 
+echo " -------------------------------------------------------------------- "
+echo
+

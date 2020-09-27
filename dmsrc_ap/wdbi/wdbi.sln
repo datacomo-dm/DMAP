@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wdbi", "wdbi.vcproj", "{B347CFBD-2509-4336-B2A6-D11D072D3923}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Mem_Debug|Win32 = Mem_Debug|Win32
+		Mem_Release|Win32 = Mem_Release|Win32
+		ODBC_Debug|Win32 = ODBC_Debug|Win32
+		ODBC_Release|Win32 = ODBC_Release|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Debug|Win32.Build.0 = Debug|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Mem_Debug|Win32.ActiveCfg = Mem_Debug|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Mem_Debug|Win32.Build.0 = Mem_Debug|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Mem_Release|Win32.ActiveCfg = Mem_Release|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Mem_Release|Win32.Build.0 = Mem_Release|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.ODBC_Debug|Win32.ActiveCfg = ODBC_Debug|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.ODBC_Debug|Win32.Build.0 = ODBC_Debug|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.ODBC_Release|Win32.ActiveCfg = ODBC_Release|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.ODBC_Release|Win32.Build.0 = ODBC_Release|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Release|Win32.ActiveCfg = Release|Win32
+		{B347CFBD-2509-4336-B2A6-D11D072D3923}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

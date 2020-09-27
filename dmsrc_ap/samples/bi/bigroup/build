@@ -1,0 +1,1 @@
+gcc  -g -I../../inc opt.cc -lstdc++ -o opt

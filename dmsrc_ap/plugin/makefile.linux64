@@ -1,0 +1,53 @@
+LDFLAGS= -fPIC -fpic -DPIC -lstdc++ -shared  -L$(DMASRC_PATH)/lib -lwdbi -L$(DATAMERGER_HOME)/oci -lpthread -lhdfs -liconv -lm -Wl,--whole-archive -ldmncftp -lncftp -lStrn -lsio -lz -Wl,--no-whole-archive
+OCILIB= -lclntsh 
+INCLUDE= -I$(DMASRC_PATH)/inc -I$(DMASRC_PATH)/inc/oci -I$(DMASRC_PATH)/inc/unix_odbc -I$(DMASRC_PATH)/inc/mysql
+SOURCE=cmnet_parser.cc 
+OBJS=cmnet_parser.o
+COMOBJ=dumpfile.o
+COMSRC=dumpfile.cc
+CXX = gcc
+CFLAGS =  -O3 -fpic -fPIC -DAVL_TREE_FIX_MEM -DPLUGIN_VERSION=\"dma-2.0.0-cbcd285c\" -DPIC -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $(INCLUDE) 
+CMNETLIB=libcmnet_parser.so 
+COMMONTXT=libcommontxt_parser.so 
+
+SOURCECOMMON = commontext_parser.cc column_parser.cpp
+OBJSCOMMON = commontext_parser.o column_parser.o
+
+ZTESMSLIB = libztesms_parser.so
+SOURCEZTESMS = ztetext_parser.cc
+OBJSZTESMS = ztetext_parser.o 
+
+all: $(CMNETLIB) $(COMMONTXT) $(ZTESMSLIB)
+
+$(CMNETLIB):$(OBJS) $(COMOBJ)
+	echo "Build CMNet parser library."
+	$(CXX) $(LDFLAGS) $(OBJS) $(COMOBJ) -o $@
+	cp $@ ../lib
+#	cp $@ $(DATAMERGER_HOME)/plugin
+
+$(OBJS):$(SOURCE)	
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE)
+
+$(COMOBJ):$(COMSRC) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(COMSRC)
+
+$(COMMONTXT):$(OBJSCOMMON) $(COMOBJ)
+	echo "Build common text parser library."
+	$(CXX) $(LDFLAGS) $(OBJSCOMMON) $(COMOBJ) -o $@
+	cp $@ ../lib
+#	cp $@ $(DATAMERGER_HOME)/plugin
+
+$(OBJSCOMMON):$(SOURCECOMMON)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCECOMMON) 
+
+$(ZTESMSLIB):$(OBJSZTESMS) $(COMOBJ)
+	echo "Build ztesms text parser library."
+	$(CXX) $(LDFLAGS) $(OBJSZTESMS) $(COMOBJ) -o $@
+	cp $@ ../lib
+#	cp $@ $(DATAMERGER_HOME)/plugin
+
+$(OBJSZTESMS):$(SOURCEZTESMS)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCEZTESMS)
+
+clean:
+	rm -f $(OBJS) $(CMNETLIB) $(COMMONTXT) $(OBJSCOMMON) $(COMOBJ) $(ZTESMSLIB) $(OBJSZTESMS)

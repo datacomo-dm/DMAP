@@ -1,0 +1,3 @@
+export CFLAGS="-g -DBUILD_LEGACY_64_BIT_MODE -D_UNIX_"
+configure --enable-threads --enable-shared --with-mysql-path=/app/dm6 --disable-unicode --disable-gui --with-ltdl-path=/usr/share/libtool/libltdl --with-unixODBC=/app/dm6 --with-unixODBC-libs=/app/dm6/lib
+unset CFLAGS

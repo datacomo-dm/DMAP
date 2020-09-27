@@ -1,0 +1,15 @@
+LFLAGS= -lm -lrt -lpthread 
+LDFLAGS=  -Wl,-brtl -maix64 -lsupc++ 
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc
+SOURCE= certlib.cpp crc32.c
+OBJS= certlib.o crc32.o
+CXX = gcc
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = -g -D__unix -maix64 -DAIX -DWORDS_BIGENDIAN -DB_TIME_FORMAT -D_LARGEFILE_SOURCE -DMAIN
+#CFLAGS = -O3 -pthread
+dpcode: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f $(OBJS) dpcode

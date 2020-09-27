@@ -1,0 +1,15 @@
+LFLAGS= -lm -lstdc++ -lrt -lpthread 
+LDFLAGS=  -fpic -fPIC -DPIC
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc
+SOURCE=getmac_linux.cpp certlib.cpp crc32.c
+OBJS=getmac_linux.o certlib.o crc32.o
+CXX = gcc
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = -g -fPIC -DB_TIME_FORMAT -D_LARGEFILE_SOURCE -fpic -DPIC -DLinux -DMAIN
+#CFLAGS = -O3 -pthread
+dpcode: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f $(OBJS) dpcode

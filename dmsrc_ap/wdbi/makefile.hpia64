@@ -1,0 +1,65 @@
+LDFLAGS= +DD64 -b -AA +z -L$(DBPLUS_HOME)/lib -L$(DBPLUS_HOME)/lib/mysql -L$(DBPLUS_HOME)/oci -L$(DBPLUS_HOME)/unixodbc/lib -lpthread -lm -lstd_v2
+OCILIB= -lclntsh 
+ODBCLIB= -lmyodbc3_r -lmysqlclient_r
+#ODBCLIB= -lodbc -lmysqlclient_r 
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc -I$(DBPLUSSRC_PATH)/inc/mysql -I$(DBPLUSSRC_PATH)/inc/oci -I$(DBPLUSSRC_PATH)/inc/unix_odbc
+SOURCE=wdbi_global.cpp wdbi_int.cpp wdbi_main.cpp wociSession.cpp wdbiError.cpp wociStatement.cpp dataTable.cpp memTable.cpp dataTableLink.cpp wodbcSession.cpp wodbcStatement.cpp
+OBJS=wdbi_global.o wdbi_int.o wdbi_main.o wociSession.o wdbiError.o wociStatement.o dataTable.o memTable.o dataTableLink.o wodbcSession.o wodbcStatement.o
+CXX = aCC 
+#CFLAGS = -O +DD64  -pthread
+CFLAGS =  -DMYSQL_VER_51 -g -AA +u1 +z +DD64  -DWORDS_BIGENDIAN $(INCLUDE) -DWDBI64BIT -DAVL_TREE_FIX_MEM -D_RWSTD_MINIMUM_NEW_CAPACITY=1 
+
+TARMEM=libwdbi_mem1.2.1.so
+TARODBC=libwdbi_odbc1.2.1.so
+TAROCI=libwdbi_oci1.2.1.so
+TARALL=libwdbi1.2.1.so
+
+TARMEM_S=libwdbimem.so
+TARODBC_S=libwdbiodbc.so
+TAROCI_S=libwdbioci.so
+TARALL_S=libwdbi.so
+
+all: $(TARMEM) $(TARODBC) $(TAROCI) $(TARALL)
+
+$(TARMEM):
+	echo "Build pure memory dbi library."
+	rm -f $(OBJS) $@
+	$(CXX) -DNO_OCI -DNO_ODBC $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@
+	rm -f ../lib/$@ ../lib/$(TARMEM_S)
+	cp $@ $(DBPLUS_HOME)/lib
+	cp $@ ../lib
+	#ln -s $@ $(DBPLUS_HOME)/lib/$(TARMEM_S)
+	
+$(TARODBC):
+	echo "Build dbi library for odbc."
+	rm -f $(OBJS) $@
+	$(CXX) -DNO_OCI $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(ODBCLIB)
+	rm -f ../lib/$@ ../lib/$(TARODBC_S)
+	cp $@ $(DBPLUS_HOME)/lib
+	cp $@ ../lib
+	#ln -s $@ ../lib/$(TARODBC_S)
+
+$(TAROCI):
+	echo "Build dbi library for oci."
+	rm -f $(OBJS) $@
+	$(CXX) -DNO_ODBC $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(OCILIB)
+	rm -f ../lib/$@ ../lib/$(TAROCI_S)
+	cp $@ ../lib
+	cp $@ $(DBPLUS_HOME)/lib
+	#ln -s $@ ../lib/$(TAROCI_S)
+	
+$(TARALL): 
+	echo "Build dbi library for odbc&oci."
+	rm -f $(OBJS) $@
+	$(CXX) $(CFLAGS)  -c $(SOURCE)
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(OCILIB) $(ODBCLIB)
+	rm -f ../lib/$@ ../lib/$(TARALL_S)
+	cp $@ ../lib
+	cp $@ $(DBPLUS_HOME)/lib
+	#ln -s $@ ../lib/$(TARALL_S)
+
+clean :
+	rm -f $(OBJS) $(TARMEM) $(TARODBC) $(TAROCI) $(TARALL)

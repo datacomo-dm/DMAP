@@ -1,0 +1,25 @@
+#LFLAGS= -lwdbi -lm -lstdc++ -lrt -lpthread  -ldtiosh -lbz2 -llzo -lz -lucl -ldpodbc3-3.51.06
+LFLAGS= -lwdbi -lm -lstdc++ -lrt -lpthread -ldpiosh -lbz2 -llzo2 -lz -lucl
+#LFLAGS= -lwoci8sh -lm -lclntsh -lbz2 -lrt -llzo -lz -lpthread -lmysqlclient -lstdc++
+LDFLAGS=  -fpic -fPIC -DPIC -L$(DMASRC_PATH)/lib -L$(DMASRC_PATH)/oci -L$(DATAMERGER_HOME)/lib
+INCLUDE= -I$(DMASRC_PATH)/inc -I$(DMASRC_PATH)/inc/mysql -I$(DMASRC_PATH)/inc/oci
+SOURCE=dt_check.cpp  dt_lib.cpp DumpFileWrapper.cpp ThreadList.cpp
+OBJS=dt_check.o  dt_lib.o DumpFileWrapper.o ThreadList.o
+CXX = gcc
+TARGET = dpadmin
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+# KEEP_LOAD_FILE --define this macro to keep binary file in /tmp as load data 
+# NOBOOST_TLIST --define this macro to skip boost support in ThreadList class
+#CFLAGS = -O3 -std=c++0x -fPIC -DB_TIME_FORMAT -DDPADMIN_VERSION=\"dma-1.6.0-f4fea186\" -DKEEP_LOAD_FILE  -DNOBOOST_TLIST -DBUILD_LEGACY_64_BIT_MODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -fpic -DPIC -DUSE_WDBI -DMYSQL_VER_51
+CFLAGS = -O3 -std=c++0x -fPIC -DB_TIME_FORMAT -DDPADMIN_VERSION=\"dma-1.9.0-ec5f971e\" -DNOBOOST_TLIST -DBUILD_LEGACY_64_BIT_MODE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -fpic -DPIC -DUSE_WDBI -DMYSQL_VER_51
+
+
+$(TARGET): $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS)
+	cp $@ $(DATAMERGER_HOME)/bin 
+
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+
+clean:
+	rm -f $(OBJS) $(TARGET)

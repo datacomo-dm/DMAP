@@ -1,0 +1,14 @@
+LFLAGS= -lm -lrt -lpthread -lstdc++ -ldpiosh
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib -L$(DATAMERGER_HOME)/oci
+INCLUDE= -I$(HOME)/dmsrc/inc -I$(HOME)/dmsrc/inc/oci -I$(HOME)/dmsrc/inc/mysql
+SOURCE=adfscan.cc
+OBJS=adfscan.o
+CXX = gcc
+CFLAGS = -g -pthread -DUSE_WDBI -DWOCI_DEBUG -m64
+adfdump: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+	cp $@ $(DATAMERGER_HOME)/bin
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm adfdump adfscan.o

@@ -1,0 +1,33 @@
+#-----------------------------------------------------------------------------
+#
+# Makefile for the platform @OS@, on the host @host@.
+#
+#-----------------------------------------------------------------------------
+
+CC=@CC@
+DEFS=@DEFS@@NDEFS@
+CFLAGS=@CFLAGS@
+# CC=gcc
+# CFLAGS=-O2 -W -Wall -Wimplicit -Wstrict-prototypes -Wmissing-prototypes
+CPPFLAGS=@CPPFLAGS@
+prefix=@prefix@
+
+LIBS=-lncftp -lsio -lStrn @LIBS@
+STRIPFLAG=@SFLAG@
+LDFLAGS=@LDFLAGS@ -L@MAINDIR@
+
+PROGS=simpleget@EXEEXT@
+
+all: $(PROGS)
+	-@/bin/ls -l $(PROGS)
+
+install: $(PROGS)
+
+simpleget@EXEEXT@: simpleget.c @MAINDIR@/ncftp.h @MAINDIR@/ncftp_errno.h @MAINDIR@/libncftp.a simpleget.c
+	@CCDV@$(CC) $(CFLAGS) $(DEFS) $(CPPFLAGS) simpleget.c -o simpleget@EXEEXT@ $(LDFLAGS) $(LIBS) $(STRIPFLAG)
+
+@MAINDIR@/libncftp.a:
+	[ -f @MAINDIR@/libncftp.a ]
+
+clean:
+	/bin/rm -f $(PROGS) *.@OBJEXT@ core csetc.pch

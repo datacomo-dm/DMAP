@@ -1,0 +1,168 @@
+message msgIBRCAttrPack {
+  enum PackType {
+    PACK_N		= 10;
+    PACK_N_PARTIAL	= 11;
+    PACK_N_LIST		= 12;
+
+    PACK_F		= 20;
+    PACK_F_PARTIAL	= 21;
+    PACK_F_LIST		= 22;
+
+    PACK_S		= 30;
+    PACK_S_PARTIAL	= 31;
+    PACK_S_LIST		= 32;
+  };
+
+  required PackType pack_type = 10;		// Pack Type
+  required uint64 no_obj = 20;			// Num Of Objects
+  required uint64 no_nulls = 21;		// Num Of NULLs
+  required uint64 optimal_mode = 22;		// Optimal Mode
+
+  optional uint64 decomposer_id = 23;		// PACK_S decomposer_id
+  optional uint64 no_groups = 24;		// PACK_S no_groups
+  optional uint64 data_full_byte_size = 25;	// PACK_S data_full_byte_size
+  optional uint64 ver = 26;			// PACK_S ver
+
+  optional int64 min_n = 27;			// PACK_N Min Value
+  optional int64 max_n = 28;			// PACK_N Max Value
+  optional uint64 total_size = 29;		// PACK_(N|F) Pack Size
+
+  optional bytes nulls = 30;			// NULLs BitMap
+  repeated uint64 data_n = 31;			// PACK_N Origin Data
+  repeated double data_f = 32;			// PACK_F Origin Data
+  repeated bytes data_s = 33;			// PACK_S Origin Data
+
+  optional bytes lens = 35;
+  optional bytes data = 36;
+
+  optional int64 first_row = 40;		// Query Result First Row Num
+  optional int64 last_row = 41;			// Query Result Last Row Num
+
+  optional uint64 partial_no_nulls = 50;	// Partial Query Num Of NULLs
+  optional bytes partial_nulls = 51;		// Partial Query NULLs BitMap
+  repeated uint64 partial_data_n = 52;		// PACK_N Partial Query Result
+  repeated double partial_data_f = 53;		// PACK_F Partial Query Result
+  repeated bytes partial_data_s = 54;		// PACK_S Partial Query Result
+
+  optional uint64 list_no_rowmap = 60;		// Cond Query Num Of Row
+  optional bytes list_rowmap = 61;		// Cond Query Row BitMap
+  repeated int64 list_ret_line_no = 62;		// Cond Query Row Num List
+  repeated uint64 list_data_n = 63;		// PACK_N Cond Query Result
+  repeated double list_data_f = 64;		// PACK_F Cond Query Result
+  repeated bytes list_data_s = 65;		// PACK_S Cond Query Result
+};
+
+message msgRCAttr_packN {
+  required uint32 no_obj = 1;
+  required uint32 no_nulls = 2;
+  required uint32 optimal_mode = 3;
+  optional uint64 min_val = 19;
+  required uint64 max_val = 20;
+  required uint32 total_size = 21;
+
+  optional int32 first_row=8;
+  optional int32 last_row=9;
+  optional bytes range_nulls = 90;
+  optional bytes range_data = 91;
+  optional bytes cond_rowmap = 70;
+
+  repeated uint32 cond_ret_line_no = 80;
+  optional bytes cond_data = 81;
+
+  optional bytes nulls = 100;
+  optional bytes data = 102;
+  optional bytes compressed_buf = 103;
+};
+
+message msgRCAttr_packS {
+  required uint32 no_obj = 1;
+  required uint32 no_nulls = 2;
+  required uint32 optimal_mode = 3;
+  required uint32 decomposer_id = 4;
+  required uint32 no_groups = 5;
+  required uint32 data_full_byte_size = 6;
+  required uint32 ver = 7;
+  
+  optional int32 first_row=8;
+  optional int32 last_row=9;
+  optional bytes range_nulls = 90;
+  optional bytes range_data = 91;
+  optional bytes range_lens = 92;
+  optional bytes cond_rowmap=70;
+
+  repeated uint32 cond_ret_line_no = 80;
+  optional bytes cond_data=81;
+  optional bytes cond_lens=82;
+	
+  optional bytes nulls = 100;
+  optional bytes lens = 101;
+  optional bytes data = 102;
+  optional bytes compressed_buf = 103;
+};
+
+message IBRiakDataPackQueryParam {
+	enum PackType {
+		PACK_NUM_UNSIGNED		= 1;
+		PACK_NUM_SIGNED			= 2;
+		PACK_FLOAT			= 3;
+		PACK_STRING			= 4;
+		PACK_BINARY			= 5;
+	};
+
+	enum ExpOPType {
+//		EOP_LB				= 1;	// '('
+//		EOP_RB				= 2;	// ')'
+//		EOP_NOT				= 10;	// 'NOT'
+//		EOP_OR				= 11;	// 'OR'
+//		EOP_AND				= 12;	// 'AND'
+		EOP_EQ				= 20;	// '='
+		EOP_NE				= 21;	// '<>'
+		EOP_GT				= 22;	// '>'
+		EOP_LT				= 23;	// '<'
+		EOP_GE				= 24;	// '>='
+		EOP_LE				= 25;	// '<='
+		EOP_BT				= 26;	// 'BETWEEN'
+		EOP_NBT				= 27;	// 'NOT BETWEEN'
+		EOP_LK				= 28;	// 'LIKE'
+		EOP_NLK				= 29;	// 'NOT LIKE'
+		EOP_IN				= 30;	// 'IN'
+		EOP_NIN				= 31;	// 'NOT IN'
+	}
+
+	enum ReqLevel {
+		RL_AUTO				= 0;
+		RL_NEED				= 1;
+		RL_NEVER			= 2;
+	}
+
+	message RowRange {
+		required uint32 pos_begin	= 1;
+		required uint32 pos_end		= 2;
+	}
+
+	message ExpField {
+		required ExpOPType op_type	= 1;
+		repeated int64 value_list_num	= 10;
+		repeated double value_list_flt	= 11;
+		repeated bytes value_list_str	= 12;
+		optional bytes msg_sub_query	= 20;
+	}
+
+	optional ReqLevel cond_data_req_level	= 5;
+	optional ReqLevel full_data_req_level	= 6;
+
+	required PackType pack_type		= 10;
+
+	optional int64 pack_local_min_num	= 15;
+
+	optional uint64 query_version		= 16;
+
+	optional ExpField expression		= 70;
+
+	optional int32 first_row		= 61;
+	optional int32 last_row			= 62;
+	optional bytes cond_rowmap_in		= 63;
+	optional bool cond_rowmap_or		= 64;
+
+	repeated RowRange row_range		= 60;
+};

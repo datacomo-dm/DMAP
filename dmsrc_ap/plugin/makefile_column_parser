@@ -1,0 +1,18 @@
+LFLAGS= -lwdbi -lm -lstdc++ -lrt -lpthread -ldpiosh -lbz2 -llzo2 -lz -lucl -liconv -fpic -fPIC 
+#LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib
+LDFLAGS=  -fpic -fPIC -DPIC -L$(DATAMERGER_HOME)/lib -L$(DMASRC_PATH)/lib -L$(DMASRC_PATH)/oci
+INCLUDE= -I$(DMASRC_PATH)/inc -I$(DMASRC_PATH)/inc/mysql -I$(DMASRC_PATH)/inc/oci
+SOURCE=column_parser_test.cpp column_parser.cpp
+OBJS=column_parser_test.o column_parser.o
+CXX = gcc
+CFLAGS =  -g -std=c++0x -fpic -fPIC -DPIC  -DB_TIME_FORMAT  -D_FILE_OFFSET_BITS=64 -DBUILD_LEGACY_64_BIT_MODE  -D_LARGEFILE_SOURCE -DUSE_WDBI -DMYSQL_VER_51 $(INCLUDE) 
+
+all: column_parser_test
+column_parser_test:$(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@ $(LFLAGS)
+
+$(OBJS):$(SOURCE)	
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE)
+
+clean:
+	rm -f $(OBJS) column_parser_test

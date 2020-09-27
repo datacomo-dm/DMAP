@@ -1,0 +1,4 @@
+Starting mysqld daemon with databases from /app/dtsys/var
+STOPPING server from pid file /app/dtsys/var/dtsvr2.pid
+060828 10:57:09  mysqld ended
+

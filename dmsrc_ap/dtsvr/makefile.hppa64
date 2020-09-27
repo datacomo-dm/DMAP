@@ -1,0 +1,18 @@
+LFLAGS= -lwdbi -lm -lclntsh -lrt -lpthread -lmysqlclient_r -lmyodbc3_r 
+LDFLAGS= +DD64 -AA  -L$(HOME)/wgsh/lib -L$(DBPLUS_HOME)/oci
+INCLUDE= -I$(HOME)/wgsh/inc -I$(HOME)/wgsh/inc/mysql
+#SOURCE=dt_test.cpp 
+#OBJS=dt_test.o 
+SOURCE=dt_check.cpp dt_lib.cpp 
+OBJS=dt_check.o dt_lib.o 
+CXX = aCC
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+CFLAGS = +O3 +DD64 -AA -DB_TIME_FORMAT -DWOCI_DEBUG -DUSE_WDBI -DWORDS_BIGENDIAN
+#CFLAGS = -O3 -pthread
+dpadmin: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS)  -o $@  -ldpiosh $(LFLAGS) 
+	cp $@ $(DBPLUS_HOME)/bin
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f $(OBJS) dtadmin

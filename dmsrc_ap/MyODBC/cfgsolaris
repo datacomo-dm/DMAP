@@ -1,0 +1,10 @@
+
+echo "---------------------------------------------------------------------"
+unset CC CFLAGS CXX CXXFLAGS
+CC=gcc
+CFLAGS="-m32 -O3 -fno-omit-frame-pointer"
+CXX=gcc
+CXXFLAGS="-m32 -O3 -fno-omit-frame-pointer -felide-constructors"
+export CC CFLAGS CXX CXXFLAGS
+configure --enable-threads --enable-odbcinstlink --with-mysql-path=/app/dm51 --disable-gui --with-unixODBC=/app/dm51/unixodbc32 --with-unixODBC-libs=/app/dm51/unixodbc32/lib --with-ltdl-path=/app/datamerger/dtsrc/libltdl
+unset CC CFLAGS CXX CXXFLAGS

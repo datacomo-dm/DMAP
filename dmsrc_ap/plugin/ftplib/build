@@ -1,0 +1,6 @@
+gcc -g -fPIC -fpic -DPIC -c ftptest.cc -I../../inc 
+gcc -g -fPIC -fpic -DPIC -c dmncftp.cpp -I../../inc
+ar -cru libdmncftp.a  dmncftp.o
+cp *.a ../../lib
+#gcc ftptest.o -o ftptest -L$DBPLUSSRC_PATH/lib  -lstdc++ -lncftp -lStrn -lsio -lz -ldmncftp
+gcc dmncftp.o ftptest.o -o ftptest -L$DBPLUSSRC_PATH/lib  -lstdc++ -lncftp -lStrn -lsio -lz 

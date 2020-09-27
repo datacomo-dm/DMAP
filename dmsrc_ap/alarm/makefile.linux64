@@ -1,0 +1,18 @@
+LFLAGS= -lwdbi -lm -lstdc++ -lrt -lpthread -ldpiosh -lbz2 -llzo2 -lz -lucl
+LDFLAGS=  -fpic -fPIC -DPIC -L$(DATAMERGER_HOME)/lib -L$(DMASRC_PATH)/lib
+INCLUDE= -I$(DMASRC_PATH)/inc -I$(DMASRC_PATH)/inc/oci  -I$(DMASRC_PATH)/inc/mysql -I./
+SOURCE=Alarm_main.cpp AlarmMsg.cpp ProcessMsg.cpp SendMsg.cpp Utility.cpp
+OBJS=Alarm_main.o AlarmMsg.o ProcessMsg.o SendMsg.o Utility.o
+CXX = gcc
+TARGET = dpAlarm
+CFLAGS = -g -fPIC -DB_TIME_FORMAT -DKEEP_LOAD_FILE -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -fpic -DPIC -DUSE_WDBI -DMYSQL_VER_51
+
+$(TARGET): $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS)
+	cp $@ $(DATAMERGER_HOME)/bin 
+
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+
+clean:
+	rm -f $(OBJS) $(TARGET)

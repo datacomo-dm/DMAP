@@ -1,0 +1,120 @@
+Starting mysqld daemon with databases from /app/mysql/var
+050317 17:18:00  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr.pid
+050827 00:08:42  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr.pid
+050827 01:07:01  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dbplus.pid
+050828 17:41:29  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+A mysqld process already exists
+/app/dbplus/bin/mysqld_safe: line 1:  3976 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:09  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4715 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:14  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4729 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:19  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4743 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:25  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4757 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:36  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4771 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:43  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4785 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:57:47  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4799 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:58:03  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4814 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:58:24  mysqld restarted
+/app/dbplus/bin/mysqld_safe: line 1:  4832 ¶Î´íÎó                  (core dumped) nohup /app/dbplus/libexec/mysqld --basedir=/app/dbplus --datadir=/app/dbplus/var --pid-file=/app/dbplus/var/dbplus.pid --skip-locking --port=3306 >>/app/dbplus/var/dbplus.err 2>&1
+
+Number of processes running now: 0
+050828 17:58:47  mysqld restarted
+STOPPING server from pid file /app/dbplus/var/dbplus.pid
+050828 17:59:21  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dbplus.pid
+050828 19:21:18  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+051207 15:58:08  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+051207 16:27:52  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+051207 18:26:54  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+051214 11:42:30  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+051215 10:56:38  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+051219 18:24:50  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+060309 09:37:03  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+060309 11:33:26  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+060309 17:46:38  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+060427 10:57:21  mysqld ended
+
+Starting mysqld daemon with databases from /app/dbplus/var
+STOPPING server from pid file /app/dbplus/var/dtsvr2.pid
+060509 08:55:39  mysqld ended
+
+Starting mysqld daemon with databases from /app/dtsys/var
+STOPPING server from pid file /app/dtsys/var/dtsvr2.pid
+060804 18:37:05  mysqld ended
+
+Starting mysqld daemon with databases from /app/dtsys/var
+STOPPING server from pid file /app/dtsys/var/dtsvr2.pid
+060829 21:28:27  mysqld ended
+
+Starting mysqld daemon with databases from /app/dtsys/var
+STOPPING server from pid file /app/dtsys/var/dtsvr2.pid
+061018 17:53:54  mysqld ended
+

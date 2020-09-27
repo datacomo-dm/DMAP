@@ -1,0 +1,5 @@
+64 bits dt (lserver) build failed.:
+1. fix some bug on wdbi/dtio/myodbc librarys.
+2. wdbi_odbc could oper on dt80,but integer column fetch wrong value(tabid,tabname).
+3. dtio-->dtpack core dumped.
+4. use wdbi(debug version)to connect to oracle,on local table is right ,query a dt table on synonyms of dtagt80 failed,core dumped.

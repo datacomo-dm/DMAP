@@ -1,0 +1,7 @@
+# gcc -g -fpic -fPIC -DUSE_WDBI -c hello.cc cpptcl.cc -I/opt/ActiveTcl-8.5/include -I./inc
+# gcc -fPIC -fpic -DPIC -lstdc++ -shared -L/app/dbplus/lib -L/app/dbplus/oci -lwdbi1.2.1 -lodbc -lclntsh -lpthread -o myhello.so hello.o cpptcl.o
+#gcc -g -m64 -DPIC -fPIC -DUSE_WDBI -c memtab.cc cpptcl.cc -I/opt/ActiveTcl-8.5/include -I./inc
+#gcc -shared -L/app/dbplus/lib -L/app/dbplus/oci -lwdbi1.2.1 -lodbc -lclntsh -lpthread -o memtab.so memtab.o cpptcl.o
+gcc -DPIC -fPIC -DUSE_WDBI -c memtab.cc cpptcl.cc -I../dmsrc/inc
+gcc -shared -L/app/dm55/lib -L/app/dm55/lib/mysql -L/app/dm55/oci -lwdbi1.2.1 -lodbc -lclntsh -lpthread -o wdbitab.so memtab.o cpptcl.o -lmystrings -ltcl8.4
+

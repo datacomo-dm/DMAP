@@ -1,0 +1,3 @@
+gcc -g -std=c++0x -DNOBOOST_TLIST pitest.cc DMThreadGroup.cpp  -I. -I../../inc -lstdc++ -lrt /usr/local/lib/libleveldb.a.1.15 /usr/local/lib/libsnappy.a -lpthread -o pitest
+cp pitest /tmp
+cp pitest $DATAMERGER_HOME/bin

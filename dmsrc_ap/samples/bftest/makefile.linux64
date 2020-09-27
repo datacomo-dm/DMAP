@@ -1,0 +1,12 @@
+LFLAGS= -lm -lrt -lpthread -lstdc++ -ldpiosh
+LDFLAGS= -m64 -L$(DATAMERGER_HOME)/lib -L$(DATAMERGER_HOME)/oci
+#INCLUDE= -I$(HOME)/dmsrc/inc
+INCLUDE= -I$(DBPLUSSRC_PATH)/inc 
+SOURCE=woci_fetch.cpp bloom_test.cpp bloom.cpp hash.cpp
+OBJS=woci_fetch.o hash.o bloom_test.o bloom.o 
+CXX = gcc
+CFLAGS = -g -pthread -DUSE_WDBI -DWOCI_DEBUG -m64 
+fetch: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 

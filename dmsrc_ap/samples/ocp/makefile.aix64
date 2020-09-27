@@ -1,0 +1,18 @@
+LFLAGS= -Wl,-brtl -maix64 -lwdbi -lsupc++ -lrt -ldpio -lm -lpthread -lmysqlclient_r  -lclntsh -lbz2 -llzo2 -lz -lucl13 -lodbc
+#-ldpodbc3
+#LDFLAGS= -Wl,-bnolibpath -L/app/dbplus/lib/oci -L$/app/dbplus/lib
+LDFLAGS= -L$(DBPLUSSRC_PATH)/lib/oci -L$(DBPLUS_HOME)/lib -L$(DBPLUSSRC_PATH)/lib 
+INCLUDE= -I$(HOME)/dbplus/inc
+SOURCE=dbcp.cc 
+OBJS=dbcp.o
+CXX = gcc
+CFLAGS = -O3 -DAIX -D__unix -maix64 -DUSE_WDBI -DWOCI_DEBUG
+dbcp: $(OBJS) 
+	$(CXX) $(LDFLAGS) $(OBJS) -o $@  $(LFLAGS) 
+	cp $@ $(DBPLUS_HOME)/bin
+$(OBJS): $(SOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE) 
+clean:
+	rm -f dbcp dbcp.o
+	
+rebuild: clean dbcp	

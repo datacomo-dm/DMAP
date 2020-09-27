@@ -1,0 +1,22 @@
+change log recheck :
+
+MySQL :
+1. *****(Never used)
+.\include\mysql.h
+2. .\libmysql\libmysql.c
+3.  .\myisam\myisamdef.h
+ line 273 add :
+ my_off_t next_block;
+
+4.  .\sql\mini_client.cpp
+5.  *********.\sql\mysqld.cpp
+6. .\sql\net_serv.cpp
+7. ********.\sql\sql_base.cpp
+8. .\sql\sql_select.cpp  **********
+9. ********.\sql\ha_myisam.h
+10. ************.\sql\ha\myisam.cpp 
+
+odbc change log : odbc\
+11. execute.c
+12. prepare.c 
+13. results.c

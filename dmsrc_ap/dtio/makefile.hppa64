@@ -1,0 +1,67 @@
+#flags used to link target .
+ZIPLIBS = -lbz2 -lrt -llzo2 -lz
+LFLAGS= -lclntsh -lwdbi -lrt -lpthread -lmyodbc3_r -lmysqlclient_r
+LFLAGS_D= -lwdbimem -lrt -lpthread 
+#flags used to link shared lib and target.
+LDFLAGS= +DD64 -AA -L$(DBPLUS_HOME)/lib -L$(DBPLUS_HOME)/oci -L$(HOME)/dtsrc/lib
+#flags used to link shared lib.
+LIBFLAGS= -lwdbi -lm -lclntsh $(ZIPLIBS) -lpthread -lmysqlclient_r -lucl -lmyodbc3_r
+
+LIBFLAGS_D= -lwdbimem -lbz2 -llzo -lz -lucl
+
+INCLUDE= -I$(HOME)/dtsrc/inc -I$(HOME)/dtsrc/inc/mysql
+#SOURCE=dt_test.cpp 
+#OBJS=dt_test.o 
+SOURCE=dtioMain.cpp
+OBJS=dtioMain.o
+CXX = aCC
+LIBOBJS=dtioDTTable.o dtioDTTableGroup.o dtiofile.o dtioMyTable.o dtioMyTableGroup.o dtioStream.o dtioStreamFile.o dtparams_mt.o mttables.o mysqlconn.o dt_common.o dt_svrlib.o crc32.o cert.o
+LIBSOURCE=dtioDTTable.cpp dtioDTTableGroup.cpp dtiofile.cpp dtioMyTable.cpp dtioMyTableGroup.cpp dtioStream.cpp dtioStreamFile.cpp dtparams_mt.cpp mttables.cpp mysqlconn.cpp dt_common.cpp dt_svrlib.cpp crc32.c cert.cpp
+# -Wall display all level of compiling info. -O given an optimization level for intrinsics functions
+#CFLAGS = -g -pthreads -DUSE_WDBI -DWOCI_DEBUG -D_FILE_OFFSET_BITS=64
+CFLAGS = +O3 +Onoinitcheck +DD64 +z -DB_TIME_FORMAT -AA -D_LARGEFILE64_SOURCE -DUSE_WDBI -DWOCI_DEBUG -DWORDS_BIGENDIAN
+DTIOLIB = libdpio.a
+DTIOEXEC = dpio
+DTIOSH = libdpiosh.sl
+AR= ar
+ARFLAGS= crvu
+DTIOMYSQLD = libdpios_sh.sl
+all : $(DTIOEXEC) $(DTIOSH)
+
+$(DTIOLIB) : $(LIBOBJS)
+	rm -f $(DTIOLIB)
+	$(AR) $(ARFLAGS) $@ $(LIBOBJS)
+	ranlib $@
+	cp $@ ../lib
+
+$(DTIOSH) : $(LIBOBJS)
+	$(CXX) +DD64 -b $(LDFLAGS) $(LIBOBJS) $(LIBFLAGS) -o $@
+	cp $@ ../lib
+	cp $@ $DBPLUS_HOME/lib
+
+$(DTIOEXEC) : $(OBJS) $(DTIOLIB) $(DTIOSH)
+	$(CXX) $(LDFLAGS) $(LFLAGS) dtioMain.o -o $@ -ldpiosh 
+	cp $@ $(DBPLUS_HOME)/bin
+
+$(OBJS): $(SOURCE)
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(SOURCE)
+
+$(LIBOBJS): $(LIBSOURCE) 
+	$(CXX) $(CFLAGS) $(INCLUDE) -c $(LIBSOURCE) 
+
+mysqld: $(DTIOMYSQLD)
+
+$(DTIOMYSQLD):
+	rm -f $(LIBOBJS) $@
+	$(CXX) $(CFLAGS) $(INCLUDE) -DMYSQL_SERVER -c $(LIBSOURCE)
+	rm -f $@
+	$(CXX)  -b $(LDFLAGS) $(LIBFLAGS_D) -o $@ $(LIBOBJS)
+	#$(AR) $(ARFLAGS) $@ $(LIBOBJS)
+	#ranlib $@
+	cp $@ ../lib
+	cp $@ $DBPLUS_HOME/lib
+	rm -f $(LIBOBJS) $@
+	
+clean:
+	rm -f $(LIBOBJS) $(OBJS) $(DTIOLIB) $(DTIOSH)
+

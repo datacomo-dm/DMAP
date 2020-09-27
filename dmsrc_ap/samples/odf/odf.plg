@@ -1,0 +1,46 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: odf - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP73A.tmp" with contents
+[
+/nologo /MTd /W3 /Gm /GX /ZI /Od /I "../inc" /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /D "USE_WDBI" /D "WOCI_DEBUG" /FR"Debug/" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\dev\turb\odf\odf.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP73A.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP73B.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib wdbid.lib zzlib.lib ucl.lib libbz2.lib lzo.lib zlibdll.lib libdtiod.lib libncftpd.lib ws2_32.lib Strnd.lib siod.lib dtgdi.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/odfd1.pdb" /debug /machine:I386 /out:"../bin/odfd1.exe" /pdbtype:sept /libpath:"../lib" 
+.\Debug\datablockstore.obj
+.\Debug\dataset_svr.obj
+.\Debug\dataset_task.obj
+.\Debug\destload.obj
+.\Debug\fileserver.obj
+.\Debug\odf.obj
+.\Debug\param_db.obj
+.\Debug\StdAfx.obj
+\dev\turb\lib\libdtiod.lib
+\dev\turb\lib\wdbid.lib
+\dev\turb\lib\dtgdi.lib
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP73B.tmp"
+<h3>Output Window</h3>
+Compiling...
+odf.cpp
+d:\dev\turb\odf\odf.cpp(32) : warning C4101: 'ext_st' : unreferenced local variable
+Linking...
+Creating command line "bscmake.exe /nologo /o"Debug/odf.bsc"  .\Debug\StdAfx.sbr .\Debug\datablockstore.sbr .\Debug\dataset_svr.sbr .\Debug\dataset_task.sbr .\Debug\destload.sbr .\Debug\fileserver.sbr .\Debug\odf.sbr .\Debug\param_db.sbr"
+Creating browse info file...
+<h3>Output Window</h3>
+
+
+
+<h3>Results</h3>
+odfd1.exe - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>

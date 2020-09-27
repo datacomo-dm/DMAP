@@ -1,0 +1,2 @@
+/home/dtinfo/dtsrc/samples/desc/run1.com: line 3:  7677 “—…±À¿                  cdrp /ttfile/pickbackdata/200612
+/home/dtinfo/dtsrc/samples/desc/run1.com: line 4:  7725 “—…±À¿                  cdrp /ttfile/pickbackdata/200612
